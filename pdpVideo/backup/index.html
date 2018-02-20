@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- toolkit styles -->
+    <link rel="stylesheet" href="toolkit.css" />
+    <link rel="stylesheet" href="common1_1.css" />
+    <!-- /toolkit styles -->
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <style>
+        .pdp-video .pdp-video-info p {
+            line-height: 2rem;
+        }
+
+        .pdp-video .pdp-video-info {
+            width: 60%;
+        }
+
+        .wmBox_closeBtn {
+            z-index: 2;
+            position: relative;
+            margin-top: 0 !important;
+        }
+
+        .wmBox_closeBtn p {
+            font-size: 21px !important;
+            border-radius: 0 !important;
+            top: -6px !important;
+            right: 5px !important;
+        }
+
+        @media (max-width: 767px) {
+            .wmBox_closeBtn p {
+                font-size: 23px !important;
+                border-radius: 0 !important;
+                top: -6px !important;
+                right: 3px !important;
+            }
+        }
+
+
+        @media (min-width: 1023px) {
+            .pdp-video .pdp-video-player .pdp-video-play {
+                min-height: 385px;
+            }
+        }
+        /* Popup video styles start here */
+
+        .wmBox_overlay {
+            z-index: 99999;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            display: none;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .wmBox_centerWrap {
+            display: table;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .wmBox_centerer {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .wmBox_centerer iframe {
+            width: 95%;
+            display: table;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .wmBox_contentWrap {
+            width: 70%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .wmBox_scaleWrap {
+            position: relative;
+            height: 0;
+            padding-top: 20px;
+            padding-bottom: 56.25%;
+            width: 100%;
+        }
+
+        .wmBox_centerer iframe {
+            position: absolute;
+            top: 0;
+            border: 0;
+            outline: 0;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .wmBox_closeBtn {
+            z-index: 2;
+            position: relative;
+            margin-top: -40px;
+        }
+
+        .wmBox_closeBtn p {
+            line-height: 0;
+            margin: 0;
+            padding: 0.5em 0 0.75em;
+            color: #FFF;
+            background: #000;
+            width: 1.3em;
+            font-size: 25px;
+            border-radius: 100%;
+            text-align: center;
+            font-family: Verdana, serif;
+            position: relative;
+            bottom: -0.5em;
+            right: -0.5em;
+            cursor: pointer;
+            float: right;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            transition: color 0.2s ease-out, background 0.2s ease-out;
+        }
+
+        .wmBox_closeBtn p:hover {
+            background: #FFF;
+            color: #000;
+        }
+
+        video {
+            z-index: 9999999999999;
+        }
+
+        @media (max-width: 768px) {
+            .wmBox_contentWrap {
+                margin: 4%;
+                width: 92%;
+            }
+        }
+        /* Popup video styles end here */
+    </style>
+    <div class="m-b-xxl">
+        <section class="pdp-video bg-teal" id="pdp-video">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="bg-teal">
+                        <div class="pdp-video-info">
+                            <div>
+                                <h5 class="h-2 txt-white txt-align--center uppercase">Urban</h5>
+                                <hr />
+                                <p class="txt-white txt-align--center">
+                                    A dynamic curved design and range of colorful finishes helps the Urban make a statement.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pdp-video-player ppgUnstyled ppcgList col-xs-12 col-sm-12 col-md-6 col-lg-6" style="padding:0px; margin-top:0px; background-image: url('https://s7d1.scene7.com/is/image/NewellRubbermaid/pen_video_urban_video_still?wid=646&fmt=jpeg&qlt=90,0');">
+                        <div>
+                            <a class="wmBox" href="#" data-popup="https://s7d9.scene7.com/e2/NewellRubbermaid/FWLA/Parker/1.%20Brand%20assets/Movies/rbn_mvimou_720p_1200k_mp4.mp4">
+                                <button class="pdp-video-play" data-video-id="videoSlot1" type="button" aria-label="play video NAME">
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $.wmBox();
+        });
+    </script>
+    <script>
+        (function ($) {
+            $.wmBox = function () {
+                $('body').prepend(
+                    '<div class="wmBox_overlay"><div class="wmBox_centerWrap"><div class="wmBox_centerer"><div class="wmBox_contentWrap"><div class="wmBox_scaleWrap"><div class="wmBox_closeBtn"><p>x</p></div>'
+                );
+            };
+            $('[data-popup]').click(function (e) {
+                e.preventDefault();
+                $('.wmBox_overlay').fadeIn(750);
+                var mySrc = $(this).attr('data-popup');
+                $('.wmBox_overlay .wmBox_scaleWrap').append('<iframe src="' + mySrc + '">');
+
+                $('.wmBox_overlay iframe').click(function (e) {
+                    e.stopPropagation();
+                });
+                $('.wmBox_overlay').click(function (e) {
+                    e.preventDefault();
+                    $('.wmBox_overlay').fadeOut(750, function () {
+                        $(this).find('iframe').remove();
+                    });
+                });
+            });
+        }(jQuery));
+    </script>
+</body>
+
+</html>

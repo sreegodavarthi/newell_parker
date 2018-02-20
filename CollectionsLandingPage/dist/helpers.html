@@ -1,0 +1,2865 @@
+<!doctype html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Helpers</title>
+
+    <!-- PP BASE STYLES --->
+    <link rel="stylesheet" href="./pp-base/common1_1.css" />
+    <!--- /PP BASE STYLES --->
+
+
+    <!-- toolkit styles -->
+    <link rel="stylesheet" href="./assets/toolkit/styles/toolkit.css" />
+    <!-- /toolkit styles -->
+
+    <link rel="stylesheet" href="./assets/fabricator/styles/f.css" />
+
+    <!-- polyfill scripts -->
+    <script src="./assets/toolkit/scripts/polyfill.js"></script>
+    <!--/polyfill scripts -->
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--/ jQuery -->
+
+    <script language="javascript" type="text/javascript" src="https://s7d9.scene7.com/s7viewers/html5/js/MixedMediaViewer.js"></script>
+
+</head>
+<body>
+
+    <div class="f-container" id="f-container">
+        <div class="f-branding left">
+            <span class="ver">v1.0.19</span>
+        </div>
+        <!-- fabricator icons -->
+        <svg style="display: none;">
+        	<symbol id="f-icon-code" viewBox="0 0 512 512">
+        		<path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
+        	</symbol>
+        	<symbol id="f-icon-notes" viewBox="0 0 512 512">
+        		<path d="M443.8 0H68.2C30.6 0 0 30.5 0 68v264.2c0 16.6 8.9 29.5 25.9 37.5 15.3 7.2 33.1 8.4 40.1 8.5V512l201.6-134h176.1c37.6 0 68.2-30.3 68.2-67.8V68c.1-37.5-30.5-68-68.1-68zM114 438V330H68.2c-11.1 0-19.2-8.8-19.2-19.8V68c0-11 8.2-20 19.2-20h375.5c11.1 0 19.2 9 19.2 20v242.2c0 11-8.2 19.8-19.2 19.8H244.2L114 438z"/>
+        	</symbol>
+        	<symbol id="f-icon-labels" viewBox="0 0 512 512">
+        		<path d="M304 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM464 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM144 280c0 13.2-10.8 24-24 24H72c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48z"/>
+        	</symbol>
+        	<symbol id="f-icon-menu" viewBox="0 0 512 512">
+        		<path d="M512 100c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 212c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 324c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 436c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24z"/>
+        	</symbol>
+        	<symbol id="f-icon-settings" viewBox="0 0 512 512">
+        		<path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
+        	</symbol>
+            <symbol id="f-icon-search" viewBox="0 0 476 512">
+        		<path d="M329.143 237.714c0-70.572-57.428-128-128-128s-128 57.428-128 128 57.428 128 128 128 128-57.428 128-128zM475.428 475.428c0 20-16.572 36.572-36.572 36.572-9.714 0-19.143-4-25.714-10.857l-98-97.714c-33.428 23.143-73.428 35.428-114 35.428-111.143 0-201.143-90-201.143-201.143s90-201.143 201.143-201.143 201.143 90 201.143 201.143c0 40.571-12.286 80.571-35.428 114l98 98c6.572 6.572 10.572 16 10.572 25.714z" />
+        	</symbol>
+            <symbol id="f-icon-catalyst" viewBox="0 0 260 257.54">
+                <defs><style>.cls-1{fill:#00b29f;}</style></defs><title>Catalysts</title><g id="Layer_2" data-name="Layer 2"><g id="Backlog_-_Creation" data-name="Backlog - Creation"><path class="cls-1" d="M22.12,136.41a1.28,1.28,0,0,0-.3-.95A9.05,9.05,0,0,0,22.12,136.41Z"/><path class="cls-1" d="M123.46,87.14C117.57,156.71,30,157.49,22.12,136.41c.44,8.66-22.49,70.14,48,100.7,46.23,18.65,90-1.41,101.65-48.32C185.34,134.33,159.34,87.93,123.46,87.14Zm-71.61,95.5a11.06,11.06,0,1,1,11.06-11.06A11.06,11.06,0,0,1,51.85,182.65Zm38.26,30.41a10.78,10.78,0,1,1,10.78-10.78A10.78,10.78,0,0,1,90.11,213.05Zm46.67-25.79a19.4,19.4,0,1,1,19.4-19.4A19.4,19.4,0,0,1,136.78,187.26Z"/><path d="M97,63.52a97,97,0,1,0,97,97A97,97,0,0,0,97,63.52Zm0,172.83a75.82,75.82,0,1,1,75.82-75.82A75.82,75.82,0,0,1,97,236.35Z"/><path class="cls-1" d="M188,6.72,118.43,76.3,110.71,84c3.62-.15,13.07.55,12.55,5.23-.9,7.93,17.58,14.12,25.24,23.91,6.48,8.28,14.76,16,20.4,24.82a20,20,0,0,1,3.46,10.49l78.71-78.71Z"/><path d="M257,75,185,3a10.35,10.35,0,0,0-14.63,14.63L173.72,21,118.43,76.3,110.71,84c3.62-.15,6.4,3.13,10.82,4.73a57,57,0,0,1,9.65,4.07L188,36,221.8,69.76l-56.5,56.5-.43.43a56.38,56.38,0,0,1,4.3,10.47A70.36,70.36,0,0,1,172,149.3l7.93-8.42,56.82-56.82,5.58,5.58A10.35,10.35,0,0,0,257,75Z"/></g></g>
+            </symbol>
+            <symbol id="f-icon-dna" viewBox="0 0 260 260">
+              <defs><style>.cls-1{fill:#00b29f;}</style></defs><title>DNA</title><g id="Layer_2" data-name="Layer 2"><g id="Backlog_-_Creation" data-name="Backlog - Creation"><rect class="cls-1" x="45.7" y="145.36" width="19.42" height="110.96" transform="translate(-125.78 98.01) rotate(-45)"/><rect class="cls-1" x="68.11" y="122.95" width="19.42" height="110.96" transform="translate(-103.38 107.29) rotate(-45)"/><rect class="cls-1" x="94.43" y="113.97" width="19.42" height="83.27" transform="translate(-79.52 119.21) rotate(-45)"/><rect class="cls-1" x="194.6" y="3.69" width="19.42" height="110.96" transform="translate(18 161.8) rotate(-45)"/><rect class="cls-1" x="172.19" y="26.09" width="19.42" height="110.97" transform="translate(-4.41 152.52) rotate(-45)"/><rect class="cls-1" x="147.32" y="61.33" width="19.42" height="83.27" transform="translate(-26.81 141.2) rotate(-45)"/><path d="M81.34,260a10.14,10.14,0,0,1-2.56-20c2.48-.68,61.86-18.07,41.92-108.32-12.49-56.56,2.73-89.18,17.7-106.59C155.06,5.79,175.07.53,175.92.31A10.14,10.14,0,0,1,181,20c-2.58.69-60.35,17.35-40.45,107.4,12.5,56.59-3.14,89.47-18.47,107.08-17,19.52-37.27,25-38.13,25.23A10.17,10.17,0,0,1,81.34,260Z"/><path d="M10.15,188.79A10.15,10.15,0,0,1,.33,176.09C.56,175.23,6,154.94,25.56,138c17.62-15.32,50.5-31,107.08-18.47C222.79,139.4,239.38,81.5,240,79a10.14,10.14,0,1,1,19.64,5.05c-.21.84-5.47,20.85-24.83,37.51-17.41,15-50,30.19-106.59,17.7-38.81-8.57-68.89-3.87-89.4,14a64,64,0,0,0-18.92,28A10.14,10.14,0,0,1,10.15,188.79Z"/></g></g>
+            </symbol>
+            <symbol id="f-icon-atom" viewBox="0 0 260 260">
+              <defs><style>.cls-1{fill:#00b29f;}</style></defs><title>Atoms</title><g id="Layer_2" data-name="Layer 2"><g id="Backlog_-_Creation" data-name="Backlog - Creation"><path d="M130,0A130,130,0,1,0,260,130,130,130,0,0,0,130,0Zm0,231.61A101.61,101.61,0,1,1,231.61,130,101.61,101.61,0,0,1,130,231.61Z"/><circle class="cls-1" cx="130" cy="130" r="66.3"/><circle class="cls-1" cx="219.96" cy="56.43" r="29.05"/></g></g>
+            </symbol>
+            <symbol id="f-icon-molecule" viewBox="0 0 260 239.88">
+              <defs><style>.cls-1{fill:#00b29f;}</style></defs><title>Molecules</title><g id="Layer_2" data-name="Layer 2"><g id="Backlog_-_Creation" data-name="Backlog - Creation"><path d="M194.54,64.36a64.36,64.36,0,1,0-64.36,64.36A64.36,64.36,0,0,0,194.54,64.36Zm-114.67,0a50.31,50.31,0,1,1,50.31,50.31A50.31,50.31,0,0,1,79.87,64.36Z"/><circle class="cls-1" cx="130.17" cy="64.36" r="32.83"/><circle class="cls-1" cx="161.24" cy="112.31" r="14.38"/><circle class="cls-1" cx="101.62" cy="112.31" r="14.38"/><path d="M163.64,231.36a64.36,64.36,0,1,0-23.87-87.84A64.36,64.36,0,0,0,163.64,231.36Zm57-99.51A50.31,50.31,0,1,1,152,150.51,50.31,50.31,0,0,1,220.62,131.85Z"/><circle class="cls-1" cx="195.63" cy="175.5" r="32.83" transform="translate(-53.88 258.07) rotate(-60.21)"/><circle class="cls-1" cx="138.58" cy="178.64" r="14.38" transform="translate(-85.3 210.14) rotate(-60.21)"/><circle class="cls-1" cx="168.2" cy="126.9" r="14.38" transform="translate(-25.5 209.82) rotate(-60.21)"/><path d="M34.41,118.54a64.36,64.36,0,1,0,86.93,27A64.36,64.36,0,0,0,34.41,118.54ZM87.8,220a50.31,50.31,0,1,1,21.1-67.94A50.31,50.31,0,0,1,87.8,220Z"/><circle class="cls-1" cx="64.38" cy="175.5" r="32.83" transform="translate(-74.31 50.15) rotate(-27.75)"/><circle class="cls-1" cx="92.35" cy="125.69" r="14.38" transform="translate(-47.9 57.45) rotate(-27.75)"/><circle class="cls-1" cx="120.1" cy="178.45" r="14.38" transform="translate(-69.27 76.44) rotate(-27.75)"/></g></g>
+            </symbol>
+            <symbol id="f-icon-organism" viewBox="0 0 260 260">
+              <defs><style>.cls-1{fill:#00b29f;}</style></defs><title>Organisms</title><g id="Layer_2" data-name="Layer 2"><g id="Backlog_-_Creation" data-name="Backlog - Creation"><path d="M260,216a44,44,0,1,0-44,44A44,44,0,0,0,260,216Zm-78.32,0A34.36,34.36,0,1,1,216,250.4,34.36,34.36,0,0,1,181.68,216Z"/><ellipse class="cls-1" cx="216.04" cy="216.03" rx="22.42" ry="22.43"/><path d="M174,216a44,44,0,1,0-44,44A44,44,0,0,0,174,216Zm-78.32,0A34.36,34.36,0,1,1,130,250.4,34.36,34.36,0,0,1,95.64,216Z"/><ellipse class="cls-1" cx="130" cy="216.03" rx="22.42" ry="22.43"/><circle class="cls-1" cx="173.15" cy="216.03" r="11.83"/><path d="M87.92,216a44,44,0,1,0-44,44A44,44,0,0,0,87.92,216ZM9.6,216A34.36,34.36,0,1,1,44,250.4,34.36,34.36,0,0,1,9.6,216Z"/><ellipse class="cls-1" cx="43.96" cy="216.03" rx="22.42" ry="22.43"/><circle class="cls-1" cx="87.11" cy="216.03" r="11.83"/><path d="M260,130a44,44,0,1,0-44,44A44,44,0,0,0,260,130Zm-78.32,0A34.36,34.36,0,1,1,216,164.34,34.36,34.36,0,0,1,181.68,130Z"/><ellipse class="cls-1" cx="216.04" cy="129.97" rx="22.42" ry="22.43"/><circle class="cls-1" cx="216.17" cy="173.06" r="11.83"/><path d="M174,130a44,44,0,1,0-44,44A44,44,0,0,0,174,130Zm-78.32,0A34.36,34.36,0,1,1,130,164.34,34.36,34.36,0,0,1,95.64,130Z"/><ellipse class="cls-1" cx="130" cy="129.97" rx="22.42" ry="22.43"/><circle class="cls-1" cx="173.15" cy="129.97" r="11.83"/><circle class="cls-1" cx="130.13" cy="173.06" r="11.83"/><path d="M87.92,130a44,44,0,1,0-44,44A44,44,0,0,0,87.92,130ZM9.6,130A34.36,34.36,0,1,1,44,164.34,34.36,34.36,0,0,1,9.6,130Z"/><ellipse class="cls-1" cx="43.96" cy="129.97" rx="22.42" ry="22.43"/><circle class="cls-1" cx="87.11" cy="129.97" r="11.83"/><circle class="cls-1" cx="44.1" cy="173.06" r="11.83"/><path d="M260,44a44,44,0,1,0-44,44A44,44,0,0,0,260,44Zm-78.32,0A34.36,34.36,0,1,1,216,78.34,34.36,34.36,0,0,1,181.68,44Z"/><ellipse class="cls-1" cx="216.04" cy="43.97" rx="22.42" ry="22.43"/><circle class="cls-1" cx="216.17" cy="87.07" r="11.83"/><path d="M174,44a44,44,0,1,0-44,44A44,44,0,0,0,174,44ZM95.64,44A34.36,34.36,0,1,1,130,78.34,34.36,34.36,0,0,1,95.64,44Z"/><ellipse class="cls-1" cx="130" cy="43.97" rx="22.42" ry="22.43"/><circle class="cls-1" cx="173.15" cy="43.97" r="11.83"/><circle class="cls-1" cx="130.13" cy="87.07" r="11.83"/><path d="M87.92,44a44,44,0,1,0-44,44A44,44,0,0,0,87.92,44ZM9.6,44A34.36,34.36,0,1,1,44,78.34,34.36,34.36,0,0,1,9.6,44Z"/><ellipse class="cls-1" cx="43.96" cy="43.97" rx="22.42" ry="22.43"/><circle class="cls-1" cx="87.11" cy="43.97" r="11.83"/><circle class="cls-1" cx="44.1" cy="87.07" r="11.83"/></g></g>
+            </symbol>
+            <symbol id="f-icon-template" viewBox="0 0 206.3 260"><style>.st0{fill:#00B29F;}</style>
+            	<circle cx="41.7" cy="18" r="5.8" class="st0"/><circle cx="53.9" cy="5.8" r="5.8" class="st0"/><circle cx="66.1" cy="5.8" r="5.8" class="st0"/><circle cx="78.3" cy="5.8" r="5.8" class="st0"/><circle cx="90.5" cy="5.8" r="5.8" class="st0"/><circle cx="102.7" cy="5.8" r="5.8" class="st0"/><circle cx="115" cy="5.8" r="5.8" class="st0"/><circle cx="127.2" cy="5.8" r="5.8" class="st0"/><circle cx="139.4" cy="5.8" r="5.8" class="st0"/><circle cx="151.6" cy="5.8" r="5.8" class="st0"/><circle cx="163.8" cy="5.8" r="5.8" class="st0"/><circle cx="176" cy="5.8" r="5.8" class="st0"/><circle cx="188.2" cy="5.8" r="5.8" class="st0"/><circle cx="200.5" cy="17.6" r="5.8" class="st0"/><circle cx="200.5" cy="29.5" r="5.8" class="st0"/><circle cx="200.5" cy="41.3" r="5.8" class="st0"/><circle cx="200.5" cy="53.1" r="5.8" class="st0"/><circle cx="200.5" cy="64.9" r="5.8" class="st0"/><circle cx="200.5" cy="76.8" r="5.8" class="st0"/><circle cx="200.5" cy="88.6" r="5.8" class="st0"/><circle cx="200.5" cy="100.4" r="5.8" class="st0"/><circle cx="200.5" cy="112.2" r="5.8" class="st0"/><circle cx="200.5" cy="124" r="5.8" class="st0"/><circle cx="200.5" cy="135.9" r="5.8" class="st0"/><circle cx="200.5" cy="147.7" r="5.8" class="st0"/><circle cx="200.5" cy="159.5" r="5.8" class="st0"/><circle cx="200.5" cy="171.3" r="5.8" class="st0"/><circle cx="200.5" cy="183.1" r="5.8" class="st0"/><circle cx="200.5" cy="195" r="5.8" class="st0"/><circle cx="200.5" cy="206.8" r="5.8" class="st0"/><circle cx="187.7" cy="218.6" r="5.8" class="st0"/><path d="M35.8 5.6V6c.1 3.1 2.6 5.5 5.6 5.6h.4c3.1-.1 5.6-2.7 5.6-5.8 0-3.2-2.6-5.8-5.8-5.8-3.1 0-5.6 2.5-5.8 5.6zM200.5 0c-3.1 0-5.7 2.5-5.8 5.6V6c.1 3.1 2.6 5.5 5.6 5.6h.4c3.1-.1 5.6-2.7 5.6-5.8 0-3.2-2.6-5.8-5.8-5.8zm.2 212.8h-.4c-3.1.1-5.5 2.6-5.6 5.6v.4c.1 3.1 2.7 5.6 5.8 5.6 3.2 0 5.8-2.6 5.8-5.8 0-3.1-2.5-5.7-5.6-5.8z" class="st0"/><circle cx="5.8" cy="242.4" r="5.8" class="st0"/><circle cx="5.8" cy="230.6" r="5.8" class="st0"/><circle cx="5.8" cy="218.8" r="5.8" class="st0"/><circle cx="5.8" cy="207.1" r="5.8" class="st0"/><circle cx="5.8" cy="195.3" r="5.8" class="st0"/><circle cx="5.8" cy="183.5" r="5.8" class="st0"/><circle cx="5.8" cy="171.7" r="5.8" class="st0"/><circle cx="5.8" cy="160" r="5.8" class="st0"/><circle cx="5.8" cy="148.2" r="5.8" class="st0"/><circle cx="5.8" cy="136.4" r="5.8" class="st0"/><circle cx="5.8" cy="124.6" r="5.8" class="st0"/><circle cx="5.8" cy="112.8" r="5.8" class="st0"/><circle cx="5.8" cy="101" r="5.8" class="st0"/><circle cx="5.8" cy="89.3" r="5.8" class="st0"/><circle cx="5.8" cy="77.5" r="5.8" class="st0"/><circle cx="5.8" cy="65.7" r="5.8" class="st0"/><circle cx="5.8" cy="53.9" r="5.8" class="st0"/><circle cx="5.8" cy="42.2" r="5.8" class="st0"/><circle cx="17.9" cy="30.4" r="5.8" class="st0"/><circle cx="30" cy="30.4" r="5.8" class="st0"/><circle cx="42.1" cy="30.4" r="5.8" class="st0"/><circle cx="54.2" cy="30.4" r="5.8" class="st0"/><circle cx="66.4" cy="30.4" r="5.8" class="st0"/><circle cx="78.5" cy="30.4" r="5.8" class="st0"/><circle cx="90.6" cy="30.4" r="5.8" class="st0"/><circle cx="102.7" cy="30.4" r="5.8" class="st0"/><circle cx="114.8" cy="30.4" r="5.8" class="st0"/><circle cx="126.9" cy="30.4" r="5.8" class="st0"/><circle cx="139" cy="30.4" r="5.8" class="st0"/><circle cx="151.1" cy="30.4" r="5.8" class="st0"/><circle cx="163.2" cy="30.4" r="5.8" class="st0"/><circle cx="175.3" cy="42.2" r="5.8" class="st0"/><circle cx="175.3" cy="53.9" r="5.8" class="st0"/><circle cx="175.3" cy="65.7" r="5.8" class="st0"/><circle cx="175.3" cy="77.5" r="5.8" class="st0"/><circle cx="175.3" cy="89.3" r="5.8" class="st0"/><circle cx="175.3" cy="101" r="5.8" class="st0"/><circle cx="175.3" cy="112.8" r="5.8" class="st0"/><circle cx="175.3" cy="124.6" r="5.8" class="st0"/><circle cx="175.3" cy="136.4" r="5.8" class="st0"/><circle cx="175.3" cy="148.2" r="5.8" class="st0"/><circle cx="175.3" cy="160" r="5.8" class="st0"/><circle cx="175.3" cy="171.7" r="5.8" class="st0"/><circle cx="175.3" cy="183.5" r="5.8" class="st0"/><circle cx="175.3" cy="195.3" r="5.8" class="st0"/><circle cx="175.3" cy="207.1" r="5.8" class="st0"/><circle cx="175.3" cy="218.8" r="5.8" class="st0"/><circle cx="175.3" cy="230.6" r="5.8" class="st0"/><circle cx="175.3" cy="242.4" r="5.8" class="st0"/><circle cx="163.2" cy="254.2" r="5.8" class="st0"/><circle cx="151.1" cy="254.2" r="5.8" class="st0"/><circle cx="139" cy="254.2" r="5.8" class="st0"/><circle cx="126.9" cy="254.2" r="5.8" class="st0"/><circle cx="114.8" cy="254.2" r="5.8" class="st0"/><circle cx="102.7" cy="254.2" r="5.8" class="st0"/><circle cx="90.6" cy="254.2" r="5.8" class="st0"/><circle cx="78.5" cy="254.2" r="5.8" class="st0"/><circle cx="66.4" cy="254.2" r="5.8" class="st0"/><circle cx="54.2" cy="254.2" r="5.8" class="st0"/><circle cx="42.1" cy="254.2" r="5.8" class="st0"/><circle cx="30" cy="254.2" r="5.8" class="st0"/><circle cx="17.9" cy="254.2" r="5.8" class="st0"/><path d="M5.8 36.2c3.1 0 5.7-2.5 5.8-5.6v-.4c-.1-3.1-2.6-5.5-5.6-5.6h-.4c-3.1.1-5.6 2.6-5.6 5.8 0 3.2 2.6 5.8 5.8 5.8zm169.7-11.6h-.4c-3.1.1-5.5 2.6-5.6 5.6v.4c.1 3.1 2.7 5.6 5.8 5.6 3.2 0 5.8-2.6 5.8-5.8.1-3.2-2.4-5.7-5.6-5.8zm0 223.8h-.4c-3.1.1-5.5 2.6-5.6 5.6v.4c.1 3.1 2.7 5.6 5.8 5.6 3.2 0 5.8-2.6 5.8-5.8.1-3.2-2.4-5.7-5.6-5.8zm-163.9 6v-.4c-.1-3.1-2.6-5.5-5.6-5.6h-.4c-3.1.1-5.6 2.6-5.6 5.8 0 3.2 2.6 5.8 5.8 5.8 3.2 0 5.7-2.5 5.8-5.6z" class="st0"/>
+            </symbol>
+            <svg id="f-icon-page" viewBox="0 0 210.35 260">
+              <defs><style>.cls-1{fill:#00b29f;}</style></defs><title>Pages</title><g id="Layer_2" data-name="Layer 2"><g id="Backlog_-_Creation" data-name="Backlog - Creation"><rect class="cls-1" x="30.7" y="5.88" width="173.77" height="223.42"/><path d="M210.35,235.18H24.82V0H210.35ZM36.58,223.42h162V11.76h-162Z"/><polygon class="cls-1" points="179.65 254.12 5.88 254.12 5.88 30.7 124.77 30.7 124.77 84.27 179.65 84.27 179.65 254.12"/><path d="M130.65,24.82H0V260H185.53V78.39Zm37.84,53.57H130.65V41.77Zm5.27,169.85h-162V36.58H118.89V90.15h54.87Z"/></g></g>
+            </svg>
+        </svg>
+        <!-- /fabricator icons -->
+        
+        
+        <!-- fabricator menu -->
+        <div id="f-menu-container" class="f-menu-container left">
+            <div class="f-flex-columns">
+                <div class="f-navbar">
+                	<a href="#" class="f-navbar-control" data-find="">
+                		<svg>
+                			<use xlink:href="#f-icon-dna" />
+                		</svg>
+                		<div>All Elements</div>
+                	</a>
+                	<a href="#" class="f-navbar-control" data-find="atom">
+                		<svg>
+                			<use xlink:href="#f-icon-atom" />
+                		</svg>
+                		<div>Atoms</div>
+                	</a>
+                	<a href="#" class="f-navbar-control" data-find="molecule">
+                		<svg>
+                			<use xlink:href="#f-icon-molecule" />
+                		</svg>
+                		<div>Molecules</div>
+                	</a>
+                    <a href="#" class="f-navbar-control" data-find="organism">
+                		<svg>
+                			<use xlink:href="#f-icon-organism" />
+                		</svg>
+                		<div>Organisms</div>
+                	</a>
+                    <a href="#" class="f-navbar-control" data-find="templates">
+                		<svg>
+                			<use xlink:href="#f-icon-template" />
+                		</svg>
+                		<div>Templates</div>
+                	</a>
+                    <a href="#" class="f-navbar-control" data-find="page">
+                		<svg>
+                			<use xlink:href="#f-icon-page" />
+                		</svg>
+                		<div>Pages</div>
+                	</a>
+                </div>
+                <div class="f-flex-rows">
+                    <div class="f-controls">
+                    	<div class="f-control f-global-control" data-f-toggle-control="labels" title="Toggle Labels">
+                    		<svg>
+                    			<use xlink:href="#f-icon-labels" />
+                    		</svg>
+                    	</div>
+                    	<div class="f-control f-global-control" data-f-toggle-control="notes" title="Toggle Notes">
+                    		<svg>
+                    			<use xlink:href="#f-icon-notes" />
+                    		</svg>
+                    	</div>
+                        <div class="f-control f-global-control" data-f-toggle-control="dna" title="Toggle DNA">
+                            <svg>
+                                <use xlink:href="#f-icon-dna" />
+                            </svg>
+                        </div>
+                    	<div class="f-control f-global-control" data-f-toggle-control="code" title="Toggle Code">
+                    		<svg>
+                    			<use xlink:href="#f-icon-code" />
+                    		</svg>
+                    	</div>
+                    </div>
+        
+                    <form data-search="[data-tags]">
+                        <div class="search">
+                            <input type="search" placeholder="search" name="find" autocomplete="off" autocorrect="off" />
+                        </div>
+                    </form>
+        
+                    <div class="f-menu nano">
+                        <ul class="nano-content">
+                            <li data-tags="docs overview Butter Assemble Dna Handlebars Cond Handlebars Lipsum Handlebars Loop Media Queries Modal">
+                              <a href="docs.html" class="f-menu__heading">Docs</a>
+                              <ul>
+                                <li data-tags="docs overview">
+                                    <a href="index.html">Overview</a>
+                                </li>
+                                <li data-tags=" Butter Assemble">
+                                  <a href="docs.html#butter-assemble">Butter Assemble</a>
+                                </li>
+                                <li data-tags=" Dna">
+                                  <a href="docs.html#DNA">DNA</a>
+                                </li>
+                                <li data-tags=" Handlebars Cond">
+                                  <a href="docs.html#handlebars-cond">Handlebars Cond</a>
+                                </li>
+                                <li data-tags=" Handlebars Lipsum">
+                                  <a href="docs.html#handlebars-lipsum">Handlebars Lipsum</a>
+                                </li>
+                                <li data-tags=" Handlebars Loop">
+                                  <a href="docs.html#handlebars-loop">Handlebars Loop</a>
+                                </li>
+                                <li data-tags=" Media Queries">
+                                  <a href="docs.html#media-queries">Media Queries</a>
+                                </li>
+                                <li data-tags=" Modal">
+                                  <a href="docs.html#modal">Modal</a>
+                                </li>
+                              </ul>
+                            </li>
+        
+                            <li data-tags="views Templates Checkout Order Confirmation Guest Checkout Order Confirmation Checkout Payment Checkout Review Guest Checkout Review Registered Checkout Shipping Address Checkout Shipping Method Checkout Sign In Home Page My Account Address Book Add My Account Address Book Edit My Account Address Book My Account Change Password My Account Log In My Account Order History Detail My Account Order History My Account Password Reset Confimation My Account Password Reset My Account Payment Info Add My Account Payment Info Edit My Account Payment Info My Account Personal Info Edit My Account Personal Info My Account Register My Account Wishlist Pdp Description Test Pdp Ink Bottle Refill Pdp No Stock Pdp Search Results Serch Results No Results Shelf Collections Shelf Plp Collections Shopping Cart">
+                                <a class="f-menu__heading" href="javascript:void(0);">Templates</a>
+                                <ul>
+                                    <li data-tags="Templates Checkout Order Confirmation Guest">
+                                        <a href="templates/checkout-order-confirmation-guest.html" target="_blank">Checkout Order Confirmation Guest</a>
+                                    </li>
+                                    <li data-tags="Templates Checkout Order Confirmation">
+                                        <a href="templates/checkout-order-confirmation.html" target="_blank">Checkout Order Confirmation</a>
+                                    </li>
+                                    <li data-tags="Templates Checkout Payment">
+                                        <a href="templates/checkout-payment.html" target="_blank">Checkout Payment</a>
+                                    </li>
+                                    <li data-tags="Templates Checkout Review Guest">
+                                        <a href="templates/checkout-review-guest.html" target="_blank">Checkout Review Guest</a>
+                                    </li>
+                                    <li data-tags="Templates Checkout Review Registered">
+                                        <a href="templates/checkout-review-registered.html" target="_blank">Checkout Review Registered</a>
+                                    </li>
+                                    <li data-tags="Templates Checkout Shipping Address">
+                                        <a href="templates/checkout-shipping-address.html" target="_blank">Checkout Shipping Address</a>
+                                    </li>
+                                    <li data-tags="Templates Checkout Shipping Method">
+                                        <a href="templates/checkout-shipping-method.html" target="_blank">Checkout Shipping Method</a>
+                                    </li>
+                                    <li data-tags="Templates Checkout Sign In">
+                                        <a href="templates/checkout-sign-in.html" target="_blank">Checkout Sign In</a>
+                                    </li>
+                                    <li data-tags="Templates Home Page">
+                                        <a href="templates/home-page.html" target="_blank">Home Page</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Address Book Add">
+                                        <a href="templates/my-account-address-book-add.html" target="_blank">My Account Address Book Add</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Address Book Edit">
+                                        <a href="templates/my-account-address-book-edit.html" target="_blank">My Account Address Book Edit</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Address Book">
+                                        <a href="templates/my-account-address-book.html" target="_blank">My Account Address Book</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Change Password">
+                                        <a href="templates/my-account-change-password.html" target="_blank">My Account Change Password</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Log In">
+                                        <a href="templates/my-account-log-in.html" target="_blank">My Account Log In</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Order History Detail">
+                                        <a href="templates/my-account-order-history-detail.html" target="_blank">My Account Order History Detail</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Order History">
+                                        <a href="templates/my-account-order-history.html" target="_blank">My Account Order History</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Password Reset Confimation">
+                                        <a href="templates/my-account-password-reset-confimation.html" target="_blank">My Account Password Reset Confimation</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Password Reset">
+                                        <a href="templates/my-account-password-reset.html" target="_blank">My Account Password Reset</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Payment Info Add">
+                                        <a href="templates/my-account-payment-info-add.html" target="_blank">My Account Payment Info Add</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Payment Info Edit">
+                                        <a href="templates/my-account-payment-info-edit.html" target="_blank">My Account Payment Info Edit</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Payment Info">
+                                        <a href="templates/my-account-payment-info.html" target="_blank">My Account Payment Info</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Personal Info Edit">
+                                        <a href="templates/my-account-personal-info-edit.html" target="_blank">My Account Personal Info Edit</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Personal Info">
+                                        <a href="templates/my-account-personal-info.html" target="_blank">My Account Personal Info</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Register">
+                                        <a href="templates/my-account-register.html" target="_blank">My Account Register</a>
+                                    </li>
+                                    <li data-tags="Templates My Account Wishlist">
+                                        <a href="templates/my-account-wishlist.html" target="_blank">My Account Wishlist</a>
+                                    </li>
+                                    <li data-tags="Templates Pdp Description Test">
+                                        <a href="templates/pdp-description-test.html" target="_blank">Pdp Description Test</a>
+                                    </li>
+                                    <li data-tags="Templates Pdp Ink Bottle Refill">
+                                        <a href="templates/pdp-ink-bottle-refill.html" target="_blank">Pdp Ink Bottle Refill</a>
+                                    </li>
+                                    <li data-tags="Templates Pdp No Stock">
+                                        <a href="templates/pdp-no-stock.html" target="_blank">Pdp No Stock</a>
+                                    </li>
+                                    <li data-tags="Templates Pdp">
+                                        <a href="templates/pdp.html" target="_blank">Pdp</a>
+                                    </li>
+                                    <li data-tags="Templates Search Results">
+                                        <a href="templates/search-results.html" target="_blank">Search Results</a>
+                                    </li>
+                                    <li data-tags="Templates Serch Results No Results">
+                                        <a href="templates/serch-results-no-results.html" target="_blank">Serch Results No Results</a>
+                                    </li>
+                                    <li data-tags="Templates Shelf Collections">
+                                        <a href="templates/shelf-collections.html" target="_blank">Shelf Collections</a>
+                                    </li>
+                                    <li data-tags="Templates Shelf Plp Collections">
+                                        <a href="templates/shelf-plp-collections.html" target="_blank">Shelf Plp Collections</a>
+                                    </li>
+                                    <li data-tags="Templates Shopping Cart">
+                                        <a href="templates/shopping-cart.html" target="_blank">Shopping Cart</a>
+                                    </li>
+                                </ul>
+                            </li>
+        
+        
+                            <li data-tags="materials Alerts Alert Error molecule Alert Info molecule">
+                                <a href="alerts.html" class="f-menu__heading">Alerts</a>
+                                <ul>
+                                    <li data-tags="Alerts Alert Error molecule">
+                                        <a href="alerts.html#alert-error">Alert Error</a>
+                                    </li>
+                                    <li data-tags="Alerts Alert Info molecule">
+                                        <a href="alerts.html#alert-info">Alert Info</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Bread Crumb Bread Crumb molecule">
+                                <a href="bread-crumb.html" class="f-menu__heading">Bread Crumb</a>
+                                <ul>
+                                    <li data-tags="Bread Crumb Bread Crumb molecule">
+                                        <a href="bread-crumb.html#bread-crumb">Bread Crumb</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Buttons Default Button atom Button Link atom Button Brand atom Button Primary atom Button Secondary atom Button Info atom Button Mini atom Button Small atom Button Xtra Mini atom Button Large atom Button Disabled atom Button Page molecule Button Pdp atom Button With Icon atom">
+                                <a href="buttons.html" class="f-menu__heading">Buttons</a>
+                                <ul>
+                                    <li data-tags="Buttons Default Button atom">
+                                        <a href="buttons.html#00.default-button">Default Button</a>
+                                    </li>
+                                    <li data-tags="Buttons Button Link atom">
+                                        <a href="buttons.html#01.button-link">Button Link</a>
+                                    </li>
+                                    <li data-tags="Buttons Button Brand atom">
+                                        <a href="buttons.html#02.button-brand">Button Brand</a>
+                                    </li>
+                                    <li data-tags="Buttons Button Primary atom">
+                                        <a href="buttons.html#03.button-primary">Button Primary</a>
+                                    </li>
+                                    <li data-tags="Buttons Button Secondary atom">
+                                        <a href="buttons.html#04.button-secondary">Button Secondary</a>
+                                    </li>
+                                    <li data-tags="Buttons Button Info atom">
+                                        <a href="buttons.html#05.button-info">Button Info</a>
+                                    </li>
+                                    <li data-tags="Buttons Button Mini atom">
+                                        <a href="buttons.html#05.button-mini">Button Mini</a>
+                                    </li>
+                                    <li data-tags="Buttons Button Small atom">
+                                        <a href="buttons.html#06.button-small">Button Small</a>
+                                    </li>
+                                    <li data-tags="Buttons Button Xtra Mini atom">
+                                        <a href="buttons.html#06.button-xtra-mini">Button Xtra Mini</a>
+                                    </li>
+                                    <li data-tags="Buttons Button Large atom">
+                                        <a href="buttons.html#07.button-large">Button Large</a>
+                                    </li>
+                                    <li data-tags="Buttons Button Disabled atom">
+                                        <a href="buttons.html#button-disabled">Button Disabled</a>
+                                    </li>
+                                    <li data-tags="Buttons Button Page molecule">
+                                        <a href="buttons.html#button-page">Button Page</a>
+                                    </li>
+                                    <li data-tags="Buttons Button Pdp atom">
+                                        <a href="buttons.html#button-pdp">Button Pdp</a>
+                                    </li>
+                                    <li data-tags="Buttons Button With Icon atom">
+                                        <a href="buttons.html#button-with-icon">Button With Icon</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Carousel Carousel 1 organism Carousel Controls molecule Carousel Navigation molecule Carousel Slide 1 organism Carousel Slide 3 organism Carousel Widget 3 organism">
+                                <a href="carousel.html" class="f-menu__heading">Carousel</a>
+                                <ul>
+                                    <li data-tags="Carousel Carousel 1 organism">
+                                        <a href="carousel.html#carousel-1">Carousel 1</a>
+                                    </li>
+                                    <li data-tags="Carousel Carousel Controls molecule">
+                                        <a href="carousel.html#carousel-controls">Carousel Controls</a>
+                                    </li>
+                                    <li data-tags="Carousel Carousel Navigation molecule">
+                                        <a href="carousel.html#carousel-navigation">Carousel Navigation</a>
+                                    </li>
+                                    <li data-tags="Carousel Carousel Slide 1 organism">
+                                        <a href="carousel.html#carousel-slide-1">Carousel Slide 1</a>
+                                    </li>
+                                    <li data-tags="Carousel Carousel Slide 3 organism">
+                                        <a href="carousel.html#carousel-slide-3">Carousel Slide 3</a>
+                                    </li>
+                                    <li data-tags="Carousel Carousel Widget 3 organism">
+                                        <a href="carousel.html#carousel-widget-3">Carousel Widget 3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Category Category Filter organism Category Pagination organism Category Pen Promo organism">
+                                <a href="category.html" class="f-menu__heading">Category</a>
+                                <ul>
+                                    <li data-tags="Category Category Filter organism">
+                                        <a href="category.html#category-filter">Category Filter</a>
+                                    </li>
+                                    <li data-tags="Category Category Pagination organism">
+                                        <a href="category.html#category-pagination">Category Pagination</a>
+                                    </li>
+                                    <li data-tags="Category Category Pen Promo organism">
+                                        <a href="category.html#category-pen-promo">Category Pen Promo</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Checkout Checkout Footer organism Checkout Header organism Checkout Order Summary organism Checkout Shipping Method organism">
+                                <a href="checkout.html" class="f-menu__heading">Checkout</a>
+                                <ul>
+                                    <li data-tags="Checkout Checkout Footer organism">
+                                        <a href="checkout.html#checkout-footer">Checkout Footer</a>
+                                    </li>
+                                    <li data-tags="Checkout Checkout Header organism">
+                                        <a href="checkout.html#checkout-header">Checkout Header</a>
+                                    </li>
+                                    <li data-tags="Checkout Checkout Order Summary organism">
+                                        <a href="checkout.html#checkout-order-summary">Checkout Order Summary</a>
+                                    </li>
+                                    <li data-tags="Checkout Checkout Shipping Method organism">
+                                        <a href="checkout.html#checkout-shipping-method">Checkout Shipping Method</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Footers Footer organism">
+                                <a href="footers.html" class="f-menu__heading">Footers</a>
+                                <ul>
+                                    <li data-tags="Footers Footer organism">
+                                        <a href="footers.html#footer">Footer</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Form Checkbox atom Checkbox Disabled atom Checkbox Error atom Checkbox Secondary atom File atom Hr atom Input Group molecule Input Group Error molecule Input Password atom Input Text atom Input Text Error atom Input With Icon atom Numeric Stepper atom Progress atom Radio atom Radio Cc Payment atom Select atom Select Error atom Select Multiple atom Submit atom Textarea atom">
+                                <a href="form.html" class="f-menu__heading">Form</a>
+                                <ul>
+                                    <li data-tags="Form Checkbox atom">
+                                        <a href="form.html#checkbox">Checkbox</a>
+                                    </li>
+                                    <li data-tags="Form Checkbox Disabled atom">
+                                        <a href="form.html#checkbox-disabled">Checkbox Disabled</a>
+                                    </li>
+                                    <li data-tags="Form Checkbox Error atom">
+                                        <a href="form.html#checkbox-error">Checkbox Error</a>
+                                    </li>
+                                    <li data-tags="Form Checkbox Secondary atom">
+                                        <a href="form.html#checkbox-secondary">Checkbox Secondary</a>
+                                    </li>
+                                    <li data-tags="Form File atom">
+                                        <a href="form.html#file">File</a>
+                                    </li>
+                                    <li data-tags="Form Hr atom">
+                                        <a href="form.html#hr">Hr</a>
+                                    </li>
+                                    <li data-tags="Form Input Group molecule">
+                                        <a href="form.html#input-group">Input Group</a>
+                                    </li>
+                                    <li data-tags="Form Input Group Error molecule">
+                                        <a href="form.html#input-group-error">Input Group Error</a>
+                                    </li>
+                                    <li data-tags="Form Input Password atom">
+                                        <a href="form.html#input-password">Input Password</a>
+                                    </li>
+                                    <li data-tags="Form Input Text atom">
+                                        <a href="form.html#input-text">Input Text</a>
+                                    </li>
+                                    <li data-tags="Form Input Text Error atom">
+                                        <a href="form.html#input-text-error">Input Text Error</a>
+                                    </li>
+                                    <li data-tags="Form Input With Icon atom">
+                                        <a href="form.html#input-with-icon">Input With Icon</a>
+                                    </li>
+                                    <li data-tags="Form Numeric Stepper atom">
+                                        <a href="form.html#numeric-stepper">Numeric Stepper</a>
+                                    </li>
+                                    <li data-tags="Form Progress atom">
+                                        <a href="form.html#progress">Progress</a>
+                                    </li>
+                                    <li data-tags="Form Radio atom">
+                                        <a href="form.html#radio">Radio</a>
+                                    </li>
+                                    <li data-tags="Form Radio Cc Payment atom">
+                                        <a href="form.html#radio-cc-payment">Radio Cc Payment</a>
+                                    </li>
+                                    <li data-tags="Form Select atom">
+                                        <a href="form.html#select">Select</a>
+                                    </li>
+                                    <li data-tags="Form Select Error atom">
+                                        <a href="form.html#select-error">Select Error</a>
+                                    </li>
+                                    <li data-tags="Form Select Multiple atom">
+                                        <a href="form.html#select-multiple">Select Multiple</a>
+                                    </li>
+                                    <li data-tags="Form Submit atom">
+                                        <a href="form.html#submit">Submit</a>
+                                    </li>
+                                    <li data-tags="Form Textarea atom">
+                                        <a href="form.html#textarea">Textarea</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Headers Header organism Header Nav molecule">
+                                <a href="headers.html" class="f-menu__heading">Headers</a>
+                                <ul>
+                                    <li data-tags="Headers Header organism">
+                                        <a href="headers.html#header">Header</a>
+                                    </li>
+                                    <li data-tags="Headers Header Nav molecule">
+                                        <a href="headers.html#header-nav">Header Nav</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Helpers Spacing helper Text Helpers atom Display Helpers atom Grid helper Colors helper">
+                                <a href="helpers.html" class="f-menu__heading">Helpers</a>
+                                <ul>
+                                    <li data-tags="Helpers Spacing helper">
+                                        <a href="helpers.html#00.spacing">Spacing</a>
+                                    </li>
+                                    <li data-tags="Helpers Text Helpers atom">
+                                        <a href="helpers.html#01.text-helpers">Text Helpers</a>
+                                    </li>
+                                    <li data-tags="Helpers Display Helpers atom">
+                                        <a href="helpers.html#03.display-helpers">Display Helpers</a>
+                                    </li>
+                                    <li data-tags="Helpers Grid helper">
+                                        <a href="helpers.html#04.grid">Grid</a>
+                                    </li>
+                                    <li data-tags="Helpers Colors helper">
+                                        <a href="helpers.html#colors">Colors</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Icons Icon American Flag atom Icon Fonts atom Icon Lock atom Icon Parker Pens atom Icon Pen atom Icon Play atom Icon Version atom">
+                                <a href="icons.html" class="f-menu__heading">Icons</a>
+                                <ul>
+                                    <li data-tags="Icons Icon American Flag atom">
+                                        <a href="icons.html#icon-american-flag">Icon American Flag</a>
+                                    </li>
+                                    <li data-tags="Icons Icon Fonts atom">
+                                        <a href="icons.html#icon-fonts">Icon Fonts</a>
+                                    </li>
+                                    <li data-tags="Icons Icon Lock atom">
+                                        <a href="icons.html#icon-lock">Icon Lock</a>
+                                    </li>
+                                    <li data-tags="Icons Icon Parker Pens atom">
+                                        <a href="icons.html#icon-parker-pens">Icon Parker Pens</a>
+                                    </li>
+                                    <li data-tags="Icons Icon Pen atom">
+                                        <a href="icons.html#icon-pen">Icon Pen</a>
+                                    </li>
+                                    <li data-tags="Icons Icon Play atom">
+                                        <a href="icons.html#icon-play">Icon Play</a>
+                                    </li>
+                                    <li data-tags="Icons Icon Version atom">
+                                        <a href="icons.html#icon-version">Icon Version</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Images Image Thumbnail atom Image Circle atom Image Fluid atom Image Full Width atom">
+                                <a href="images.html" class="f-menu__heading">Images</a>
+                                <ul>
+                                    <li data-tags="Images Image Thumbnail atom">
+                                        <a href="images.html#00.image-thumbnail">Image Thumbnail</a>
+                                    </li>
+                                    <li data-tags="Images Image Circle atom">
+                                        <a href="images.html#02.image-circle">Image Circle</a>
+                                    </li>
+                                    <li data-tags="Images Image Fluid atom">
+                                        <a href="images.html#03.image-fluid">Image Fluid</a>
+                                    </li>
+                                    <li data-tags="Images Image Full Width atom">
+                                        <a href="images.html#image-full-width">Image Full Width</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Modal Checkout Payment Modal organism Checkout Shipping Address Modal organism Checkout Shipping Method Modal organism Default Modal molecule Email Signup Modal organism Guest Checkout Payment Modal organism Guest Checkout Shipping Address organism">
+                                <a href="modal.html" class="f-menu__heading">Modal</a>
+                                <ul>
+                                    <li data-tags="Modal Checkout Payment Modal organism">
+                                        <a href="modal.html#checkout-payment-modal">Checkout Payment Modal</a>
+                                    </li>
+                                    <li data-tags="Modal Checkout Shipping Address Modal organism">
+                                        <a href="modal.html#checkout-shipping-address-modal">Checkout Shipping Address Modal</a>
+                                    </li>
+                                    <li data-tags="Modal Checkout Shipping Method Modal organism">
+                                        <a href="modal.html#checkout-shipping-method-modal">Checkout Shipping Method Modal</a>
+                                    </li>
+                                    <li data-tags="Modal Default Modal molecule">
+                                        <a href="modal.html#default-modal">Default Modal</a>
+                                    </li>
+                                    <li data-tags="Modal Email Signup Modal organism">
+                                        <a href="modal.html#email-signup-modal">Email Signup Modal</a>
+                                    </li>
+                                    <li data-tags="Modal Guest Checkout Payment Modal organism">
+                                        <a href="modal.html#guest-checkout-payment-modal">Guest Checkout Payment Modal</a>
+                                    </li>
+                                    <li data-tags="Modal Guest Checkout Shipping Address organism">
+                                        <a href="modal.html#guest-checkout-shipping-address">Guest Checkout Shipping Address</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials My Account My Account Credit Cards organism My Account Newell Payment Info organism My Account Payment organism My Account Personal Info organism My Account Sidebar organism">
+                                <a href="my-account.html" class="f-menu__heading">My Account</a>
+                                <ul>
+                                    <li data-tags="My Account My Account Credit Cards organism">
+                                        <a href="my-account.html#my-account-credit-cards">My Account Credit Cards</a>
+                                    </li>
+                                    <li data-tags="My Account My Account Newell Payment Info organism">
+                                        <a href="my-account.html#my-account-newell-payment-info">My Account Newell Payment Info</a>
+                                    </li>
+                                    <li data-tags="My Account My Account Payment organism">
+                                        <a href="my-account.html#my-account-payment">My Account Payment</a>
+                                    </li>
+                                    <li data-tags="My Account My Account Personal Info organism">
+                                        <a href="my-account.html#my-account-personal-info">My Account Personal Info</a>
+                                    </li>
+                                    <li data-tags="My Account My Account Sidebar organism">
+                                        <a href="my-account.html#my-account-sidebar">My Account Sidebar</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Pdp Pdp Description organism Pdp Description Right organism Pdp Description Left organism Pdp Gift organism Pdp Video organism Slide Out Nib organism Slide Out Rollerball organism Slide Out Version organism">
+                                <a href="pdp.html" class="f-menu__heading">Pdp</a>
+                                <ul>
+                                    <li data-tags="Pdp Pdp Description organism">
+                                        <a href="pdp.html#00.pdp-description">Pdp Description</a>
+                                    </li>
+                                    <li data-tags="Pdp Pdp Description Right organism">
+                                        <a href="pdp.html#01.pdp-description-right">Pdp Description Right</a>
+                                    </li>
+                                    <li data-tags="Pdp Pdp Description Left organism">
+                                        <a href="pdp.html#02.pdp-description-left">Pdp Description Left</a>
+                                    </li>
+                                    <li data-tags="Pdp Pdp Gift organism">
+                                        <a href="pdp.html#pdp-gift">Pdp Gift</a>
+                                    </li>
+                                    <li data-tags="Pdp Pdp Video organism">
+                                        <a href="pdp.html#pdp-video">Pdp Video</a>
+                                    </li>
+                                    <li data-tags="Pdp Slide Out Nib organism">
+                                        <a href="pdp.html#slide-out-nib">Slide Out Nib</a>
+                                    </li>
+                                    <li data-tags="Pdp Slide Out Rollerball organism">
+                                        <a href="pdp.html#slide-out-rollerball">Slide Out Rollerball</a>
+                                    </li>
+                                    <li data-tags="Pdp Slide Out Version organism">
+                                        <a href="pdp.html#slide-out-version">Slide Out Version</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Product Product Version 1 organism Product Version 2 organism">
+                                <a href="product.html" class="f-menu__heading">Product</a>
+                                <ul>
+                                    <li data-tags="Product Product Version 1 organism">
+                                        <a href="product.html#product-version-1">Product Version 1</a>
+                                    </li>
+                                    <li data-tags="Product Product Version 2 organism">
+                                        <a href="product.html#product-version-2">Product Version 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Product Recommendation Widget Product Recommendation Carousel Swiper organism Product Recommendation Carousel Swiper 2 organism Product Recommended organism">
+                                <a href="product-recommendation-widget.html" class="f-menu__heading">Product Recommendation Widget</a>
+                                <ul>
+                                    <li data-tags="Product Recommendation Widget Product Recommendation Carousel Swiper organism">
+                                        <a href="product-recommendation-widget.html#product-recommendation-carousel-swiper">Product Recommendation Carousel Swiper</a>
+                                    </li>
+                                    <li data-tags="Product Recommendation Widget Product Recommendation Carousel Swiper 2 organism">
+                                        <a href="product-recommendation-widget.html#product-recommendation-carousel-swiper-2">Product Recommendation Carousel Swiper 2</a>
+                                    </li>
+                                    <li data-tags="Product Recommendation Widget Product Recommended organism">
+                                        <a href="product-recommendation-widget.html#product-recommended">Product Recommended</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Promo Tiles Promo Tile molecule Promo Tile Dark Background molecule Promo Tiles Look3 organism">
+                                <a href="promo-tiles.html" class="f-menu__heading">Promo Tiles</a>
+                                <ul>
+                                    <li data-tags="Promo Tiles Promo Tile molecule">
+                                        <a href="promo-tiles.html#promo-tile">Promo Tile</a>
+                                    </li>
+                                    <li data-tags="Promo Tiles Promo Tile Dark Background molecule">
+                                        <a href="promo-tiles.html#promo-tile-dark-background">Promo Tile Dark Background</a>
+                                    </li>
+                                    <li data-tags="Promo Tiles Promo Tiles Look3 organism">
+                                        <a href="promo-tiles.html#promo-tiles-look3">Promo Tiles Look3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Tab Tab Button Carousel organism Tab Button Container organism">
+                                <a href="tab.html" class="f-menu__heading">Tab</a>
+                                <ul>
+                                    <li data-tags="Tab Tab Button Carousel organism">
+                                        <a href="tab.html#tab-button-carousel">Tab Button Carousel</a>
+                                    </li>
+                                    <li data-tags="Tab Tab Button Container organism">
+                                        <a href="tab.html#tab-button-container">Tab Button Container</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Text Links Default atom">
+                                <a href="text-links.html" class="f-menu__heading">Text Links</a>
+                                <ul>
+                                    <li data-tags="Text Links Default atom">
+                                        <a href="text-links.html#default">Default</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Tool Tip Quick View organism Quick View Cc Help organism">
+                                <a href="tool-tip.html" class="f-menu__heading">Tool Tip</a>
+                                <ul>
+                                    <li data-tags="Tool Tip Quick View organism">
+                                        <a href="tool-tip.html#quick-view">Quick View</a>
+                                    </li>
+                                    <li data-tags="Tool Tip Quick View Cc Help organism">
+                                        <a href="tool-tip.html#quick-view-cc-help">Quick View Cc Help</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-tags="materials Typography Headings atom Paragraph atom Font Helpers atom Blockquote atom Code atom Inline Code atom">
+                                <a href="typography.html" class="f-menu__heading">Typography</a>
+                                <ul>
+                                    <li data-tags="Typography Headings atom">
+                                        <a href="typography.html#00.headings">Headings</a>
+                                    </li>
+                                    <li data-tags="Typography Paragraph atom">
+                                        <a href="typography.html#01.paragraph">Paragraph</a>
+                                    </li>
+                                    <li data-tags="Typography Font Helpers atom">
+                                        <a href="typography.html#03.font-helpers">Font Helpers</a>
+                                    </li>
+                                    <li data-tags="Typography Blockquote atom">
+                                        <a href="typography.html#blockquote">Blockquote</a>
+                                    </li>
+                                    <li data-tags="Typography Code atom">
+                                        <a href="typography.html#code">Code</a>
+                                    </li>
+                                    <li data-tags="Typography Inline Code atom">
+                                        <a href="typography.html#inline-code">Inline Code</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        	</div>
+        </div>
+        <!-- /fabricator menu -->
+    
+<h1 data-f-toggle="labels" class="mt-4">Helpers</h1>
+
+
+<div class="f-item-group" id="00.spacing">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Spacing</h2>
+		<div class="f-item-controls">
+		
+		
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+
+<div class="f-item-code" data-f-toggle="code">
+    <pre><code class="language-markup">&lt;!--
+
+    -----------------------------
+    Examples:
+    -----------------------------
+
+    &lt;div class&#x3D;&quot;m-t-lg&quot;&gt;Margin top: 32px&lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;p-x-md&quot;&gt;Padding left &amp; right: 24px&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+--&gt;
+&lt;p&gt;Spacing converts the following pixel values to rem values.&lt;/p&gt;
+&lt;table class&#x3D;&quot;f-table&quot; style&#x3D;&quot;width: auto;&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th class&#x3D;&quot;f-text-left&quot;&gt;Name&lt;/th&gt;
+			&lt;th class&#x3D;&quot;f-text-right&quot;&gt;px&lt;/th&gt;
+			&lt;th&gt;&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;th class&#x3D;&quot;f-text-left f-text-middle&quot;&gt;xxs&lt;/th&gt;
+			&lt;td class&#x3D;&quot;f-text-right f-text-middle&quot;&gt;4&lt;/td&gt;
+			&lt;td class&#x3D;&quot;f-text-middle&quot;&gt;
+				&lt;div class&#x3D;&quot;f-spacing f-spacing-xxs&quot;&gt;&lt;/div&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th class&#x3D;&quot;f-text-left f-text-middle&quot;&gt;xs&lt;/th&gt;
+			&lt;td class&#x3D;&quot;f-text-right f-text-middle&quot;&gt;8&lt;/td&gt;
+			&lt;td class&#x3D;&quot;f-text-middle&quot;&gt;
+				&lt;div class&#x3D;&quot;f-spacing f-spacing-xs&quot;&gt;&lt;/div&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th class&#x3D;&quot;f-text-left f-text-middle&quot;&gt;sm&lt;/th&gt;
+			&lt;td class&#x3D;&quot;f-text-right f-text-middle&quot;&gt;16&lt;/td&gt;
+			&lt;td class&#x3D;&quot;f-text-middle&quot;&gt;
+				&lt;div class&#x3D;&quot;f-spacing f-spacing-sm&quot;&gt;&lt;/div&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th class&#x3D;&quot;f-text-left f-text-middle&quot;&gt;md&lt;/th&gt;
+			&lt;td class&#x3D;&quot;f-text-right f-text-middle&quot;&gt;24&lt;/td&gt;
+			&lt;td class&#x3D;&quot;f-text-middle&quot;&gt;
+				&lt;div class&#x3D;&quot;f-spacing f-spacing-md&quot;&gt;&lt;/div&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th class&#x3D;&quot;f-text-left f-text-middle&quot;&gt;lg&lt;/th&gt;
+			&lt;td class&#x3D;&quot;f-text-right f-text-middle&quot;&gt;32&lt;/td&gt;
+			&lt;td class&#x3D;&quot;f-text-middle&quot;&gt;
+				&lt;div class&#x3D;&quot;f-spacing f-spacing-lg&quot;&gt;&lt;/div&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th class&#x3D;&quot;f-text-left f-text-middle&quot;&gt;xl&lt;/th&gt;
+			&lt;td class&#x3D;&quot;f-text-right f-text-middle&quot;&gt;48&lt;/td&gt;
+			&lt;td class&#x3D;&quot;f-text-middle&quot;&gt;
+				&lt;div class&#x3D;&quot;f-spacing f-spacing-xl&quot;&gt;&lt;/div&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th class&#x3D;&quot;f-text-left f-text-middle&quot;&gt;xxl&lt;/th&gt;
+			&lt;td class&#x3D;&quot;f-text-right f-text-middle&quot;&gt;64&lt;/td&gt;
+			&lt;td class&#x3D;&quot;f-text-middle&quot;&gt;
+				&lt;div class&#x3D;&quot;f-spacing f-spacing-xxl&quot;&gt;&lt;/div&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div&gt;
+	&lt;h2&gt;Usage&lt;/h2&gt;
+	&lt;h5&gt;Where property is one of:&lt;/h5&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;kbd&gt;m&lt;/kbd&gt; - for setting margin&lt;/li&gt;
+		&lt;li&gt;&lt;kbd&gt;p&lt;/kbd&gt; - for setting padding&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;h5&gt;Where side is one of:&lt;/h5&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;kbd&gt;t&lt;/kbd&gt; - for setting margin-top or padding-top&lt;/li&gt;
+		&lt;li&gt;&lt;kbd&gt;r&lt;/kbd&gt; - for setting margin-right or padding-right&lt;/li&gt;
+		&lt;li&gt;&lt;kbd&gt;b&lt;/kbd&gt; - for setting margin-bottom or padding-bottom&lt;/li&gt;
+		&lt;li&gt;&lt;kbd&gt;l&lt;/kbd&gt; - for setting margin-left or padding-left&lt;/li&gt;
+		&lt;li&gt;&lt;kbd&gt;x&lt;/kbd&gt; - for setting margin-left &amp; margin-right or padding-left &amp; padding-right&lt;/li&gt;
+		&lt;li&gt;&lt;kbd&gt;y&lt;/kbd&gt; - for setting margin-top &amp; margin-bottom or padding-bottom &amp; padding-bottom&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;h5&gt;Where size is one of:&lt;/h5&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;span style&#x3D;&quot;width: 30px; display: inline-block;&quot;&gt;&lt;kbd&gt;0&lt;/kbd&gt;&lt;/span&gt; &lt;span style&#x3D;&quot;width: 15px; display: inline-block;&quot;&gt;-&lt;/span&gt; for removing margin or padding&lt;/li&gt;
+		&lt;li&gt;&lt;span style&#x3D;&quot;width: 30px; display: inline-block;&quot;&gt;&lt;kbd&gt;xxs&lt;/kbd&gt;&lt;/span&gt; &lt;span style&#x3D;&quot;width: 15px; display: inline-block;&quot;&gt;-&lt;/span&gt; 4&lt;/li&gt;
+		&lt;li&gt;&lt;span style&#x3D;&quot;width: 30px; display: inline-block;&quot;&gt;&lt;kbd&gt;xs&lt;/kbd&gt;&lt;/span&gt; &lt;span style&#x3D;&quot;width: 15px; display: inline-block;&quot;&gt;-&lt;/span&gt; 8&lt;/li&gt;
+		&lt;li&gt;&lt;span style&#x3D;&quot;width: 30px; display: inline-block;&quot;&gt;&lt;kbd&gt;sm&lt;/kbd&gt;&lt;/span&gt; &lt;span style&#x3D;&quot;width: 15px; display: inline-block;&quot;&gt;-&lt;/span&gt; 16&lt;/li&gt;
+		&lt;li&gt;&lt;span style&#x3D;&quot;width: 30px; display: inline-block;&quot;&gt;&lt;kbd&gt;md&lt;/kbd&gt;&lt;/span&gt; &lt;span style&#x3D;&quot;width: 15px; display: inline-block;&quot;&gt;-&lt;/span&gt; 24&lt;/li&gt;
+		&lt;li&gt;&lt;span style&#x3D;&quot;width: 30px; display: inline-block;&quot;&gt;&lt;kbd&gt;lg&lt;/kbd&gt;&lt;/span&gt; &lt;span style&#x3D;&quot;width: 15px; display: inline-block;&quot;&gt;-&lt;/span&gt; 32&lt;/li&gt;
+		&lt;li&gt;&lt;span style&#x3D;&quot;width: 30px; display: inline-block;&quot;&gt;&lt;kbd&gt;xl&lt;/kbd&gt;&lt;/span&gt; &lt;span style&#x3D;&quot;width: 15px; display: inline-block;&quot;&gt;-&lt;/span&gt; 48&lt;/li&gt;
+		&lt;li&gt;&lt;span style&#x3D;&quot;width: 30px; display: inline-block;&quot;&gt;&lt;kbd&gt;xxl&lt;/kbd&gt;&lt;/span&gt; &lt;span style&#x3D;&quot;width: 15px; display: inline-block;&quot;&gt;-&lt;/span&gt; 64&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="f-item-preview " id="preview-00.spacing">
+	<!--
+
+    -----------------------------
+    Examples:
+    -----------------------------
+
+    <div class="m-t-lg">Margin top: 32px</div>
+
+    <div class="p-x-md">Padding left & right: 24px</div>
+
+
+
+
+
+
+
+
+
+-->
+<p>Spacing converts the following pixel values to rem values.</p>
+<table class="f-table" style="width: auto;">
+	<thead>
+		<tr>
+			<th class="f-text-left">Name</th>
+			<th class="f-text-right">px</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th class="f-text-left f-text-middle">xxs</th>
+			<td class="f-text-right f-text-middle">4</td>
+			<td class="f-text-middle">
+				<div class="f-spacing f-spacing-xxs"></div>
+			</td>
+		</tr>
+		<tr>
+			<th class="f-text-left f-text-middle">xs</th>
+			<td class="f-text-right f-text-middle">8</td>
+			<td class="f-text-middle">
+				<div class="f-spacing f-spacing-xs"></div>
+			</td>
+		</tr>
+		<tr>
+			<th class="f-text-left f-text-middle">sm</th>
+			<td class="f-text-right f-text-middle">16</td>
+			<td class="f-text-middle">
+				<div class="f-spacing f-spacing-sm"></div>
+			</td>
+		</tr>
+		<tr>
+			<th class="f-text-left f-text-middle">md</th>
+			<td class="f-text-right f-text-middle">24</td>
+			<td class="f-text-middle">
+				<div class="f-spacing f-spacing-md"></div>
+			</td>
+		</tr>
+		<tr>
+			<th class="f-text-left f-text-middle">lg</th>
+			<td class="f-text-right f-text-middle">32</td>
+			<td class="f-text-middle">
+				<div class="f-spacing f-spacing-lg"></div>
+			</td>
+		</tr>
+		<tr>
+			<th class="f-text-left f-text-middle">xl</th>
+			<td class="f-text-right f-text-middle">48</td>
+			<td class="f-text-middle">
+				<div class="f-spacing f-spacing-xl"></div>
+			</td>
+		</tr>
+		<tr>
+			<th class="f-text-left f-text-middle">xxl</th>
+			<td class="f-text-right f-text-middle">64</td>
+			<td class="f-text-middle">
+				<div class="f-spacing f-spacing-xxl"></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div>
+	<h2>Usage</h2>
+	<h5>Where property is one of:</h5>
+	<ul>
+		<li><kbd>m</kbd> - for setting margin</li>
+		<li><kbd>p</kbd> - for setting padding</li>
+	</ul>
+	<h5>Where side is one of:</h5>
+	<ul>
+		<li><kbd>t</kbd> - for setting margin-top or padding-top</li>
+		<li><kbd>r</kbd> - for setting margin-right or padding-right</li>
+		<li><kbd>b</kbd> - for setting margin-bottom or padding-bottom</li>
+		<li><kbd>l</kbd> - for setting margin-left or padding-left</li>
+		<li><kbd>x</kbd> - for setting margin-left & margin-right or padding-left & padding-right</li>
+		<li><kbd>y</kbd> - for setting margin-top & margin-bottom or padding-bottom & padding-bottom</li>
+	</ul>
+	<h5>Where size is one of:</h5>
+	<ul>
+		<li><span style="width: 30px; display: inline-block;"><kbd>0</kbd></span> <span style="width: 15px; display: inline-block;">-</span> for removing margin or padding</li>
+		<li><span style="width: 30px; display: inline-block;"><kbd>xxs</kbd></span> <span style="width: 15px; display: inline-block;">-</span> 4</li>
+		<li><span style="width: 30px; display: inline-block;"><kbd>xs</kbd></span> <span style="width: 15px; display: inline-block;">-</span> 8</li>
+		<li><span style="width: 30px; display: inline-block;"><kbd>sm</kbd></span> <span style="width: 15px; display: inline-block;">-</span> 16</li>
+		<li><span style="width: 30px; display: inline-block;"><kbd>md</kbd></span> <span style="width: 15px; display: inline-block;">-</span> 24</li>
+		<li><span style="width: 30px; display: inline-block;"><kbd>lg</kbd></span> <span style="width: 15px; display: inline-block;">-</span> 32</li>
+		<li><span style="width: 30px; display: inline-block;"><kbd>xl</kbd></span> <span style="width: 15px; display: inline-block;">-</span> 48</li>
+		<li><span style="width: 30px; display: inline-block;"><kbd>xxl</kbd></span> <span style="width: 15px; display: inline-block;">-</span> 64</li>
+	</ul>
+</div>
+</div>
+
+
+
+</div>
+
+
+<div class="f-item-group" id="01.text-helpers">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Text Helpers</h2>
+		<div class="f-item-controls">
+		
+		
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+
+<div class="f-item-code" data-f-toggle="code">
+    <pre><code class="language-markup">&lt;div data-dna&#x3D;&quot;text-helpers&quot;&gt;
+	&lt;div class&#x3D;&quot;bg-gray-light brd-1 brdc-gray-dark txt--align--left&quot;&gt;
+		&lt;h4&gt;ClassName .txt--align--left&lt;/h4&gt;
+		&lt;p class&#x3D;&quot;m-b-xs gotham-bold&quot;&gt;Text Aligned Left&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;bg-gray-light brd-1 brdc-gray-dark m-t-sm txt-align--center&quot;&gt;
+		&lt;h4&gt;ClassName .txt-align--center&lt;/h4&gt;
+		&lt;p class&#x3D;&quot;m-b-xxs gotham-bold&quot;&gt;Text Aligned Center&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;txt--align--right bg-gray-light brd-1 brdc-gray-dark m-t-sm&quot;&gt;
+		&lt;h4&gt;ClassName .txt--align--right&lt;/h4&gt;
+		&lt;p class&#x3D;&quot;m-b-xxs gotham-bold&quot;&gt;Text Aligned Right&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;m-t-sm&quot;&gt;
+		&lt;h4&gt;&lt;strong&gt;ClassName .capitalize&lt;/strong&gt;&lt;/h4&gt;
+		&lt;p class&#x3D;&quot;m-b-xxs capitalize&quot;&gt;Tesque eu elit ac elit feugiat dignissim etiam elementum eu mauris id interdum interdum et malesuada fames ac ante ipsum primis in faucibus maecenas.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;m-t-sm&quot;&gt;
+		&lt;h4&gt;&lt;strong&gt;ClassName .uppercase&lt;/strong&gt;&lt;/h4&gt;
+		&lt;p class&#x3D;&quot;m-b-xxs uppercase&quot;&gt;Venenatis euismod fermentum pellentesque et egestas dui nam at suscipit ligula suspendisse potenti donec at lectus elit suspendisse potenti pellentesq.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;m-t-sm&quot;&gt;
+		&lt;h4&gt;&lt;strong&gt;ClassName .lowercase&lt;/strong&gt;&lt;/h4&gt;
+		&lt;p class&#x3D;&quot;m-b-xxs lowercase&quot;&gt;Lesuada fames ac ante ipsum primis in faucibus sed ac posuere quam sit amet tristique mauris nullam facilisis cursus aliquam nunc sagittis est sapien.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;m-t-sm&quot;&gt;
+		&lt;h4&gt;&lt;strong&gt;ClassName .nowrap&lt;/strong&gt;&lt;/h4&gt;
+		&lt;p class&#x3D;&quot;m-b-xxs nowrap&quot;&gt;Massa fermentum tincidunt sed mauris ex ultricies ut dui id mattis volutpat orci praesent ornare consequat ante in commodo pellentesque ut porta sem.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="f-item-preview " id="preview-01.text-helpers">
+	<div data-dna="text-helpers">
+	<div class="bg-gray-light brd-1 brdc-gray-dark txt--align--left">
+		<h4>ClassName .txt--align--left</h4>
+		<p class="m-b-xs gotham-bold">Text Aligned Left</p>
+	</div>
+	<div class="bg-gray-light brd-1 brdc-gray-dark m-t-sm txt-align--center">
+		<h4>ClassName .txt-align--center</h4>
+		<p class="m-b-xxs gotham-bold">Text Aligned Center</p>
+	</div>
+	<div class="txt--align--right bg-gray-light brd-1 brdc-gray-dark m-t-sm">
+		<h4>ClassName .txt--align--right</h4>
+		<p class="m-b-xxs gotham-bold">Text Aligned Right</p>
+	</div>
+	<div class="m-t-sm">
+		<h4><strong>ClassName .capitalize</strong></h4>
+		<p class="m-b-xxs capitalize">La finibus condimentum orci odio rhoncus nisl congue dapibus orci nisi id mi pellentesque eget enim vitae dolor tempus mattis congue sit amet neque.</p>
+	</div>
+	<div class="m-t-sm">
+		<h4><strong>ClassName .uppercase</strong></h4>
+		<p class="m-b-xxs uppercase">Ec luctus vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae pellentesque et viverra risus vitae ornare elit nulla.</p>
+	</div>
+	<div class="m-t-sm">
+		<h4><strong>ClassName .lowercase</strong></h4>
+		<p class="m-b-xxs lowercase">Porta luctus elit nec luctus nunc sit amet justo a lectus bibendum hendrerit aenean egestas feugiat velit vel rutrum nibh varius non suspendisse nec.</p>
+	</div>
+	<div class="m-t-sm">
+		<h4><strong>ClassName .nowrap</strong></h4>
+		<p class="m-b-xxs nowrap">A non varius porttitor est nibh imperdiet leo non elementum lorem massa quis orci vestibulum vestibulum hendrerit urna laoreet luctus in odio purus.</p>
+	</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+<div class="f-item-group" id="03.display-helpers">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Display Helpers</h2>
+		<div class="f-item-controls">
+		
+		
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+
+<div class="f-item-code" data-f-toggle="code">
+    <pre><code class="language-markup">&lt;div data-dna&#x3D;&quot;display-helpers&quot;&gt;
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+		&lt;div class&#x3D;&quot;col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center&quot;&gt;
+			&lt;p class&#x3D;&quot;m-t-xs m-b-xs&quot;&gt;ClassName .visible-block&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center&quot;&gt;
+			&lt;p class&#x3D;&quot;m-t-xs m-b-xs&quot;&gt;display: block&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+		&lt;div class&#x3D;&quot;col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center&quot;&gt;
+			&lt;p class&#x3D;&quot;m-t-xs m-b-xs&quot;&gt;ClassName .visible-inline&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center&quot;&gt;
+			&lt;p class&#x3D;&quot;m-t-xs m-b-xs&quot;&gt;display: inline&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+		&lt;div class&#x3D;&quot;col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center&quot;&gt;
+			&lt;p class&#x3D;&quot;m-t-xs m-b-xs&quot;&gt;ClassName .visible-inline-block&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center&quot;&gt;
+			&lt;p class&#x3D;&quot;m-t-xs m-b-xs&quot;&gt;display: inline-block&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+		&lt;div class&#x3D;&quot;col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center&quot;&gt;
+			&lt;p class&#x3D;&quot;m-t-xs m-b-xs&quot;&gt;ClassName .visible-flex&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center&quot;&gt;
+			&lt;p class&#x3D;&quot;m-t-xs m-b-xs&quot;&gt;display: flex&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+		&lt;div class&#x3D;&quot;col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center&quot;&gt;
+			&lt;p class&#x3D;&quot;m-t-xs m-b-xs&quot;&gt;ClassName .invisible&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center&quot;&gt;
+			&lt;p class&#x3D;&quot;m-t-xs m-b-xs&quot;&gt;display: none&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+		&lt;div class&#x3D;&quot;col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center&quot;&gt;
+			&lt;p class&#x3D;&quot;m-t-xs m-b-xs&quot;&gt;ClassName .full-size&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center&quot;&gt;
+			&lt;p class&#x3D;&quot;m-t-xs m-b-xs&quot;&gt;width: 100% , display:block&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="f-item-preview " id="preview-03.display-helpers">
+	<div data-dna="display-helpers">
+	<div class="row">
+		<div class="col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center">
+			<p class="m-t-xs m-b-xs">ClassName .visible-block</p>
+		</div>
+		<div class="col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center">
+			<p class="m-t-xs m-b-xs">display: block</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center">
+			<p class="m-t-xs m-b-xs">ClassName .visible-inline</p>
+		</div>
+		<div class="col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center">
+			<p class="m-t-xs m-b-xs">display: inline</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center">
+			<p class="m-t-xs m-b-xs">ClassName .visible-inline-block</p>
+		</div>
+		<div class="col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center">
+			<p class="m-t-xs m-b-xs">display: inline-block</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center">
+			<p class="m-t-xs m-b-xs">ClassName .visible-flex</p>
+		</div>
+		<div class="col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center">
+			<p class="m-t-xs m-b-xs">display: flex</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center">
+			<p class="m-t-xs m-b-xs">ClassName .invisible</p>
+		</div>
+		<div class="col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center">
+			<p class="m-t-xs m-b-xs">display: none</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center">
+			<p class="m-t-xs m-b-xs">ClassName .full-size</p>
+		</div>
+		<div class="col-xs-2 col-sm-2 col-md-2 brd-1 brdc-gray-dark bg-gray-lighter txt-align--center">
+			<p class="m-t-xs m-b-xs">width: 100% , display:block</p>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+<div class="f-item-group" id="04.grid">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Grid</h2>
+		<div class="f-item-controls">
+		
+		
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+
+<div class="f-item-code" data-f-toggle="code">
+    <pre><code class="language-markup">&lt;p&gt;
+	A grid system based on the flex display property.
+&lt;/p&gt;
+&lt;section class&#x3D;&quot;clear&quot;&gt;
+	&lt;h4&gt;Fluid&lt;/h4&gt;
+	&lt;div class&#x3D;&quot;container-fluid f-grid-demo&quot;&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-2&quot;&gt;
+				col-sm-2
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-2&quot;&gt;
+				col-sm-2
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-2&quot;&gt;
+				col-sm-2
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-2&quot;&gt;
+				col-sm-2
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-2&quot;&gt;
+				col-sm-2
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-2&quot;&gt;
+				col-sm-2
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-3&quot;&gt;
+				col-sm-3
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-3&quot;&gt;
+				col-sm-3
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-3&quot;&gt;
+				col-sm-3
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-3&quot;&gt;
+				col-sm-3
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;
+				col-sm-4
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;
+				col-sm-4
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;
+				col-sm-4
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-6&quot;&gt;
+				col-sm-6
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-6&quot;&gt;
+				col-sm-6
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+	&lt;h4&gt;Fixed&lt;/h4&gt;
+	&lt;div class&#x3D;&quot;container f-grid-demo&quot;&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-1&quot;&gt;
+				col-sm-1
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-2&quot;&gt;
+				col-sm-2
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-2&quot;&gt;
+				col-sm-2
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-2&quot;&gt;
+				col-sm-2
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-2&quot;&gt;
+				col-sm-2
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-2&quot;&gt;
+				col-sm-2
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-2&quot;&gt;
+				col-sm-2
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-3&quot;&gt;
+				col-sm-3
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-3&quot;&gt;
+				col-sm-3
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-3&quot;&gt;
+				col-sm-3
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-3&quot;&gt;
+				col-sm-3
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;
+				col-sm-4
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;
+				col-sm-4
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;
+				col-sm-4
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-6&quot;&gt;
+				col-sm-6
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-6&quot;&gt;
+				col-sm-6
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+	&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+	&lt;h4&gt;Offset Column&lt;/h4&gt;
+	&lt;h6 class&#x3D;&quot;m-b-sm&quot;&gt;* is xs,sm,md,lg&lt;/h6&gt;
+	&lt;div class&#x3D;&quot;container f-grid-demo&quot;&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-sm-offset-11 col-sm-1 col-xs-offset-0 col-xs-12&quot;&gt;.col-*-offset-12&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-sm-offset-10 col-sm-2 col-xs-offset-0 col-xs-12&quot;&gt;.col-*-offset-11&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-sm-offset-9 col-sm-3 col-xs-offset-0 col-xs-12&quot;&gt;.col-*-offset-9&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-sm-offset-8 col-sm-4 col-xs-offset-0 col-xs-12&quot;&gt;.col-*-offset-8&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-sm-offset-7 col-sm-5 col-xs-offset-0 col-xs-12&quot;&gt;.col-*-offset-7&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-sm-offset-6 col-sm-6 col-xs-offset-0 col-xs-12&quot;&gt;.col-*-offset-6&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-sm-offset-5 col-sm-7 col-xs-offset-0 col-xs-12&quot;&gt;.col-*-offset-5&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-sm-offset-4 col-sm-8 col-xs-offset-0 col-xs-12&quot;&gt;.col-*-offset-4&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-sm-offset-3 col-sm-9 col-xs-offset-0 col-xs-12&quot;&gt;.col-*-offset-3&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-sm-offset-2 col-sm-10 col-xs-offset-0 col-xs-12&quot;&gt;.col-*-offset-2&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-sm-offset-1 col-sm-11 col-xs-offset-0 col-xs-12&quot;&gt;.col-*-offset-1&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-offset-0 col-xs-12&quot;&gt;.col-*-offset-0&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class&#x3D;&quot;m-t-sm m-b-sm&quot;&gt;
+	&lt;h4&gt;Responsive Visibility Classes &lt;/h4&gt;
+	&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-2 brd-1 brdc-gray-dark p-y-xs&quot;&gt;&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-2 brd-1 brdc-gray-dark p-y-xs txt-align--center&quot;&gt;
+				Mobile Phones (
+				&lt;576px) &lt;/div&gt;
+					&lt;div class&#x3D;&quot;col-xs-2 brd-1 brdc-gray-dark p-y-xs txt-align--center&quot;&gt;
+						Tablet Tablets (≥768px)
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;col-xs-2 brd-1 brdc-gray-dark p-y-xs txt-align--center&quot;&gt;
+						Desktop Desktops (≥992px)
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;col-xs-2 brd-1 brdc-gray-dark p-y-xs txt-align--center&quot;&gt;
+						Large Desktops (≥1292px)
+					&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;row&quot;&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center&quot;&gt;
+					.visible-xs-*
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;row&quot;&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center&quot;&gt;
+					.visible-sm-*
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;row&quot;&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center&quot;&gt;
+					.visible-md-*
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;row&quot;&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center&quot;&gt;
+					.visible-lg-*
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;row&quot;&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center&quot;&gt;
+					.hidden-xs-*
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;row&quot;&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center&quot;&gt;
+					.hidden-sm-*
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;row&quot;&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center&quot;&gt;
+					.hidden-md-*
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;row&quot;&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center&quot;&gt;
+					.hidden-lg-*
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Visible
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light&quot;&gt;
+					Hidden
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+	&lt;h4&gt;Auto Width&lt;/h4&gt;
+	&lt;h6 class&#x3D;&quot;m-b-sm&quot;&gt;* is xs,sm,md,lg&lt;/h6&gt;
+	&lt;div class&#x3D;&quot;container-fluid f-grid-demo&quot;&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs&quot;&gt;.col-*&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs&quot;&gt;.col-*&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs&quot;&gt;.col-*&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs&quot;&gt;.col-*&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs&quot;&gt;.col-*&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+	&lt;h4&gt;Reordering&lt;/h4&gt;
+	&lt;div class&#x3D;&quot;container-fluid f-grid-demo&quot;&gt;
+		.first-
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;1&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;2&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4 first-sm&quot;&gt;3&lt;/div&gt;
+		&lt;/div&gt;
+		.last-
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4 last-sm&quot;&gt;1&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;2&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;3&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+	&lt;h4&gt;Reversing&lt;/h4&gt;
+	&lt;div class&#x3D;&quot;container-fluid f-grid-demo&quot;&gt;
+		.reverse
+		&lt;div class&#x3D;&quot;row reverse&quot;&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;1&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;2&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-xs-12 col-sm-4&quot;&gt;3&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+</div>
+
+<div class="f-item-preview " id="preview-04.grid">
+	<p>
+	A grid system based on the flex display property.
+</p>
+<section class="clear">
+	<h4>Fluid</h4>
+	<div class="container-fluid f-grid-demo">
+		<div class="row">
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-2">
+				col-sm-2
+			</div>
+			<div class="col-xs-12 col-sm-2">
+				col-sm-2
+			</div>
+			<div class="col-xs-12 col-sm-2">
+				col-sm-2
+			</div>
+			<div class="col-xs-12 col-sm-2">
+				col-sm-2
+			</div>
+			<div class="col-xs-12 col-sm-2">
+				col-sm-2
+			</div>
+			<div class="col-xs-12 col-sm-2">
+				col-sm-2
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-3">
+				col-sm-3
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				col-sm-3
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				col-sm-3
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				col-sm-3
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				col-sm-4
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				col-sm-4
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				col-sm-4
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6">
+				col-sm-6
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				col-sm-6
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<h4>Fixed</h4>
+	<div class="container f-grid-demo">
+		<div class="row">
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+			<div class="col-xs-12 col-sm-1">
+				col-sm-1
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-2">
+				col-sm-2
+			</div>
+			<div class="col-xs-12 col-sm-2">
+				col-sm-2
+			</div>
+			<div class="col-xs-12 col-sm-2">
+				col-sm-2
+			</div>
+			<div class="col-xs-12 col-sm-2">
+				col-sm-2
+			</div>
+			<div class="col-xs-12 col-sm-2">
+				col-sm-2
+			</div>
+			<div class="col-xs-12 col-sm-2">
+				col-sm-2
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-3">
+				col-sm-3
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				col-sm-3
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				col-sm-3
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				col-sm-3
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">
+				col-sm-4
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				col-sm-4
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				col-sm-4
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6">
+				col-sm-6
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				col-sm-6
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section>
+	<h4>Offset Column</h4>
+	<h6 class="m-b-sm">* is xs,sm,md,lg</h6>
+	<div class="container f-grid-demo">
+		<div class="row">
+			<div class="col-sm-offset-11 col-sm-1 col-xs-offset-0 col-xs-12">.col-*-offset-12</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-10 col-sm-2 col-xs-offset-0 col-xs-12">.col-*-offset-11</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-9 col-sm-3 col-xs-offset-0 col-xs-12">.col-*-offset-9</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-8 col-sm-4 col-xs-offset-0 col-xs-12">.col-*-offset-8</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-7 col-sm-5 col-xs-offset-0 col-xs-12">.col-*-offset-7</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-6 col-sm-6 col-xs-offset-0 col-xs-12">.col-*-offset-6</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-5 col-sm-7 col-xs-offset-0 col-xs-12">.col-*-offset-5</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-4 col-sm-8 col-xs-offset-0 col-xs-12">.col-*-offset-4</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-3 col-sm-9 col-xs-offset-0 col-xs-12">.col-*-offset-3</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-2 col-sm-10 col-xs-offset-0 col-xs-12">.col-*-offset-2</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-1 col-sm-11 col-xs-offset-0 col-xs-12">.col-*-offset-1</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-offset-0 col-xs-12">.col-*-offset-0</div>
+		</div>
+	</div>
+</section>
+
+<section class="m-t-sm m-b-sm">
+	<h4>Responsive Visibility Classes </h4>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-2 brd-1 brdc-gray-dark p-y-xs"></div>
+			<div class="col-xs-2 brd-1 brdc-gray-dark p-y-xs txt-align--center">
+				Mobile Phones (
+				<576px) </div>
+					<div class="col-xs-2 brd-1 brdc-gray-dark p-y-xs txt-align--center">
+						Tablet Tablets (≥768px)
+					</div>
+					<div class="col-xs-2 brd-1 brdc-gray-dark p-y-xs txt-align--center">
+						Desktop Desktops (≥992px)
+					</div>
+					<div class="col-xs-2 brd-1 brdc-gray-dark p-y-xs txt-align--center">
+						Large Desktops (≥1292px)
+					</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center">
+					.visible-xs-*
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center">
+					.visible-sm-*
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center">
+					.visible-md-*
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center">
+					.visible-lg-*
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center">
+					.hidden-xs-*
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center">
+					.hidden-sm-*
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center">
+					.hidden-md-*
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center txt-gray-light">
+					Hidden
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center">
+					.hidden-lg-*
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Visible
+				</div>
+				<div class="col-xs-2 p-y-xs brd-1 brdc-gray-dark txt-align--center bg-gray-light">
+					Hidden
+				</div>
+			</div>
+		</div>
+</section>
+
+<section>
+	<h4>Auto Width</h4>
+	<h6 class="m-b-sm">* is xs,sm,md,lg</h6>
+	<div class="container-fluid f-grid-demo">
+		<div class="row">
+			<div class="col-xs">.col-*</div>
+			<div class="col-xs">.col-*</div>
+			<div class="col-xs">.col-*</div>
+		</div>
+		<div class="row">
+			<div class="col-xs">.col-*</div>
+			<div class="col-xs">.col-*</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<h4>Reordering</h4>
+	<div class="container-fluid f-grid-demo">
+		.first-
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">1</div>
+			<div class="col-xs-12 col-sm-4">2</div>
+			<div class="col-xs-12 col-sm-4 first-sm">3</div>
+		</div>
+		.last-
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 last-sm">1</div>
+			<div class="col-xs-12 col-sm-4">2</div>
+			<div class="col-xs-12 col-sm-4">3</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<h4>Reversing</h4>
+	<div class="container-fluid f-grid-demo">
+		.reverse
+		<div class="row reverse">
+			<div class="col-xs-12 col-sm-4">1</div>
+			<div class="col-xs-12 col-sm-4">2</div>
+			<div class="col-xs-12 col-sm-4">3</div>
+		</div>
+	</div>
+</section>
+</div>
+
+
+
+</div>
+
+
+<div class="f-item-group" id="colors">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Colors</h2>
+		<div class="f-item-controls">
+		
+		
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div>
+
+<div class="f-item-code" data-f-toggle="code">
+    <pre><code class="language-markup">&lt;p&gt;You can use any of the colors defined below within .less files: @primary or in markup:&lt;/p&gt;
+&lt;table class&#x3D;&quot;f-table&quot;&gt;
+	&lt;col width&#x3D;&quot;10%&quot;&gt;
+	&lt;col width&#x3D;&quot;25%&quot;&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td class&#x3D;&quot;nowrap&quot;&gt;.txt-COLOR&lt;/td&gt;
+			&lt;td class&#x3D;&quot;nowrap&quot;&gt;For setting the &#x60;text-color&#x60;&lt;/td&gt;
+			&lt;td&gt;.txt-primary&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class&#x3D;&quot;nowrap&quot;&gt;.bg-COLOR&lt;/td&gt;
+			&lt;td class&#x3D;&quot;nowrap&quot;&gt;For setting the &#x60;background-color&#x60;&lt;/td&gt;
+			&lt;td&gt;.bg-gray&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class&#x3D;&quot;nowrap&quot;&gt;.brdc-t/r/b/l-COLOR&lt;/td&gt;
+			&lt;td class&#x3D;&quot;nowrap&quot;&gt;For setting the &#x60;border-color&#x60;&lt;/td&gt;
+			&lt;td&gt;.brdc-secondary / .brdc-b-secondary&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class&#x3D;&quot;f-colors&quot;&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;timelessness&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #3B3C43&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#3B3C43&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			elegance&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #E9EAEB&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#E9EAEB&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			substance&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #B29142&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#B29142&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			teal&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #587A8C&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#587A8C&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			teal-light&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #658B9F&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#658B9F&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			white&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #FFFFFF&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#FFFFFF&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			black&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #000000&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#000000&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			jet-black&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #2E2F34&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#2E2F34&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			gray-darkest&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #2D2E34&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#2D2E34&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			gray-darker&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #747678&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#747678&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			gray-dark&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #818A8F&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#818A8F&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			gray&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #B9B9B9&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#B9B9B9&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			gray-light&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #D8D8D8&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#D8D8D8&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			gray-lighter&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #F2F2F2&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#F2F2F2&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			red&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #FF0000&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#FF0000&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			green&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #417505&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#417505&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+
+			primary&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #3B3C43&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#3B3C43&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			primary-hover&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #75767B&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#75767B&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+
+			secondary&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: teal&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;teal&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			secondary-hover&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #8AA1AE&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#8AA1AE&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+
+			brand&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #C2A355&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#C2A355&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			brand-hover&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #C2A355&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#C2A355&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+
+			tertiary&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #3B3C43&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#3B3C43&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+
+			register-section-bg&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: gray-lighter&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;gray-lighter&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			text-input-label-color&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: gray-darker&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;gray-darker&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			text-wish-list-content-color&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: jet-black&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;jet-black&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+
+			checkbox-label&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #3B3C43&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#3B3C43&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			checkbox-border&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: gray&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;gray&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			checkbox-check-color&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: gray-dark&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;gray-dark&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			checkbox-error-border&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: red&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;red&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			checkbox-check-error&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: red&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;red&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			checkbox-secondary-border&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: black&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;black&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			checkbox-check-secondary&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: white&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;white&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			checkbox-checked-bg&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: black&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;black&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+
+			checkout-header-bg&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: tertiary&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;tertiary&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+
+			radio-circle-border&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: gray&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;gray&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			radio-circle-checked-bg&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: teal&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;teal&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			radio-circle-checked-bd&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: gray-darkest&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;gray-darkest&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+
+			modal-color-1&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: gray-light&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;gray-light&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			modal-color-2&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: gray-darkest&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;gray-darkest&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			modal-color-3&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: gray-dark&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;gray-dark&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			modal-color-4&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: gray-darkest&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;gray-darkest&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			modal-color-5&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: white&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;white&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			modal-background-color-2&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: white&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;white&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			modal-border-color-1&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: white&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;white&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+
+			tab-carousel-label-color&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: gray-darker&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;gray-darker&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			tab-carousel-active-label-color&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: tertiary&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;tertiary&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			tab-carousel-visited-label-color&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: teal&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;teal&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			tab-pagination-color&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: gray-dark&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;gray-dark&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+
+			header-banner-color&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #363942&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#363942&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			header-search-color-1&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #62656C&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#62656C&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;f-color&quot;&gt;
+		&lt;div class&#x3D;&quot;f-color-name&quot;&gt;
+			main-nav-color&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-block&quot; style&#x3D;&quot;background-color: #3E4149&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;f-color-value&quot;&gt;#3E4149&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div class="f-item-preview " id="preview-colors">
+	<p>You can use any of the colors defined below within .less files: @primary or in markup:</p>
+<table class="f-table">
+	<col width="10%">
+	<col width="25%">
+	<tbody>
+		<tr>
+			<td class="nowrap">.txt-COLOR</td>
+			<td class="nowrap">For setting the `text-color`</td>
+			<td>.txt-primary</td>
+		</tr>
+		<tr>
+			<td class="nowrap">.bg-COLOR</td>
+			<td class="nowrap">For setting the `background-color`</td>
+			<td>.bg-gray</td>
+		</tr>
+		<tr>
+			<td class="nowrap">.brdc-t/r/b/l-COLOR</td>
+			<td class="nowrap">For setting the `border-color`</td>
+			<td>.brdc-secondary / .brdc-b-secondary</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="f-colors">
+	<div class="f-color">
+		<div class="f-color-name">timelessness</div>
+		<div class="f-color-block" style="background-color: #3B3C43"></div>
+		<div class="f-color-value">#3B3C43</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			elegance</div>
+		<div class="f-color-block" style="background-color: #E9EAEB"></div>
+		<div class="f-color-value">#E9EAEB</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			substance</div>
+		<div class="f-color-block" style="background-color: #B29142"></div>
+		<div class="f-color-value">#B29142</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			teal</div>
+		<div class="f-color-block" style="background-color: #587A8C"></div>
+		<div class="f-color-value">#587A8C</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			teal-light</div>
+		<div class="f-color-block" style="background-color: #658B9F"></div>
+		<div class="f-color-value">#658B9F</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			white</div>
+		<div class="f-color-block" style="background-color: #FFFFFF"></div>
+		<div class="f-color-value">#FFFFFF</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			black</div>
+		<div class="f-color-block" style="background-color: #000000"></div>
+		<div class="f-color-value">#000000</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			jet-black</div>
+		<div class="f-color-block" style="background-color: #2E2F34"></div>
+		<div class="f-color-value">#2E2F34</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			gray-darkest</div>
+		<div class="f-color-block" style="background-color: #2D2E34"></div>
+		<div class="f-color-value">#2D2E34</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			gray-darker</div>
+		<div class="f-color-block" style="background-color: #747678"></div>
+		<div class="f-color-value">#747678</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			gray-dark</div>
+		<div class="f-color-block" style="background-color: #818A8F"></div>
+		<div class="f-color-value">#818A8F</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			gray</div>
+		<div class="f-color-block" style="background-color: #B9B9B9"></div>
+		<div class="f-color-value">#B9B9B9</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			gray-light</div>
+		<div class="f-color-block" style="background-color: #D8D8D8"></div>
+		<div class="f-color-value">#D8D8D8</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			gray-lighter</div>
+		<div class="f-color-block" style="background-color: #F2F2F2"></div>
+		<div class="f-color-value">#F2F2F2</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			red</div>
+		<div class="f-color-block" style="background-color: #FF0000"></div>
+		<div class="f-color-value">#FF0000</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			green</div>
+		<div class="f-color-block" style="background-color: #417505"></div>
+		<div class="f-color-value">#417505</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+
+			primary</div>
+		<div class="f-color-block" style="background-color: #3B3C43"></div>
+		<div class="f-color-value">#3B3C43</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			primary-hover</div>
+		<div class="f-color-block" style="background-color: #75767B"></div>
+		<div class="f-color-value">#75767B</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+
+			secondary</div>
+		<div class="f-color-block" style="background-color: teal"></div>
+		<div class="f-color-value">teal</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			secondary-hover</div>
+		<div class="f-color-block" style="background-color: #8AA1AE"></div>
+		<div class="f-color-value">#8AA1AE</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+
+			brand</div>
+		<div class="f-color-block" style="background-color: #C2A355"></div>
+		<div class="f-color-value">#C2A355</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			brand-hover</div>
+		<div class="f-color-block" style="background-color: #C2A355"></div>
+		<div class="f-color-value">#C2A355</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+
+			tertiary</div>
+		<div class="f-color-block" style="background-color: #3B3C43"></div>
+		<div class="f-color-value">#3B3C43</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+
+			register-section-bg</div>
+		<div class="f-color-block" style="background-color: gray-lighter"></div>
+		<div class="f-color-value">gray-lighter</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			text-input-label-color</div>
+		<div class="f-color-block" style="background-color: gray-darker"></div>
+		<div class="f-color-value">gray-darker</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			text-wish-list-content-color</div>
+		<div class="f-color-block" style="background-color: jet-black"></div>
+		<div class="f-color-value">jet-black</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+
+			checkbox-label</div>
+		<div class="f-color-block" style="background-color: #3B3C43"></div>
+		<div class="f-color-value">#3B3C43</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			checkbox-border</div>
+		<div class="f-color-block" style="background-color: gray"></div>
+		<div class="f-color-value">gray</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			checkbox-check-color</div>
+		<div class="f-color-block" style="background-color: gray-dark"></div>
+		<div class="f-color-value">gray-dark</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			checkbox-error-border</div>
+		<div class="f-color-block" style="background-color: red"></div>
+		<div class="f-color-value">red</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			checkbox-check-error</div>
+		<div class="f-color-block" style="background-color: red"></div>
+		<div class="f-color-value">red</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			checkbox-secondary-border</div>
+		<div class="f-color-block" style="background-color: black"></div>
+		<div class="f-color-value">black</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			checkbox-check-secondary</div>
+		<div class="f-color-block" style="background-color: white"></div>
+		<div class="f-color-value">white</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			checkbox-checked-bg</div>
+		<div class="f-color-block" style="background-color: black"></div>
+		<div class="f-color-value">black</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+
+			checkout-header-bg</div>
+		<div class="f-color-block" style="background-color: tertiary"></div>
+		<div class="f-color-value">tertiary</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+
+			radio-circle-border</div>
+		<div class="f-color-block" style="background-color: gray"></div>
+		<div class="f-color-value">gray</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			radio-circle-checked-bg</div>
+		<div class="f-color-block" style="background-color: teal"></div>
+		<div class="f-color-value">teal</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			radio-circle-checked-bd</div>
+		<div class="f-color-block" style="background-color: gray-darkest"></div>
+		<div class="f-color-value">gray-darkest</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+
+			modal-color-1</div>
+		<div class="f-color-block" style="background-color: gray-light"></div>
+		<div class="f-color-value">gray-light</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			modal-color-2</div>
+		<div class="f-color-block" style="background-color: gray-darkest"></div>
+		<div class="f-color-value">gray-darkest</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			modal-color-3</div>
+		<div class="f-color-block" style="background-color: gray-dark"></div>
+		<div class="f-color-value">gray-dark</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			modal-color-4</div>
+		<div class="f-color-block" style="background-color: gray-darkest"></div>
+		<div class="f-color-value">gray-darkest</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			modal-color-5</div>
+		<div class="f-color-block" style="background-color: white"></div>
+		<div class="f-color-value">white</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			modal-background-color-2</div>
+		<div class="f-color-block" style="background-color: white"></div>
+		<div class="f-color-value">white</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			modal-border-color-1</div>
+		<div class="f-color-block" style="background-color: white"></div>
+		<div class="f-color-value">white</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+
+			tab-carousel-label-color</div>
+		<div class="f-color-block" style="background-color: gray-darker"></div>
+		<div class="f-color-value">gray-darker</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			tab-carousel-active-label-color</div>
+		<div class="f-color-block" style="background-color: tertiary"></div>
+		<div class="f-color-value">tertiary</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			tab-carousel-visited-label-color</div>
+		<div class="f-color-block" style="background-color: teal"></div>
+		<div class="f-color-value">teal</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			tab-pagination-color</div>
+		<div class="f-color-block" style="background-color: gray-dark"></div>
+		<div class="f-color-value">gray-dark</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+
+			header-banner-color</div>
+		<div class="f-color-block" style="background-color: #363942"></div>
+		<div class="f-color-value">#363942</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			header-search-color-1</div>
+		<div class="f-color-block" style="background-color: #62656C"></div>
+		<div class="f-color-value">#62656C</div>
+	</div>
+	<div class="f-color">
+		<div class="f-color-name">
+			main-nav-color</div>
+		<div class="f-color-block" style="background-color: #3E4149"></div>
+		<div class="f-color-value">#3E4149</div>
+	</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+    </div>
+
+    <!-- vendor scripts -->
+    <script src="./assets/toolkit/scripts/vendor-toolkit.js"></script>
+    <!--/vendor scripts -->
+
+    <!-- toolkit scripts -->
+    <script src="./assets/toolkit/scripts/toolkit.js"></script>
+    <!-- /toolkit scripts -->
+
+    <!-- form scripts -->
+    <script src="./assets/toolkit/scripts/form.js"></script>
+    <!-- /form scripts -->
+
+    <!-- fabricator scripts -->
+    <script src="./assets/fabricator/scripts/f.js"></script>
+    <!-- /fabricator scripts -->
+
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>checkout shipping address</title>
+
+    <!-- PP BASE STYLES --->
+    <link rel="stylesheet" href="../pp-base/common1_1.css" />
+    <!--- /PP BASE STYLES --->
+
+
+    <!-- toolkit styles -->
+    <link rel="stylesheet" href="../assets/toolkit/styles/toolkit.css" />
+    <!-- /toolkit styles -->
+
+
+    <!-- polyfill scripts -->
+    <script src="../assets/toolkit/scripts/polyfill.js"></script>
+    <!--/polyfill scripts -->
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--/ jQuery -->
+
+    <script language="javascript" type="text/javascript" src="https://s7d9.scene7.com/s7viewers/html5/js/MixedMediaViewer.js"></script>
+
+</head>
+<body>
+
+    <div id="page">
+    <!--------------------------- HEADER START --------------------------------->
+    <div id="headerWidget" data-dna="checkout-header" class="checkout-header">
+        <div id="header" role="banner">
+            <div id="headerRow1">
+                <div id="logo" class="checkout-header__logo" tabindex="-1">
+                    <a id="ct100_aLogo" href="#" tabindex="0">
+                        <svg viewBox="0 0 233 62" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <path id="a" d="M0 60.42h232.134V.13H0z"/>
+                            </defs>
+                            <g transform="translate(0 .788)" fill="none" fill-rule="evenodd">
+                                <path d="M157.036 52.87c1.36.316 1.988.844 1.988 1.84 0 1.12-.872 1.842-2.084 1.842-.968 0-1.762-.343-2.494-1.036l.427-.536c.637.61 1.247.915 2.093.915.82 0 1.36-.453 1.36-1.11 0-.61-.304-.952-1.586-1.24-1.405-.322-2.05-.805-2.05-1.876 0-1.036.846-1.776 2.006-1.776.89 0 1.526.268 2.146.795l-.402.562c-.566-.49-1.134-.7-1.762-.7-.792 0-1.3.46-1.3 1.052 0 .62.315.962 1.658 1.267zM164.002 56.46h-.698v-5.8h-2.05v-.673h4.798v.673h-2.05" fill="#C2A355"/>
+                                <mask id="b" fill="#fff">
+                                    <use xlink:href="#a"/>
+                                </mask>
+                                <path fill="#C2A355" mask="url(#b)" d="M167.565 56.545h.923v-1.057h-.923M175.876 49.94h.507v6.52h-.68v-5.762l-1.152.38-.166-.592M181.384 56.552c-1.3 0-2.294-.75-2.294-1.84 0-.777.522-1.323 1.254-1.6-.565-.278-1.046-.74-1.046-1.5 0-1.006.968-1.718 2.086-1.718 1.116 0 2.084.712 2.084 1.72 0 .758-.48 1.22-1.047 1.498.725.286 1.256.813 1.256 1.59 0 1.11-.994 1.85-2.292 1.85m0-3.098c-.89 0-1.597.51-1.597 1.24 0 .664.593 1.22 1.597 1.22 1.003 0 1.595-.556 1.595-1.22 0-.73-.706-1.24-1.596-1.24m0-2.923c-.794 0-1.396.473-1.396 1.13 0 .712.62 1.193 1.396 1.193.776 0 1.395-.48 1.395-1.193 0-.648-.604-1.13-1.396-1.13M188.32 56.552c-1.3 0-2.293-.75-2.293-1.84 0-.777.522-1.323 1.255-1.6-.567-.278-1.047-.74-1.047-1.5 0-1.006.97-1.718 2.085-1.718 1.116 0 2.085.712 2.085 1.72 0 .758-.48 1.22-1.047 1.498.724.286 1.255.813 1.255 1.59 0 1.11-.994 1.85-2.293 1.85m0-3.098c-.89 0-1.596.51-1.596 1.24 0 .664.593 1.22 1.596 1.22 1.003 0 1.596-.556 1.596-1.22 0-.73-.706-1.24-1.596-1.24m0-2.923c-.794 0-1.395.473-1.395 1.13 0 .712.62 1.193 1.395 1.193.776 0 1.397-.48 1.397-1.193 0-.648-.602-1.13-1.397-1.13M195.257 56.552c-1.3 0-2.294-.75-2.294-1.84 0-.777.523-1.323 1.256-1.6-.568-.278-1.048-.74-1.048-1.5 0-1.006.97-1.718 2.085-1.718 1.117 0 2.085.712 2.085 1.72 0 .758-.48 1.22-1.047 1.498.724.286 1.256.813 1.256 1.59 0 1.11-.993 1.85-2.293 1.85m0-3.098c-.89 0-1.596.51-1.596 1.24 0 .664.594 1.22 1.597 1.22 1.004 0 1.595-.556 1.595-1.22 0-.73-.705-1.24-1.595-1.24m0-2.923c-.793 0-1.397.473-1.397 1.13 0 .712.62 1.193 1.397 1.193.776 0 1.396-.48 1.396-1.193 0-.648-.602-1.13-1.396-1.13M119.733 20.057h-7.56s.227 1.24.227 9.01-.227 9.63-.227 9.63h3.023s-.087-.89-.087-4.185c0-3.295.107-4.298.107-4.298.895.05 1.76.087 2.79.087 3.32 0 9.186-.887 9.186-5.65 0-4.512-5.39-4.593-7.46-4.593m-2.067 9.258c-.758 0-1.728-.097-2.45-.233v-8.015h3.11c3.538 0 5.792.648 5.792 3.725 0 3.676-3.617 4.523-6.452 4.523M144.287 38.704h3.486s-1.053-1.437-4.987-9.322c-3.944-7.9-4.572-9.324-4.572-9.324h-.71l-9.934 18.646h.003l-.003.006h2.16l3.458-7.024 7.735-.006 3.364 7.024zm-10.485-8.267l3.305-6.716 3.218 6.717h-6.523zM159.524 29.594c2.462-.305 6.547-1.71 6.55-5.185 0-3.26-3.114-4.31-6.753-4.31h-7.385l.005.018h-.013s.226 1.24.226 9.01c0 7.768-.226 9.63-.226 9.63h.005l-.005.02h3.004v-.02h.02l-.02-1.422v-7.554l1.155.063c2.72 2.838 6.836 7.265 8.324 8.922l.02.01h3.937l-.094-.07c-1.832-1.73-7.095-7.39-8.75-9.113m-4.592-.966v-1.504c0-1.915.02-3.908.02-5.872.793-.03 1.79-.07 3.248-.07 2.178.007 4.94.705 4.944 3.495-.004 3.15-3.476 4.064-6.103 4.064-.817 0-1.55-.016-2.11-.112M223.29 29.513c2.463-.305 6.547-1.71 6.55-5.185 0-3.256-3.115-4.31-6.754-4.31H215.7l.006.02h-.013s.226 1.24.226 9.01-.227 9.63-.227 9.63h.005l-.005.02h3.005v-.02h.017l-.017-1.423v-7.553l1.153.062c2.723 2.84 6.836 7.265 8.327 8.922l.02.01h3.936l-.094-.07c-1.834-1.73-7.095-7.39-8.75-9.113m-4.592-.965v-1.505c0-1.915.02-3.908.02-5.87.792-.032 1.788-.07 3.247-.07 2.178.006 4.94.704 4.944 3.494-.005 3.15-3.48 4.065-6.105 4.065-.817 0-1.55-.018-2.107-.114M209.25 37.323l-8.68.023-.058-7.97h7.795v-1.268h-7.773c0-.693-.022-1.957-.022-3.33 0-1.305.087-2.233.125-3.37l8.458.04V20.11l.007-.06h-11.58V38.7h11.747l-.02-.047v-1.327zM181.18 28.185l9.94-8.128-2.585-.003-10.315 8.793 9.834 9.85h3.91M174.393 20.018l.005.02h-.012s.226 1.24.226 9.01-.226 9.63-.226 9.63h.004l-.004.02H177.642V20.052h-.003l.003-.035h-3.25zM48.344 49.74l-2.425 2.804c-.028.53-.048 1.058-.064 1.567l2.488-2.855V49.74zM48.344 52.01l-2.518 2.894c-.03.567-.053 1.08-.07 1.582l2.566-2.964.022-1.51zM48.37 47.575l-2.348 2.7c-.024.49-.044.98-.06 1.468l2.394-2.764.015-1.405zM51.758 59.818v-.073l-3.04-3.503-3.04 3.5v.076c0 .37.287.603.872.603h4.332c.586 0 .876-.233.876-.602M45.69 58.815l2.624-3.03.007-1.51-2.6 2.98c-.015.587-.03 1.114-.03 1.56M48.394 43.074l-2.16 2.498c-.01.463-.043.924-.062 1.424l2.222-2.555v-1.366zM48.388 45.347l-2.26 2.592c-.014.476-.04.953-.064 1.432l2.31-2.66.014-1.365zM51.202 45.583l-2.186-2.51.02 1.362 2.24 2.578c-.03-.503-.05-.974-.074-1.43M51.623 54.92L49.09 52v1.513l2.594 2.977c-.023-.5-.046-1.02-.06-1.573M51.3 47.952l-2.252-2.604v1.348l2.327 2.675c-.024-.47-.044-.954-.074-1.418M51.746 58.83c-.007-.44-.017-.977-.03-1.56l-2.61-2.996.005 1.507 2.636 3.05zM51.59 54.124c-.036-.506-.044-1.035-.073-1.567l-2.445-2.823.007 1.514 2.51 2.876zM51.474 51.755c-.017-.49-.033-.978-.057-1.473l-2.362-2.706.007 1.404 2.412 2.775z"/>
+                                <path d="M46.275 44.635v-.014L48.4 42.17l.28-39.077h.076l.258 39.078 2.153 2.464v.003c26.13-.397 46.275-7.095 46.275-15.568 0-8.638-20.897-15.426-47.744-15.587v-.006c-.022-2.302-.058-3.805-.058-3.805s1.014-.478 1.072-1.277c.064-.784-.793-5.547-1.198-6.81-.402-1.27-.53-1.455-.792-1.455-.272 0-.4.186-.793 1.454-.42 1.264-1.277 6.027-1.207 6.81.067.8 1.066 1.277 1.066 1.277s-.014 1.502-.053 3.804v.006C20.885 13.64 0 20.43 0 29.067c0 8.473 20.13 15.17 46.275 15.568zM49.72 14.98c25.147.18 44.426 6.545 44.426 14.087 0 7.39-18.514 13.673-43.04 14.05v-.027c-.037-.75-.045-1.335-.045-1.653 0-2.46-.6-3.775-.88-6.355-.174-1.784-.367-13.167-.46-20.078l-.018-1.2.017 1.177zm-2.004 0l.017-1.234-.017 1.264c-.1 6.905-.278 18.302-.46 20.072-.265 2.58-.873 3.895-.873 6.355 0 .318-.043.904-.058 1.653v.026c-24.533-.384-43.04-6.66-43.04-14.05 0-7.54 19.286-13.907 44.43-14.085zM152.12 50.65h-3.725v2.21h3.332v.668h-3.332v2.265h3.768v.667h-4.457v-6.474h4.413" fill="#C2A355" mask="url(#b)"/>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>    <!--------------------------- HEADER END ----------------------------------->
+
+    <!--------------------------- CHECKOUT NAV START ----------------------------->
+    <div class="checkout-nav">
+        <div id="checkout-nav" class="tab_button_container checkout-nav-swiper-container" role="tablist">
+            <div class="tab_button_container__content tab_button_container__content--carousel swiper-wrapper">
+                <a href="#" id="shipping-Address-tab" tabindex="-1" class="tab active_tab swiper-slide" aria-labelledby="tab1-label"
+                   aria-controls="tab1Widget" role="tab">
+                    <div id="tab1-label" class="h-6 tab-label">
+                        <span>Shipping Address</span>
+                    </div>
+                </a>
+                <a href="#" id="shipping-method-tab" tabindex="-1" data-hash="shipping Method" class="tab swiper-slide"
+                   aria-labelledby="tab2-label" aria-controls="tab1Widget" role="tab">
+                    <div id="tab2-label" class="h-6 tab-label">
+                        <span>Shipping Method</span>
+                    </div>
+                </a>
+                <a href="#"
+                   id="payment-method-tab" tabindex="-1" class="tab swiper-slide" aria-labelledby="tab3-label"
+                   aria-controls="tab1Widget" role="tab">
+                    <div id="tab3-label" class="h-6 tab-label">
+                        <span>Payment Method</span>
+                    </div>
+                </a>
+                <a href="#" id="review-order-tab" tabindex="-1" class="tab swiper-slide" aria-labelledby="tab4-label"
+                   aria-controls="tab1Widget" role="tab">
+                    <div id="tab4-label" class="h-6 tab-label">
+                        <span>Review & Place Order</span>
+                    </div>
+                </a>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <!--------------------------- CHECKOUT NAV END --------------------------------->
+
+    <!------------------------------- SHIPPING METHOD START ---------------------------->
+    <main id="contentWrapper" role="main" class="m-b-xxl">
+        <div class="container container--checkout-wrapper">
+            <div id="WC_AccountDisplay_div_1" class="row">
+                <!--------------------------------- START LEFT RAIL ------------------------------------------->
+                <div id="contentMain" class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                    <h2 class="m-b-lg">Enter your shipping address</h2>
+                    <div id="box">
+                        <div id="shippingAddressFormContainer">
+                            <form name="CheckoutStep2shippingForm" id="CheckoutStep2shippingFormId" onsubmit="javascript:AddressFormJS.prepareSubmit();return false;">
+                                <input type="hidden" name="storeId" value="15160" id="WC_CheckoutStep2_FormInput_storeId_In_Register_1" autocomplete="off">
+                                <input type="hidden" name="catalogId" value="67551" id="WC_CheckoutStep2_FormInput_catalogId_In_Register_1" autocomplete="off">
+                                <input name="addressId" type="hidden" value="" id="addressId_shipping" autocomplete="off">
+                                <input type="hidden" name="URL" value="" id="WC_UserRegistrationUpdateForm_FormInput_URL_In_Register_1" autocomplete="off">
+                                <input type="hidden" name="nickName" value="1501638592624" id="nickName_shipping" autocomplete="off">
+                                <input type="hidden" name="AddressForm_FieldsOrderByLocale" id="AddressForm_FieldsOrderByLocale" value="FIRST_NAME,LAST_NAME,ADDRESS,EMAIL1,PHONE1,CITY,COUNTRY/REGION,STATE/PROVINCE,ZIP" autocomplete="off">
+                                <input type="hidden" id="countryCode" name="country" value="US" autocomplete="off">
+                                <input type="hidden" name="authToken" value="4852502%2CT2ILuZE3LBXqwzkGo4Xt9jhTnx8%3D" id="Checkout2AddressUpdate_authToken" autocomplete="off">
+                                <input type="hidden" name="addressType" value="SB" id="AddressType" autocomplete="off">
+                                <div class="input-wrapper m-b-sm">
+                                    <input type="text" value="" id="firstname_shipping" name="firstName">
+                                    <label for="firstname_shipping">First Name</label>
+                                </div>
+                                <div class="input-wrapper m-b-sm">
+                                    <input type="text"  value="" id="lastname_shipping" name="lastName">
+                                    <label for="lastname_shipping">Last Name</label>
+                                </div>
+                                <div id="FLF1" class="input-wrapper m-b-sm">
+                                    <input type="text" value="" id="address1_shipping" name="address1">
+                                    <label for="address1_shipping">Street Address</label>
+                                </div>
+                                <div  id="FLF2" class="input-wrapper m-b-sm">
+                                    <input type="text" value="" id="address2_shipping" name="address2">
+                                    <label for="address2_shipping">Suite, Apt, Floor </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm">
+                                        <div  id="FLF3" class="input-wrapper m-b-sm">
+                                            <input type="text"  value="" id="city_shipping" name="city">
+                                            <label for="city_shipping">City</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-8 col-sm col-sm-offset-1">
+                                        <div  id="FLF4" class="selectBox-container m-b-sm">
+                                            <select id="state_shipping" name="state">
+                                                <option value="" hidden></option>
+                                                <option value="1">Option 1</option>
+                                            </select>
+                                            <span class="selectBox-title">State</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 p-r-md">
+                                        <div id="FLF5" class="input-wrapper m-b-sm">
+                                            <input type="text"  value="" id="zipcode_shipping" name="zipCode">
+                                            <label for="zipcode_shipping">Zip Code</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div  id="FLF6" class="input-wrapper m-b-sm">
+                                    <label for="phone1_shipping">Phone Number</label>
+                                    <input type="text"  value="" id="phone1_shipping" name="phone1">
+                                </div>
+                                <div id="EmailIBox" class="input-wrapper m-b-sm">
+                                    <input type="text"  value="Testovich@gmail.com" id="email1_shipping" name="email1">
+                                    <label for="email1_shipping">Email Address</label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <input type="hidden" name="flagToUpdateOrAddAddress" value="false" id="flagToUpdateOrAddAddress" autocomplete="off">
+                        <div id="divProgress" style="display: none; z-index: 200; top: 500px; left: 500px; position: absolute;"><img style="" src="./SHIPPING &amp; BILLING_files/ajax-loader.gif"></div>
+                        <div id="ShowPopup" style="display: none; z-index: 100; position: absolute;">
+                            <div class="shopConfirmationOverlay">
+                                <div class="top"><span></span></div>
+                                <div class="closeBtn"><a href="javascript:Popup.hide('ShowPopup');"><img src="./SHIPPING &amp; BILLING_files/btn_close.gif"></a></div>
+                                <div class="contentContainer">
+                                    <div class="contentMain">
+                                        <div class="contentInner">
+                                            <div id="ctl00_WebPartManagerNew_g_5266af73_0acd_4b30_8af6_65e6ff4991f4_pnlShipping" style="height: 220px; width: 580px; overflow-y: scroll;">
+                                                <div class="topHeading">Shipping Charges</div>
+                                                <p>ParkerPen US ships to the 48 contiguous states. We do not ship to P.O. Boxes, APO or FPO addresses.</p><p>Depending on the product(s) being purchased, your order will be delivered via FedEx Ground for smaller items, or a common LTL truck carrier for larger items (See surcharge information below).</p><p>Your order may be shipped from one or more of our warehouses for faster service. You can expect to receive a shipment confirmation email, complete with tracking information, when your purchase has left our warehouse.</p><p>Expect delivery to arrive within 7-10 business days. For larger items, our common truck carriers will use the Delivery Contact Number provided during the Checkout process to schedule a delivery appointment, if required.</p>
+                                                <p class="red"><strong> ** Please note that the carrier, for larger items shipped, may charge you a storage fee if delivery is not completed within 48 hours. The carrier is contracted to deliver only to the curbside of your address, and cannot provide inside delivery (over the threshold) as part of their service. For this reason, especially for oversized items, we recommend that you have help available to move the item to its final location. </strong></p>
+                                                <div class="topHeading">???SHIP_RATE???</div>
+                                                <p><img src="./SHIPPING &amp; BILLING_files/shipping-charges.gif"></p>
+                                                <div class="topHeading">???SHIP_SURCHARGE???</div>
+                                                ???LTL_SHIP_MSG???
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom"><span></span></div>
+                            </div>
+                        </div>
+                        <div id="ShowErrMsgPopup" style="display: none; z-index: 100; position: absolute;">
+                            <div class="shopConfirmationOverlay">
+                                <div class="top"><span></span></div>
+                                <div class="closeBtn"><a href="javascript:Popup.hide('ShowErrMsgPopup');"><img src="./SHIPPING &amp; BILLING_files/btn_close.gif"></a></div>
+                                <div class="contentContainer">
+                                    <div class="contentMain">
+                                        <div class="contentInner">
+                                            <div style="overflow-y: auto; Width: 580px;">
+                                                ???ERR_PROCESS_CREDITCARD???
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--------------------------------- END LEFT RAIL ------------------------------------------->
+                <!--------------------------------- START RIGHT RAIL ------------------------------------------->
+                <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-md-12 col-lg-offset-2 col-lg-4">
+                    <div class="checkout-order-summary m-b-sm" data-dna="checkout-summary">
+                        <h2 class="txt-align--center">ORDER SUMMARY</h2>
+                        <table id="order_total" cellpadding="0" cellspacing="0"
+                               border="0" role="presentation">
+                            <tbody>
+                            <tr>
+                                <td id="WC_SingleShipmentOrderTotalsSummary_td_1">Order
+                                    Subtotal (4) :
+                                </td>
+                                <td id="WC_SingleShipmentOrderTotalsSummary_td_2"
+                                    class="txt--align--right">$20.25
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="WC_SingleShipmentOrderTotalsSummary_td_3">
+                                    Discounts :
+                                </td>
+                                <td id="WC_SingleShipmentOrderTotalsSummary_td_4"
+                                    class="txt--align--right">$0.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="WC_SingleShipmentOrderTotalsSummary_td_7">
+                                    Estimated Tax :
+                                </td>
+                                <td id="WC_SingleShipmentOrderTotalsSummary_td_8"
+                                    class="txt--align--right">$0.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="WC_SingleShipmentOrderTotalsSummary_td_9"
+                                    class="order-total">Order Total:
+                                </td>
+                                <td id="WC_SingleShipmentOrderTotalsSummary_td_10"
+                                    class="order-total txt--align--right">$20.25
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <input type="submit" class="btn btn-primary btn-xs full-size" name="submitShippingAddress" value="Continue" onclick="javascript:AddressFormJS.prepareSubmit();" id="submitShippingAddress">
+                    </div>
+                </div>
+                <!------------------------------- END RIGHT RAIL ------------------------------------------------>
+            </div>
+        </div>
+    </main>
+    <!------------------------------- SHIPPING METHOD END ---------------------------->
+
+    <!--------------------------- FOOTER START --------------------------------->
+    <div class=" checkout-footer-wrapper p-t-lg">
+        <footer class="row checkout-footer" data-dna="checkout-footer">
+            <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="checkout-footer__contact">
+                    <i class="icon icon-phone"><span class="sr-only">Phone</span></i>
+                    <div>
+                        <span>Need Help with your order ? </span>
+                        <span>Get Support. <a href="tel:1-800-237-8736">800-237-8736</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="checkout-footer__security">
+                    <span>This site is secured by</span>
+                    <img src="/assets/toolkit/images/fpo/norton.png" alt="Alt Text Goes Here">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="checkout-footer__copy-rights">
+                    <span>© Parker 2017, All Rights Reserved</span>
+                </div>
+            </div>
+        </footer>    </div>
+    <!--------------------------- FOOTER END --------------------------------->
+</div>
+
+
+    <!-- vendor scripts -->
+    <script src="../assets/toolkit/scripts/vendor-toolkit.js"></script>
+    <!--/vendor scripts -->
+
+    <!-- toolkit scripts -->
+    <script src="../assets/toolkit/scripts/toolkit.js"></script>
+    <!-- /toolkit scripts -->
+
+    <!-- form scripts -->
+    <script src="../assets/toolkit/scripts/form.js"></script>
+    <!-- /form scripts -->
+
+
+
+</body>
+</html>

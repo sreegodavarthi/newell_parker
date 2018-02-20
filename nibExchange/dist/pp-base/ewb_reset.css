@@ -1,0 +1,98 @@
+/* ****************************************************************************** */
+/* Setting Highlight Colors                                                       */
+/* ****************************************************************************** */
+body,
+#footer .section .header h3,
+#footer .section ul a,
+div#widget_breadcrumb ul li.current,
+div#widget_breadcrumb > ul li a,
+div#widget_breadcrumb ul span.divider,
+.optionContainer > .title,
+.facetSelect li,
+.selectWrapper .dijitSelect,
+#quickLinksBar,
+.controlBar .pageControl.number > a:hover,
+.controlBar .pageControl.number > a.selected,
+#quickLinksBar > li > a.disabled,
+.product_info > .product_name > a,
+.compare_target,
+.controlBar .pageControl.number > a,
+.product_image .RibbonAdDefault{
+    color: red;
+}
+
+.basicMenu.active,
+.subscribeButton,
+#header,
+#minishopcart_total,
+#cartDropdown,
+#cartDropdown > h3,
+.departmentMenu,
+#searchBox,
+#searchTermWrapper > input,
+#AutoSuggestDiv,
+#AutoSuggestDiv .heading,
+#AutoSuggestDiv #autoSuggestAdvancedSearch,
+#AutoSuggestDiv #autoSuggestAdvancedSearch:hover,
+#footerRow1 > .section > .header:before,
+.pageControl.dot > a,
+.pageControl.number > a,
+.pageControl.thumbnail > a,
+.controlBar .pageControl.number > a,
+.controlBar .pageControl.number > a:hover,
+.controlBar .pageControl.number > a.selected,
+.pageControlButton,
+.pageControlMenu.active,
+.basicMenu > h3,
+#departmentsMenu.active,
+#searchButton,
+#content .collapsible,
+#content .collapsible:hover,
+.optionContainer > .title,
+.facetSelectContainer,
+#footer,
+.selectWrapper,
+.product_image .RibbonAdDefault,
+#headerRow2,
+div.grid_icon,
+.facetSelect .checkBox{
+    background-color: greenyellow;
+}
+
+#headerRow2,
+.product_image .RibbonAdDefault,
+.departmentButton,
+.optionContainer > .title {
+    background: linear-gradient(greenyellow, greenyellow);
+    background-image: linear-gradient(greenyellow, greenyellow);
+}
+
+
+/* ****************************************************************************** */
+/* RCP                                                                            */
+/* ****************************************************************************** */
+.rowContainer,
+.carousel.padding-true {
+    padding: 0px;
+}
+
+.rowContainer > .row.margin-true {
+    padding: 0px !important;
+}
+
+.rowContainer .row.margin-true > div > div,
+.rowContainer .row.margin-true > div > div:first-of-type,
+.rowContainer .row.margin-true > div > div:last-of-type {
+    margin: 0px;
+}
+
+/* ****************************************************************************** */
+/* Graco                                                                           */
+/* ****************************************************************************** */
+
+input, .inputField {
+    border-radius: 0;
+}
+.nonRWDPage {
+    min-width: 320px;
+}

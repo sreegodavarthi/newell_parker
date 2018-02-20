@@ -1,0 +1,3463 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>World of Parker</title>
+    <!-- toolkit styles -->
+    <link rel="stylesheet" href="toolkit.css" />
+    <link rel="stylesheet" href="common1_1.css" />
+    <link rel="stylesheet" href="f.css" />
+    <!-- /toolkit styles -->
+    <!-- jQuery -->
+
+    <!--/ jQuery -->
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style type="text/css">
+        .ppgWrapper {
+            position: relative;
+        }
+
+        .ppgWrapper * {
+            padding: 0;
+            margin: 0;
+            outline: none;
+        }
+
+        .ppgWrapper img,
+        .ppgWrapper fieldset {
+            border: none;
+        }
+
+        .ppgWrapper li {
+            margin-left: 35px;
+        }
+
+        .ppgWrapper sup,
+        .ppgWrapper sub {
+            height: 0;
+            line-height: 1;
+            vertical-align: baseline;
+            position: relative;
+        }
+
+        .ppgWrapper sup {
+            bottom: 1ex;
+        }
+
+        .ppgWrapper sub {
+            top: .5ex;
+        }
+
+        .ppgWrapper abbr {
+            border: none;
+        }
+
+        ol.ppgUnstyled,
+        ul.ppgUnstyled {
+            margin: 0;
+        }
+
+        ol.ppgUnstyled li,
+        ul.ppgUnstyled li {
+            list-style-type: none;
+            margin: 0;
+        }
+
+        .ppgClear {
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            display: block;
+            visibility: hidden;
+            overflow: hidden;
+            clear: both;
+        }
+
+        .ppgClearfix {
+            *zoom: 1;
+        }
+
+        .ppgClearfix:before,
+        .ppgClearfix:after {
+            display: table;
+            content: "";
+            line-height: 0;
+        }
+
+        .ppgClearfix:after {
+            clear: both;
+        }
+
+        .ppgNone {
+            display: none;
+        }
+
+        .ppgPortraitOnly {
+            display: none;
+        }
+
+        .ppgWrapper {
+            display: block;
+            max-width: 2880px;
+            margin: 0 auto;
+            overflow-x: hidden;
+            background-color: #e3e3e3;
+        }
+
+        .ppg2Vh {
+            width: 100vw;
+            height: 200vh;
+            max-width: 2880px;
+        }
+
+        .ppg1Vh {
+            width: 100vw;
+            height: calc(100vh - 120px);
+            height: -moz-calc(100vh - 120px);
+            height: -webkit-calc(100vh - 120px);
+            height: -o-calc(100vh - 120px);
+            max-width: 2880px;
+        }
+
+        .ppg1Vh.ppgHeaderOverlap {
+            margin-top: -156px;
+        }
+
+        .ppgVhCol {
+            height: 50vh;
+        }
+
+        .ppgCol {
+            width: 50%;
+            display: inline-block;
+            float: left;
+        }
+
+        .ppgHalfCol {
+            width: 25%;
+            display: inline-block;
+            float: left;
+        }
+
+        .ppg38Col {
+            width: 37.5%;
+            display: inline-block;
+            float: left;
+        }
+
+        .ppg58Col {
+            width: 62.5%;
+            display: inline-block;
+            float: left;
+        }
+
+        .ppgMiddle {
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .ppgAlignCenter {
+            text-align: center;
+        }
+
+        .ppgAlignRight {
+            text-align: right;
+        }
+
+        .ppgScrollDown {
+            display: block;
+            width: 5.113636363636363vh;
+            height: 5.113636363636363vh;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.25);
+            color: rgba(255, 255, 255, 0);
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-border-radius: 50%;
+            -khtml-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            cursor: pointer;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI3LjFweCIgaGVpZ2h0PSI3LjFweCIgdmlld0JveD0iMCAwIDcuMSA3LjEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDcuMSA3LjE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBzdHlsZT0iZmlsbDojZjJmMmYyOyIgcG9pbnRzPSIyLjksMi42IDIuOSwwIDQuMywwIDQuMywyLjYgNy4xLDIuNiAzLjcsNy4xIDAsMi43ICIvPjwvc3ZnPg==');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: auto 25%;
+        }
+
+        .ppgScrollDown:before,
+        .ppgScrollDown:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-border-radius: 50%;
+            -khtml-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            border: solid 1px rgba(255, 255, 255, 0);
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform-origin: center center;
+            -moz-transform-origin: center center;
+            -ms-transform-origin: center center;
+            -o-transform-origin: center center;
+            transform-origin: center center;
+            -webkit-transform: scale(1.2, 1.2);
+            -moz-transform: scale(1.2, 1.2);
+            -ms-transform: scale(1.2, 1.2);
+            -o-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+        }
+
+        .ppgScrollDown:after {
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        .ppgScrollDown:before {
+            opacity: 1;
+            border-color: rgba(0, 0, 0, 0);
+            -webkit-transition: all 0s ease;
+            -moz-transition: all 0s ease;
+            -ms-transition: all 0s ease;
+            -o-transition: all 0s ease;
+            transition: all 0s ease;
+        }
+
+        .ppgScrollDown:hover {
+            animation: arrowdown .8s 1;
+            -ms-animation: arrowdown .8s 1;
+            -moz-animation: arrowdown .8s 1;
+            -webkit-animation: arrowdown .8s 1;
+        }
+
+        .ppgScrollDown:hover:before {
+            border-color: rgba(255, 255, 255, 0.25);
+            animation: circleburst .8s 1;
+            -ms-animation: circleburst .8s 1;
+            -moz-animation: circleburst .8s 1;
+            -webkit-animation: circleburst .8s 1;
+        }
+
+        .ppgScrollDown:hover:after {
+            border: solid 1px rgba(255, 255, 255, 0);
+            -webkit-transform: scale(1, 1);
+            -moz-transform: scale(1, 1);
+            -ms-transform: scale(1, 1);
+            -o-transform: scale(1, 1);
+            transform: scale(1, 1);
+            -webkit-transition: all 0s ease;
+            -moz-transition: all 0s ease;
+            -ms-transition: all 0s ease;
+            -o-transition: all 0s ease;
+            transition: all 0s ease;
+        }
+
+        .ppgVideoCta {
+            display: block;
+            width: 9.090909090909092vh;
+            height: 9.090909090909092vh;
+            -webkit-transform: translate3d(0, 0, 0) translateX(-50%) translateY(-50%);
+            -moz-transform: translate3d(0, 0, 0) translateX(-50%) translateY(-50%);
+            -ms-transform: translate3d(0, 0, 0) translateX(-50%) translateY(-50%);
+            -o-transform: translate3d(0, 0, 0) translateX(-50%) translateY(-50%);
+            transform: translate3d(0, 0, 0) translateX(-50%) translateY(-50%);
+            top: 50%;
+            left: 50%;
+            -webkit-transition: all .4s ease;
+            -moz-transition: all .4s ease;
+            -ms-transition: all .4s ease;
+            -o-transition: all .4s ease;
+            transition: all .4s ease;
+            font-size: 1.5909090909090908vh;
+            line-height: 6.1;
+            text-align: center;
+            position: absolute;
+            background-color: #dfe0df;
+            color: #353741;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-border-radius: 100%;
+            -khtml-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+            cursor: pointer;
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .ppgVideoCta.ppgVideoCtaLarge {
+            width: 18.181818181818183vh;
+            height: 18.181818181818183vh;
+            font-size: 1.7045454545454546vh;
+            line-height: 9.5;
+        }
+
+        .ppgVideoCta.ppgVideoCtaLarge:hover {
+            width: 20.454545454545453vh;
+            height: 20.454545454545453vh;
+        }
+
+        .ppgVideoCta:after {
+            content: "\f0da";
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            -webkit-transform: translate3d(0, 0, 0) translateX(-50%) translateY(-50%);
+            -moz-transform: translate3d(0, 0, 0) translateX(-50%) translateY(-50%);
+            -ms-transform: translate3d(0, 0, 0) translateX(-50%) translateY(-50%);
+            -o-transform: translate3d(0, 0, 0) translateX(-50%) translateY(-50%);
+            transform: translate3d(0, 0, 0) translateX(-50%) translateY(-50%);
+            top: 50%;
+            left: 50%;
+            position: absolute;
+        }
+
+        .ppgVideoCta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-border-radius: 100%;
+            -khtml-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+            border: solid 1px #dfe0df;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform-origin: center center;
+            -moz-transform-origin: center center;
+            -ms-transform-origin: center center;
+            -o-transform-origin: center center;
+            transform-origin: center center;
+        }
+
+        .ppgVideoCta:before {
+            opacity: 1;
+            border: solid 1px rgba(223, 224, 223, 0.6);
+            -webkit-transform: scale(1.35, 1.35);
+            -moz-transform: scale(1.35, 1.35);
+            -ms-transform: scale(1.35, 1.35);
+            -o-transform: scale(1.35, 1.35);
+            transform: scale(1.35, 1.35);
+            -webkit-transition: all .4s ease;
+            -moz-transition: all .4s ease;
+            -ms-transition: all .4s ease;
+            -o-transition: all .4s ease;
+            transition: all .4s ease;
+        }
+
+        .ppgVideoCta:hover {
+            width: 9.659090909090908vh;
+            height: 9.659090909090908vh;
+        }
+
+        .ppgVideoCta:hover:before {
+            border-color: #dfe0df;
+            opacity: 1;
+            -webkit-transform: scale(1.15, 1.15);
+            -moz-transform: scale(1.15, 1.15);
+            -ms-transform: scale(1.15, 1.15);
+            -o-transform: scale(1.15, 1.15);
+            transform: scale(1.15, 1.15);
+            -webkit-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            -ms-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+        }
+
+        .ppgForm {
+            background-color: #373942;
+            padding: 5.681818181818182vh 1.7361111111111112vw;
+            color: #dfe0df;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .ppgForm h4 {
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 300;
+            font-size: 2.3863636363636362vh;
+            line-height: 3.1818181818181817vh;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            text-transform: uppercase;
+        }
+
+        .ppgForm p {
+            padding: 4.545454545454546vh 0;
+            font-family: 'Baskerville Regular', 'Times New Roman', Times, serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 1.9318181818181819vh;
+            line-height: 2.5vh;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .ppgForm input[type="submit"] {
+            display: inline-block;
+            height: 5.113636363636363vh;
+            border: solid 1px #a58a45;
+            color: #a58a45;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            font-size: 1.3636363636363635vh;
+            line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            padding: 0 0.7986111111111112vw;
+            background: none;
+            margin-top: 4.7727272727272725vh;
+        }
+
+        .ppgFormRow {
+            margin-bottom: 1.7045454545454546vh;
+        }
+
+        .ppgFormRow.ppgFormHalfInput input[type="text"],
+        .ppgFormRow.ppgFormHalfInput input[type="email"],
+        .ppgFormRow.ppgFormHalfInput input[type="password"] {
+            width: 50%;
+            width: calc(50% - 0.2777777777777778vw);
+            display: inline-block;
+            float: left;
+            margin-right: 0.2777777777777778vw;
+        }
+
+        .ppgFormRow.ppgFormHalfInput input[type="text"]:last-child,
+        .ppgFormRow.ppgFormHalfInput input[type="email"]:last-child,
+        .ppgFormRow.ppgFormHalfInput input[type="password"]:last-child {
+            margin-right: 0;
+            margin-left: 0.2777777777777778vw;
+        }
+
+        .ppgFormRow input[type="text"],
+        .ppgFormRow input[type="email"],
+        .ppgFormRow input[type="password"] {
+            display: block;
+            width: 100%;
+            height: 7.386363636363637vh;
+            background: none;
+            border: solid 1px #4f5159;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            font-size: 1.3636363636363635vh;
+            line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            padding: 0 0.7986111111111112vw;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-appearance: none;
+        }
+
+        .ppgFormRow input[type="text"]::-webkit-input-placeholder,
+        .ppgFormRow input[type="email"]::-webkit-input-placeholder,
+        .ppgFormRow input[type="password"]::-webkit-input-placeholder {
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            font-size: 1.3636363636363635vh;
+            line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            display: block;
+        }
+
+        .ppgFormRow input[type="text"]:-moz-placeholder,
+        .ppgFormRow input[type="email"]:-moz-placeholder,
+        .ppgFormRow input[type="password"]:-moz-placeholder {
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            font-size: 1.3636363636363635vh;
+            line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            display: block;
+            line-height: 1.5em;
+            opacity: 1;
+        }
+
+        .ppgFormRow input[type="text"]::-moz-placeholder,
+        .ppgFormRow input[type="email"]::-moz-placeholder,
+        .ppgFormRow input[type="password"]::-moz-placeholder {
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            font-size: 1.3636363636363635vh;
+            line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            display: block;
+            line-height: 5.4em;
+            opacity: 1;
+        }
+
+        .ppgFormRow input[type="text"]:-ms-input-placeholder,
+        .ppgFormRow input[type="email"]:-ms-input-placeholder,
+        .ppgFormRow input[type="password"]:-ms-input-placeholder {
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            font-size: 1.3636363636363635vh;
+            line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            display: block;
+        }
+
+        .ppgFormRow input[type="text"]:-o-input-placeholder,
+        .ppgFormRow input[type="email"]:-o-input-placeholder,
+        .ppgFormRow input[type="password"]:-o-input-placeholder {
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            font-size: 1.3636363636363635vh;
+            line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            display: block;
+        }
+
+        .ppgFormSelect {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border: solid 1px #4f5159;
+        }
+
+        .ppgFormSelect:after {
+            content: '';
+            position: absolute;
+            right: 0.7986111111111112vw;
+            top: 50%;
+            z-index: 0;
+            border-right: 0.45454545454545453vh solid transparent;
+            border-left: 0.45454545454545453vh solid transparent;
+            border-top: 0.45454545454545453vh solid #e9eaeb;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .ppgFormSelect select {
+            position: relative;
+            z-index: 1;
+            border: none;
+            display: block;
+            width: 100%;
+            height: 7.386363636363637vh;
+            background: none;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            font-size: 1.3636363636363635vh;
+            line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            padding: 0 0.7986111111111112vw;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -moz-border-radius: 0;
+            -khtml-border-radius: 0;
+            -webkit-border-radius: 0;
+            border-radius: 0;
+            width: 140%;
+        }
+
+        .ppgBreadcrumbs {
+            position: absolute;
+            top: 20px;
+            left: 82px;
+            color: #FFF;
+            z-index: 40;
+        }
+
+        .ppgBreadcrumbs li {
+            display: inline-block;
+            margin: 0 0 16px 9px;
+        }
+
+        .ppgBreadcrumbs li a {
+            text-decoration: none;
+            color: #EEE;
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            font-size: 1.1363636363636365vh;
+            line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .ppgBreadcrumbs li:before {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 2.6px 2.6px 2.6px 0;
+            border-color: transparent rgba(255, 255, 255, 0.8) transparent transparent;
+            margin: 0 9px 0 0;
+            position: relative;
+            top: -1.4px;
+            transform: rotate(-180deg);
+            -webkit-transform: rotate(-180deg);
+            -moz-transform: rotate(-180deg);
+            -ms-transform: rotate(-180deg);
+        }
+
+        .ppgBreadcrumbs li:nth-child(1) {
+            margin: 0 0 16px 0;
+        }
+
+        .ppgBreadcrumbs li:nth-child(1):before {
+            display: none;
+        }
+
+        .ppgBreadcrumbs li:last-child a {
+            opacity: .7;
+        }
+
+        .ppgimgcaption {
+            position: absolute;
+            font-family: 'Baskerville Italic', 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 1.3636363636363635vh;
+            line-height: 1.8181818181818181vh;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            color: #FFF;
+            display: block;
+        }
+
+        .ppgimgcaption.bottom {
+            bottom: 20px;
+        }
+
+        .ppgimgcaption.top {
+            top: 20px;
+        }
+
+        .ppgimgcaption.left {
+            left: 22px;
+            text-align: left;
+        }
+
+        .ppgimgcaption.right {
+            right: 22px;
+            text-align: right;
+        }
+
+        @media screen and (orientation: portrait),
+        screen and (max-width: 640px) {
+            .ppgCol,
+            .ppg38Col,
+            .ppg58Col {
+                width: 100%;
+                display: block;
+                float: none;
+                clear: both;
+                *zoom: 1;
+            }
+            .ppgCol:before,
+            .ppg38Col:before,
+            .ppg58Col:before,
+            .ppgCol:after,
+            .ppg38Col:after,
+            .ppg58Col:after {
+                display: table;
+                content: "";
+                line-height: 0;
+            }
+            .ppgCol:after,
+            .ppg38Col:after,
+            .ppg58Col:after {
+                clear: both;
+            }
+            .ppg1Vh.ppgHeaderOverlap {
+                margin-top: 0;
+            }
+            .ppgHalfCol {
+                width: 50%;
+            }
+            .ppgFluidVh {
+                height: auto !important;
+            }
+            .ppgPortraitOnly {
+                display: block;
+            }
+            .ppgLandscapeOnly {
+                display: none !important;
+            }
+            .ppgForm {
+                background-color: #373942;
+                padding: 8.958333333333334vh 5vw;
+            }
+            .ppgForm h4 {
+                font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: 400;
+                font-size: 2.272727272727273vh;
+                line-height: normal;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                text-align: center;
+            }
+            .ppgForm h4 br {
+                display: none;
+            }
+            .ppgForm p {
+                padding: 4.166666666666667vh 8.571428571428571vw;
+                font-family: 'Baskerville Regular', 'Times New Roman', Times, serif;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: normal;
+                font-size: 2.3863636363636362vh;
+                line-height: 2.840909090909091vh;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                text-align: center;
+            }
+            .ppgForm input[type="submit"] {
+                height: 7.954545454545454vh;
+                letter-spacing: 0.2em;
+                font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: 500;
+                font-size: 1.875vh;
+                line-height: 7.5vh;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                padding: 0 7.571428571428571vw;
+            }
+            .ppgFormRow.ppgFormHalfInput input[type="text"],
+            .ppgFormRow.ppgFormHalfInput input[type="email"],
+            .ppgFormRow.ppgFormHalfInput input[type="password"] {
+                width: 100%;
+                display: block;
+                float: none;
+                margin-right: 0;
+                margin-bottom: 1.7045454545454546vh;
+            }
+            .ppgFormRow.ppgFormHalfInput input[type="text"]:last-child,
+            .ppgFormRow.ppgFormHalfInput input[type="email"]:last-child,
+            .ppgFormRow.ppgFormHalfInput input[type="password"]:last-child {
+                margin-left: 0;
+                margin-bottom: 0;
+            }
+            .ppgBreadcrumbs {
+                height: 0;
+                width: 0;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+            .ppgimgcaption {
+                display: none;
+            }
+        }
+
+        @-webkit-keyframes arrowdown {
+            0% {
+                background-position: 50% 50%;
+            }
+            50% {
+                background-position: 50% 140%;
+            }
+            50.11111111111% {
+                background-position: 50% -50%;
+            }
+            100% {
+                background-position: 50% 50%;
+            }
+        }
+
+        @-moz-keyframes arrowdown {
+            0% {
+                background-position: 50% 50%;
+            }
+            50% {
+                background-position: 50% 140%;
+            }
+            50.11111111111% {
+                background-position: 50% -50%;
+            }
+            100% {
+                background-position: 50% 50%;
+            }
+        }
+
+        @-ms-keyframes arrowdown {
+            0% {
+                background-position: 50% 50%;
+            }
+            50% {
+                background-position: 50% 140%;
+            }
+            50.11111111111% {
+                background-position: 50% -50%;
+            }
+            100% {
+                background-position: 50% 50%;
+            }
+        }
+
+        @keyframes arrowdown {
+            0% {
+                background-position: 50% 50%;
+            }
+            50% {
+                background-position: 50% 140%;
+            }
+            50.11111111111% {
+                background-position: 50% -50%;
+            }
+            100% {
+                background-position: 50% 50%;
+            }
+        }
+
+        @-webkit-keyframes circleburst {
+            0% {
+                -webkit-transform: scale(1.2, 1.2);
+                -moz-transform: scale(1.2, 1.2);
+                -ms-transform: scale(1.2, 1.2);
+                -o-transform: scale(1.2, 1.2);
+                transform: scale(1.2, 1.2);
+                opacity: 1;
+            }
+            50% {
+                -webkit-transform: scale(1.75, 1.75);
+                -moz-transform: scale(1.75, 1.75);
+                -ms-transform: scale(1.75, 1.75);
+                -o-transform: scale(1.75, 1.75);
+                transform: scale(1.75, 1.75);
+                opacity: 0;
+            }
+            51% {
+                opacity: 0;
+                -webkit-transform: scale(1.2, 1.2);
+                -moz-transform: scale(1.2, 1.2);
+                -ms-transform: scale(1.2, 1.2);
+                -o-transform: scale(1.2, 1.2);
+                transform: scale(1.2, 1.2);
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes circleburst {
+            0% {
+                -webkit-transform: scale(1.2, 1.2);
+                -moz-transform: scale(1.2, 1.2);
+                -ms-transform: scale(1.2, 1.2);
+                -o-transform: scale(1.2, 1.2);
+                transform: scale(1.2, 1.2);
+                opacity: 1;
+            }
+            50% {
+                -webkit-transform: scale(1.75, 1.75);
+                -moz-transform: scale(1.75, 1.75);
+                -ms-transform: scale(1.75, 1.75);
+                -o-transform: scale(1.75, 1.75);
+                transform: scale(1.75, 1.75);
+                opacity: 0;
+            }
+            51% {
+                opacity: 0;
+                -webkit-transform: scale(1.2, 1.2);
+                -moz-transform: scale(1.2, 1.2);
+                -ms-transform: scale(1.2, 1.2);
+                -o-transform: scale(1.2, 1.2);
+                transform: scale(1.2, 1.2);
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-ms-keyframes circleburst {
+            0% {
+                -webkit-transform: scale(1.2, 1.2);
+                -moz-transform: scale(1.2, 1.2);
+                -ms-transform: scale(1.2, 1.2);
+                -o-transform: scale(1.2, 1.2);
+                transform: scale(1.2, 1.2);
+                opacity: 1;
+            }
+            50% {
+                -webkit-transform: scale(1.75, 1.75);
+                -moz-transform: scale(1.75, 1.75);
+                -ms-transform: scale(1.75, 1.75);
+                -o-transform: scale(1.75, 1.75);
+                transform: scale(1.75, 1.75);
+                opacity: 0;
+            }
+            51% {
+                opacity: 0;
+                -webkit-transform: scale(1.2, 1.2);
+                -moz-transform: scale(1.2, 1.2);
+                -ms-transform: scale(1.2, 1.2);
+                -o-transform: scale(1.2, 1.2);
+                transform: scale(1.2, 1.2);
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes circleburst {
+            0% {
+                -webkit-transform: scale(1.2, 1.2);
+                -moz-transform: scale(1.2, 1.2);
+                -ms-transform: scale(1.2, 1.2);
+                -o-transform: scale(1.2, 1.2);
+                transform: scale(1.2, 1.2);
+                opacity: 1;
+            }
+            50% {
+                -webkit-transform: scale(1.75, 1.75);
+                -moz-transform: scale(1.75, 1.75);
+                -ms-transform: scale(1.75, 1.75);
+                -o-transform: scale(1.75, 1.75);
+                transform: scale(1.75, 1.75);
+                opacity: 0;
+            }
+            51% {
+                opacity: 0;
+                -webkit-transform: scale(1.2, 1.2);
+                -moz-transform: scale(1.2, 1.2);
+                -ms-transform: scale(1.2, 1.2);
+                -o-transform: scale(1.2, 1.2);
+                transform: scale(1.2, 1.2);
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <main class="ppgWrapper">
+        <!-- BEGIN TIMELINE INTRO -->
+        <style type="text/css">
+            .pptHero {
+                z-index: 0;
+                padding-top: 156px;
+                text-align: center;
+                position: relative;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                background-size: cover !important;
+                height: 100vh;
+            }
+
+            .pptHero .ppgBreadcrumbs {
+                top: 172px;
+            }
+
+            .pptHero h1 {
+                text-transform: uppercase;
+                font-family: 'Gotham A', 'Gotham B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: 100;
+                font-size: 4.545454545454546vh;
+                line-height: normal;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                padding-bottom: 4.545454545454546vh;
+                margin-bottom: 4.545454545454546vh;
+                border-bottom: solid 1px rgba(255, 255, 255, 0.15);
+                color: #FFF;
+            }
+
+            .pptHero .ppgMiddle {
+                z-index: 1;
+                width: 15.277777777777779vw;
+                min-width: 460px;
+                position: absolute;
+                left: 50%;
+                top: 36%;
+                transform: translate(-50%, 0);
+                color: #f9f9f9;
+                font-family: 'Baskerville Italic', 'Times New Roman', Times, serif;
+                font-style: italic;
+                font-variant: normal;
+                font-weight: normal;
+                font-size: 1.8181818181818181vh;
+                line-height: 2.5vh;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            .pptHero .ppgMiddle p {
+                font-family: 'Baskerville Italic', 'Times New Roman', Times, serif;
+                font-style: italic;
+                font-variant: normal;
+                font-weight: normal;
+                font-size: 2.159090909090909vh;
+                line-height: 2.840909090909091vh;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            .pptHero .ppgScrollDown {
+                position: absolute;
+                left: 50%;
+                bottom: 3.409090909090909vh;
+                z-index: 2;
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+
+            @media screen and (orientation: portrait),
+            screen and (max-width: 640px) {
+                .ppWopIntro {
+                    background-color: #353741;
+                    padding-bottom: 13.541666666666666vh;
+                    padding-top: 0;
+                    margin-top: 0;
+                    position: relative;
+                    top: auto !important;
+                    left: auto;
+                    -webkit-transform: translateX(0);
+                    -moz-transform: translateX(0);
+                    -ms-transform: translateX(0);
+                    -o-transform: translateX(0);
+                    transform: translateX(0);
+                }
+                .ppWopIntro h1 {
+                    font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                    font-style: normal;
+                    font-variant: normal;
+                    font-weight: 300;
+                    font-size: 4.6875vh;
+                    line-height: normal;
+                    text-rendering: optimizeLegibility;
+                    -webkit-font-smoothing: antialiased;
+                }
+                .ppWopIntro img {
+                    margin-bottom: 5.208333333333333vh;
+                }
+                .pptHero {
+                    position: relative;
+                    margin-top: 0 !important;
+                    padding-top: 0;
+                }
+                .pptHero img {
+                    display: block;
+                    width: 100%;
+                }
+                .pptHero .ppgMiddle {
+                    z-index: 1;
+                    width: 70%;
+                    padding-left: 0;
+                    color: #f9f9f9;
+                    position: static;
+                    -webkit-transform: none;
+                    -moz-transform: none;
+                    -ms-transform: none;
+                    -o-transform: none;
+                    margin: 0 auto 0 auto;
+                    padding: 10% 15% 20% 15%;
+                    background: #353741;
+                    top: auto;
+                    transform: none;
+                    min-width: initial;
+                }
+                .pptHero .ppgMiddle p {
+                    font-family: 'Baskerville Italic', 'Times New Roman', Times, serif;
+                    font-style: italic;
+                    font-variant: normal;
+                    font-weight: normal;
+                    font-size: 2.727272727272727vh;
+                    line-height: 3.1818181818181817vh;
+                    text-rendering: optimizeLegibility;
+                    -webkit-font-smoothing: antialiased;
+                }
+                .ppgScrollDown {
+                    display: none;
+                }
+                .ppgScrollDownMBL {
+                    width: 100%;
+                    height: 34px;
+                    position: absolute;
+                    bottom: 0;
+                    margin: 0 auto;
+                    background-position: center bottom;
+                    background-repeat: no-repeat;
+                    cursor: pointer;
+                    left: 0;
+                    background-size: contain;
+                }
+            }
+        </style>
+        <article class="ppg1Vh ppgHeaderOverlap ppgFluidVh pptHero" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/HERO_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2')">
+
+            <ul class="ppgBreadcrumbs">
+                <li>
+                    <a href="[contextPath]/en-US/parkerpenusa/world-of-parker">WORLD OF PARKER</a>
+                </li>
+                <li>
+                    <a href="[contextPath]/en-US/parkerpenusa/world-of-parker-our-story">OUR STORY</a>
+                </li>
+                <li>
+                    <a href="">HISTORY</a>
+                </li>
+            </ul>
+
+            <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/HERO_WOP_HISTORY_D?wid=640&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                class="ppgPortraitOnly" />
+
+            <span class="ppgScrollDown">ꜜ</span>
+
+
+            <div class="ppgMiddle">
+                <h1>IMMERSE YOURSELF
+                    <br/>IN THE HISTORY
+                    <br/>OF PARKER</h1>
+                <p>Making a Parker pen is a solemn act of creation. It not only requires experience but also rare technical
+                    competence in areas as diverse as mechanical design engineering, prototyping, and testing.</p>
+                <span class="ppgScrollDownMBL" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/mbl_down?wid=114&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></span>
+            </div>
+        </article>
+        <!-- END TIMELINE INTRO -->
+
+        <!-- BEGIN TIMELINE -->
+        <style type="text/css">
+            .pptMain {
+                position: relative;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+
+            .pptMain .ppgScrollDown {
+                position: fixed;
+                z-index: 2;
+                bottom: 3.409090909090909vh;
+                left: 25%;
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+
+            .pptMain .ppgScrollDown.not {
+                height: 0;
+                width: 0;
+                opacity: 0;
+            }
+
+            .pptPseudo {
+                position: fixed;
+                top: 156px;
+                left: 50%;
+                z-index: 1;
+                overflow: hidden;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            .pptPseudo .pptPseudoScroll {
+                display: block;
+                -webkit-backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+
+            .pptPseudo .pptEventRight {
+                display: block;
+                float: none;
+            }
+
+            #pptMain .ppg1Vh {
+                height: calc(100vh - 70px);
+                height: -moz-calc(100vh - 70px);
+                height: -webkit-calc(100vh - 70px);
+                height: -o-calc(100vh - 70px);
+            }
+
+            .pptBreadcrumbs {
+                position: fixed;
+                top: 92px;
+                left: 69px;
+                font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: 500;
+                font-size: 1.1363636363636365vh;
+                line-height: 1.6;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                z-index: 30;
+                display: block;
+                color: #FFF;
+                cursor: pointer;
+                transition: opacity .4s linear 0s;
+            }
+
+            .pptBreadcrumbs.not {
+                opacity: 0;
+                height: 0;
+                width: 0;
+                overflow: hidden;
+            }
+
+            .pptBreadcrumbs li {
+                display: inline-block;
+                margin: 0 0 16px 9px;
+            }
+
+            .pptBreadcrumbs li span {
+                text-decoration: none;
+                color: #EEE;
+                font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: 500;
+                font-size: 1.1363636363636365vh;
+                line-height: 1.6;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            .pptBreadcrumbs li:before {
+                content: '';
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 2.6px 2.6px 2.6px 0;
+                border-color: transparent rgba(255, 255, 255, 0.8) transparent transparent;
+                margin: 0 9px 0 0;
+                position: relative;
+                top: -1.4px;
+                transform: rotate(-180deg);
+                -webkit-transform: rotate(-180deg);
+                -moz-transform: rotate(-180deg);
+                -ms-transform: rotate(-180deg);
+            }
+
+            .pptBreadcrumbs li:nth-child(1) {
+                margin: 0 0 16px 0;
+            }
+
+            .pptBreadcrumbs li:nth-child(1):before {
+                display: none;
+            }
+
+            .pptBreadcrumbs li:last-child span {
+                opacity: .7;
+            }
+
+            .pptEvent {
+                position: relative;
+                z-index: 0;
+                height: calc(100vh - 70px);
+                height: -moz-calc(100vh - 70px);
+                height: -webkit-calc(100vh - 70px);
+                height: -o-calc(100vh - 70px);
+                /* hacky nth specific colors */
+                /* dark */
+                /* light */
+                /* gold */
+            }
+
+            .pptEvent:nth-child(3n+1) .pptEventLeft h2 small {
+                color: #747682;
+            }
+
+            .pptEvent:nth-child(3n+1) .pptEventLeft p {
+                color: #FFF;
+            }
+
+            .pptEvent:nth-child(3n+1) .pptEventRight {
+                background-color: #4a4d54;
+            }
+
+            .pptEvent:nth-child(3n+2) .pptEventLeft h2 small {
+                color: #5d686f;
+            }
+
+            .pptEvent:nth-child(3n+2) .pptEventLeft p {
+                color: #FFF;
+            }
+
+            .pptEvent:nth-child(3n+2) .pptEventRight {
+                background-color: #565f66;
+            }
+
+            .pptEvent:nth-child(3n+3) .pptEventLeft h2 small {
+                color: #9e7c39;
+            }
+
+            .pptEvent:nth-child(3n+3) .pptEventRight {
+                background-color: #846d41;
+            }
+
+            .pptEvent:nth-child(12) .pptEventLeft h2 small,
+            .pptEvent:nth-child(15) .pptEventLeft h2 small,
+            .pptEvent:nth-child(20) .pptEventLeft h2 small {
+                color: #747682;
+            }
+
+            .pptEvent:nth-child(12) .pptEventLeft p,
+            .pptEvent:nth-child(15) .pptEventLeft p,
+            .pptEvent:nth-child(20) .pptEventLeft p {
+                color: #FFF;
+            }
+
+            .pptEvent:nth-child(12) .pptEventRight,
+            .pptEvent:nth-child(15) .pptEventRight,
+            .pptEvent:nth-child(20) .pptEventRight {
+                background-color: #4a4d54;
+            }
+
+            .pptEvent:nth-child(16) .pptEventLeft h2 small,
+            .pptEvent:nth-child(18) .pptEventLeft h2 small {
+                color: #5d686f;
+            }
+
+            .pptEvent:nth-child(16) .pptEventLeft p,
+            .pptEvent:nth-child(18) .pptEventLeft p {
+                color: #FFF;
+            }
+
+            .pptEvent:nth-child(16) .pptEventRight,
+            .pptEvent:nth-child(18) .pptEventRight {
+                background-color: #565f66;
+            }
+
+            .pptEvent:nth-child(13) .pptEventLeft h2 small,
+            .pptEvent:nth-child(14) .pptEventLeft h2 small,
+            .pptEvent:nth-child(17) .pptEventLeft h2 small,
+            .pptEvent:nth-child(19) .pptEventLeft h2 small,
+            .pptEvent:nth-child(21) .pptEventLeft h2 small {
+                color: #9e7c39;
+            }
+
+            .pptEvent:nth-child(13) .pptEventRight,
+            .pptEvent:nth-child(14) .pptEventRight,
+            .pptEvent:nth-child(17) .pptEventRight,
+            .pptEvent:nth-child(19) .pptEventRight,
+            .pptEvent:nth-child(21) .pptEventRight {
+                background-color: #846d41;
+            }
+
+            .pptEventLeft {
+                background-size: cover;
+                background-position: center center;
+                font-family: 'Baskerville Regular', 'Times New Roman', Times, serif;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: normal;
+                font-size: 1.9318181818181819vh;
+                line-height: 2.5vh;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                color: #353741;
+                padding: 10.416666666666666vw 0 0 9.090909090909092vh;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                height: calc(100vh - 70px);
+                height: -moz-calc(100vh - 70px);
+                height: -webkit-calc(100vh - 70px);
+                height: -o-calc(100vh - 70px);
+            }
+
+            .pptEventLeft h2 {
+                position: relative;
+            }
+
+            .pptEventLeft h2 small {
+                color: #60626a;
+                font-family: 'Baskerville Italic', 'Times New Roman', Times, serif;
+                font-style: italic;
+                font-variant: normal;
+                font-weight: normal;
+                font-size: 24.886363636363637vh;
+                line-height: 24.886363636363637vh;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                font-size: 26.886364vh;
+                line-height: 23.886364vh;
+                letter-spacing: .014em;
+                position: relative;
+                z-index: 0;
+            }
+
+            .pptEventLeft h2 span {
+                text-transform: uppercase;
+                font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: 400;
+                font-size: 1.9318181818181819vh;
+                line-height: 2.5vh;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                font-size: 1.8318181818181819vh;
+                letter-spacing: 0.11em;
+                color: #fff;
+                z-index: 1;
+                position: absolute;
+                left: 0;
+                bottom: 7.954545454545454vh;
+                bottom: 8.954545vh;
+                display: block;
+                width: 13.88888888888889vw;
+                width: 88.777778%;
+                margin-bottom: -5vh;
+            }
+
+            .pptEventLeft h2 span:before {
+                content: '';
+                width: 10px;
+                height: 1px;
+                position: absolute;
+                top: -3vh;
+                left: 0;
+                background-color: #353741;
+            }
+
+            .pptEventLeft a {
+                text-transform: uppercase;
+                font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: 400;
+                font-size: 1.3636363636363635vh;
+                line-height: normal;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                letter-spacing: 0.2em;
+                color: #353741;
+                text-decoration: none;
+                display: block;
+                margin: 14px 0 0 0;
+            }
+
+            .pptEventLeft a:after {
+                display: inline-block;
+                content: '';
+                border-top: 2.6px solid transparent;
+                border-bottom: 2.6px solid transparent;
+                border-left: 2.6px solid #353741;
+                margin: 0 0 0 5px;
+                vertical-align: baseline;
+            }
+
+            .pptEventLeft p {
+                width: 11.458333333333334vw;
+                width: 52%;
+                margin-bottom: 1em;
+                margin-top: 4vh;
+                font-family: 'Baskerville Regular', 'Times New Roman', Times, serif;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: normal;
+                font-size: 2.0454545454545454vh;
+                line-height: 2.840909090909091vh;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                color: #353741;
+            }
+
+            .pptEventRight {
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-color: #4a4d54;
+                position: relative;
+                height: calc(100vh - 70px);
+                height: -moz-calc(100vh - 70px);
+                height: -webkit-calc(100vh - 70px);
+                height: -o-calc(100vh - 70px);
+            }
+
+            .pptEventRight img {
+                width: 100% !important;
+                height: auto !important;
+                position: relative;
+                z-index: 0;
+            }
+
+            .pptEventRight .social-icons {
+                position: absolute;
+                bottom: 8%;
+                left: 50%;
+                transform: translate(-50%, 0);
+                display: inline-block;
+            }
+
+            .pptEventRight .social-icons a {
+                display: inline-block;
+                width: 18px;
+                height: 20px;
+                background-repeat: no-repeat;
+                margin: 0 8px;
+                transform: scale(1.2, 1.2);
+                cursor: pointer;
+                transition: transform 0.4s ease-in-out 0s;
+                transform-origin: center center;
+            }
+
+            .pptEventRight .social-icons a.twitter {
+                background-position: -18px 0;
+            }
+
+            .pptEventRight .social-icons a.pinterest {
+                background-position: -34px 0;
+            }
+
+            .pptEventRight .social-icons a:hover {
+                transform: scale(1.4, 1.4);
+            }
+
+            .pptVideo {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                display: block;
+                cursor: pointer;
+            }
+
+            .pptVideo:hover .ppgVideoCta:before {
+                border-color: #a58a45;
+                opacity: 0;
+                -webkit-transform: scale(1.75, 1.75);
+                -moz-transform: scale(1.75, 1.75);
+                -ms-transform: scale(1.75, 1.75);
+                -o-transform: scale(1.75, 1.75);
+                transform: scale(1.75, 1.75);
+                -webkit-transition: all 0.5s ease, opacity 0.35s ease 0.15s;
+                -moz-transition: all 0.5s ease, opacity 0.35s ease 0.15s;
+                -ms-transition: all 0.5s ease, opacity 0.35s ease 0.15s;
+                -o-transition: all 0.5s ease, opacity 0.35s ease 0.15s;
+                transition: all 0.5s ease, opacity 0.35s ease 0.15s;
+            }
+
+            .pptVideo:hover .ppgVideoCta:after {
+                border: solid 1px rgba(255, 255, 255, 0);
+                -webkit-transform: scale(1, 1);
+                -moz-transform: scale(1, 1);
+                -ms-transform: scale(1, 1);
+                -o-transform: scale(1, 1);
+                transform: scale(1, 1);
+                -webkit-transition: all 0s ease;
+                -moz-transition: all 0s ease;
+                -ms-transition: all 0s ease;
+                -o-transition: all 0s ease;
+                transition: all 0s ease;
+            }
+
+            .pptVideo .ppgVideoCta {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translateY(-50%) translateX(-50%);
+                -moz-transform: translateY(-50%) translateX(-50%);
+                -ms-transform: translateY(-50%) translateX(-50%);
+                -o-transform: translateY(-50%) translateX(-50%);
+                transform: translateY(-50%) translateX(-50%);
+            }
+
+            #pptYears {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translateY(-50%) translateX(-50%);
+                -moz-transform: translateY(-50%) translateX(-50%);
+                -ms-transform: translateY(-50%) translateX(-50%);
+                -o-transform: translateY(-50%) translateX(-50%);
+                transform: translateY(-50%) translateX(-50%);
+                margin-left: -32px;
+                opacity: 0;
+                z-index: 50;
+                -webkit-transition: opacity .2s linear 0s;
+                -moz-transition: opacity .2s linear 0s;
+                -ms-transition: opacity .2s linear 0s;
+                -o-transition: opacity .2s linear 0s;
+                transition: opacity .2s linear 0s;
+            }
+
+            #pptYears.on {
+                opacity: 1;
+                -webkit-transition: opacity .4s linear 0s;
+                -moz-transition: opacity .4s linear 0s;
+                -ms-transition: opacity .4s linear 0s;
+                -o-transition: opacity .4s linear 0s;
+                transition: opacity .4s linear 0s;
+            }
+
+            #pptYears ul.yearGroup {
+                list-style: none;
+                margin-top: 2.272727272727273vh;
+                margin-bottom: 2.272727272727273vh;
+            }
+
+            #pptYears ul.yearGroup:last-child {
+                margin-bottom: 0;
+            }
+
+            #pptYears ul.yearGroup.open li.year {
+                height: 3.409090909090909vh;
+            }
+
+            #pptYears ul.yearGroup li.year {
+                position: relative;
+                list-style: none;
+                color: #353741;
+                margin: 0;
+                font-family: 'Baskerville Regular', 'Times New Roman', Times, serif;
+                letter-spacing: 0.5px;
+                font-size: 1.8181818181818181vh;
+                line-height: 3.409090909090909vh;
+                cursor: pointer;
+                overflow: hidden;
+                height: 0;
+                -webkit-transition: height 0.3s ease, color 0.3s ease;
+                -moz-transition: height 0.3s ease, color 0.3s ease;
+                -ms-transition: height 0.3s ease, color 0.3s ease;
+                -o-transition: height 0.3s ease, color 0.3s ease;
+                transition: height 0.3s ease, color 0.3s ease;
+            }
+
+            #pptYears ul.yearGroup li.year:after {
+                content: '';
+                display: block;
+                width: 0vw;
+                height: 1px;
+                background-color: #fff;
+                opacity: 0.6;
+                position: absolute;
+                left: 0;
+                right: auto;
+                bottom: 0;
+                -webkit-transition: all .4s ease;
+                -moz-transition: all .4s ease;
+                -ms-transition: all .4s ease;
+                -o-transition: all .4s ease;
+                transition: all .4s ease;
+            }
+
+            #pptYears ul.yearGroup li.year.twentyFifth {
+                color: #2b2c33;
+                margin-bottom: 0.9090909090909091vh;
+                padding-left: 10px;
+                height: auto;
+            }
+
+            #pptYears ul.yearGroup li.year.twentyFifth:after {
+                content: '';
+                display: block;
+                width: 0.3125vw;
+                height: 1px;
+                background-color: #2b2c33;
+                opacity: 0.3;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: auto;
+                -webkit-transition: all 0s ease;
+                -moz-transition: all 0s ease;
+                -ms-transition: all 0s ease;
+                -o-transition: all 0s ease;
+                transition: all 0s ease;
+            }
+
+            #pptYears ul.yearGroup li.year.twentyFifth:after:hover {
+                content: '';
+                display: block;
+                width: 1.1805555555555556vw;
+                height: 1px;
+                background-color: #fff;
+                opacity: 0.6;
+                position: absolute;
+                left: auto;
+                right: 0;
+                bottom: 0;
+            }
+
+            #pptYears ul.yearGroup li.year.current,
+            #pptYears ul.yearGroup li.year:hover {
+                color: #fff;
+            }
+
+            #pptYears ul.yearGroup li.year.current:after,
+            #pptYears ul.yearGroup li.year:hover:after {
+                content: '';
+                display: block;
+                width: 0.9375vw;
+                height: 1px;
+                background-color: #fff;
+                opacity: 0.6;
+                position: absolute;
+                left: 0;
+                right: auto;
+                bottom: 0;
+            }
+
+            #pptYears ul.yearGroup li.year.current.twentyFifth:after,
+            #pptYears ul.yearGroup li.year:hover.twentyFifth:after {
+                left: 10px;
+            }
+
+            #pptYears ul.yearGroup.open li.year.twentyFifth:hover {
+                position: relative;
+                list-style: none;
+                color: #353741;
+                margin: 0;
+                font-family: 'Baskerville Regular', 'Times New Roman', Times, serif;
+                letter-spacing: 0.5px;
+                font-size: 1.8181818181818181vh;
+                line-height: 3.409090909090909vh;
+                cursor: pointer;
+                overflow: hidden;
+                margin-bottom: 0.9090909090909091vh;
+                -webkit-transition: height 0.3s ease, color 0.3s ease;
+                -moz-transition: height 0.3s ease, color 0.3s ease;
+                -ms-transition: height 0.3s ease, color 0.3s ease;
+                -o-transition: height 0.3s ease, color 0.3s ease;
+                transition: height 0.3s ease, color 0.3s ease;
+            }
+
+            #pptYears ul.yearGroup.open li.year.twentyFifth:hover:after {
+                background-color: transparent;
+            }
+
+            #pptYears ul.yearGroup.open li.year.twentyFifth:after:hover {
+                content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                background-color: transparent;
+                opacity: 0.6;
+                position: absolute;
+                left: 0;
+                right: auto;
+                bottom: 0;
+            }
+
+            #pptDropdown {
+                display: none;
+            }
+
+            .pptBackButton {
+                position: fixed;
+                top: 106px;
+                left: 9.090909090909092vh;
+                font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: 500;
+                font-size: 0.9090909090909091vh;
+                line-height: 1.6;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                z-index: 30;
+                display: block;
+                color: #FFF;
+                cursor: pointer;
+                transition: opacity .4s linear 0s;
+            }
+
+            .pptBackButton.not {
+                opacity: 0;
+                height: 0;
+                width: 0;
+                overflow: hidden;
+            }
+
+            .pptBackButton:before {
+                content: '';
+                display: inline-block;
+                border-top: 3px solid transparent;
+                border-bottom: 3px solid transparent;
+                border-right: 3px solid #FFF;
+                margin: 0 8px 0 0;
+            }
+
+            .pptBackButton:after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background-color: #f9f9f9;
+                -webkit-transition: background-color 0.5s ease, width 0.25s ease;
+                -moz-transition: background-color 0.5s ease, width 0.25s ease;
+                -ms-transition: background-color 0.5s ease, width 0.25s ease;
+                -o-transition: background-color 0.5s ease, width 0.25s ease;
+                transition: background-color 0.5s ease, width 0.25s ease;
+            }
+
+            .pptBackButton:hover:after {
+                width: 100%;
+                background-color: rgba(249, 249, 249, 0.25);
+            }
+
+            @media screen and (orientation: portrait),
+            screen and (max-width: 640px) {
+                .pptMain {
+                    padding-top: 0;
+                }
+                .pptEventLeft {
+                    padding: 8.854166666666666vh 5vw 7.8125vh 5vw;
+                    font-family: 'Baskerville Regular', 'Times New Roman', Times, serif;
+                    font-style: normal;
+                    font-variant: normal;
+                    font-weight: normal;
+                    font-size: 2.0454545454545454vh;
+                    line-height: 2.6136363636363638vh;
+                    text-rendering: optimizeLegibility;
+                    -webkit-font-smoothing: antialiased;
+                }
+                .pptEventLeft h2 small {
+                    font-family: 'Baskerville Italic', 'Times New Roman', Times, serif;
+                    font-style: italic;
+                    font-variant: normal;
+                    font-weight: normal;
+                    font-size: 15.625vh;
+                    line-height: 14.583333333333334vh;
+                    text-rendering: optimizeLegibility;
+                    -webkit-font-smoothing: antialiased;
+                }
+                .pptEventLeft h2 span {
+                    font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                    font-style: normal;
+                    font-variant: normal;
+                    font-weight: 400;
+                    font-size: 2.272727272727273vh;
+                    line-height: 2.727272727272727vh;
+                    text-rendering: optimizeLegibility;
+                    -webkit-font-smoothing: antialiased;
+                    margin-bottom: 0;
+                    position: relative;
+                    bottom: auto;
+                    display: block;
+                    padding-bottom: 10.416666666666666vh;
+                }
+                .pptEventLeft h2 span:before {
+                    top: auto;
+                    bottom: 4.166666666666667vh;
+                }
+                .pptEventLeft p {
+                    width: auto;
+                    font-family: 'Baskerville Regular', 'Times New Roman', Times, serif;
+                    font-style: normal;
+                    font-variant: normal;
+                    font-weight: normal;
+                    font-size: 2.5vh;
+                    line-height: 3.1818181818181817vh;
+                    text-rendering: optimizeLegibility;
+                    -webkit-font-smoothing: antialiased;
+                }
+                .pptPseudo {
+                    display: none;
+                }
+                .pptEventRight {
+                    padding: 0 5vw 5vw 5vw;
+                    background-size: 0 0;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                }
+                .pptBreadcrumbs {
+                    height: 0;
+                    width: 0;
+                    overflow: hidden;
+                    opacity: 0;
+                }
+                #pptDropdown {
+                    display: block;
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    z-index: 10;
+                }
+                #pptDropdown.sticky .select-value {
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                }
+                #pptDropdown.sticky select {
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                }
+                #pptDropdown .select-value {
+                    position: relative;
+                    font-size: 10px;
+                    line-height: 60px;
+                    padding: 0 18px;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    text-transform: uppercase;
+                    font-family: Arial, sans-serif;
+                    color: #fff;
+                    background-color: #6c7880;
+                    letter-spacing: 0.5px;
+                }
+                #pptDropdown .select-value:after {
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    line-height: 0;
+                    border: solid 3px transparent;
+                    border-top-color: #fff;
+                    position: absolute;
+                    top: 28px;
+                    right: 18px;
+                }
+                #pptDropdown select {
+                    -webkit-appearance: none;
+                    display: block;
+                    border: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 60px;
+                    opacity: 0;
+                    filter: alpha(opacity=0);
+                    z-index: 1;
+                }
+                .pptBackButton {
+                    height: 0;
+                    width: 0;
+                    overflow: hidden;
+                    opacity: 0;
+                }
+            }
+
+            .email-signup.active .input-wrapper .text-input-label {
+                top: 1.4rem;
+            }
+
+            .email-signup.active .input-wrapper input {
+                padding-top: 2rem;
+                padding-bottom: 1rem;
+            }
+
+
+
+            /*** Styles added to fix the issue with zoom in on iphone ***/
+
+            select:focus {
+                font-size: 16px;
+            }
+
+            @media screen and (-webkit-min-device-pixel-ratio:0) {
+                select {
+                    font-size: 16px;
+                }
+            }
+
+            /* iPhone < 5: */
+
+            @media screen and (device-aspect-ratio: 2/3) {
+                select {
+                    font-size: 16px;
+                }
+            }
+
+            /* iPhone 5, 5C, 5S, iPod Touch 5g */
+
+            @media screen and (device-aspect-ratio: 40/71) {
+                select {
+                    font-size: 16px;
+                }
+            }
+
+            /* iPhone 6, iPhone 6s, iPhone 7 portrait/landscape */
+
+            @media screen and (device-aspect-ratio: 375/667) {
+                select {
+                    font-size: 16px;
+                }
+            }
+
+            /* iPhone 6 Plus, iPhone 6s Plus, iPhone 7 Plus portrait/landscape */
+
+            @media screen and (device-aspect-ratio: 9/16) {
+                select {
+                    font-size: 16px;
+                }
+            }
+        </style>
+        <div id="pptDropdown">
+            <div class="select-value">Select a specific year</div>
+            <select>
+                <option value="1888">1888</option>
+                <option value="1894">1894</option>
+                <option value="1906">1906</option>
+                <option value="1914">1914</option>
+                <option value="1918">1918</option>
+                <option value="1921">1921</option>
+                <option value="1928">1928</option>
+                <option value="1931">1931</option>
+                <option value="1933">1933</option>
+                <option value="1939">1939</option>
+                <option value="1945">1945</option>
+                <option value="1954">1954</option>
+                <option value="1957">1957</option>
+                <option value="1962">1962</option>
+                <option value="1964">1964</option>
+                <option value="1969">1969</option>
+                <option value="1970">1970</option>
+                <option value="1981">1981</option>
+                <option value="1987">1987</option>
+                <option value="1990">1990</option>
+                <option value="1993">1993</option>
+                <option value="1996">1996</option>
+                <option value="2009">2009</option>
+                <option value="2011">2011</option>
+                <option value="2013">2013</option>
+                <option value="2015">2015</option>
+            </select>
+        </div>
+        <article id="pptMain" class="pptMain">
+            <section data-count="1" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1888">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT1_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1888">
+                    <h2>
+                        <small>1888</small>
+                        <span>OUR STORY BEGINS</span>
+                    </h2>
+                    <p>Aged 25, George applies for his first pen patent and begins the PARKER story with the driving philosophy:
+                        'It will always be possible to make a better pen'.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1888_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1888">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1888_WOP_HISTORY_D?wid=1244&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha"
+                        alt="OUR STORY BEGINS" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1888" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="https://twitter.com/parkerpens" target="_blank" data-timeline-year="1888" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="https://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1888" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="2" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1894">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT2_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1894">
+                    <h2>
+                        <small>1894</small>
+                        <span>A MAJOR BREAKTHROUGH IN THE PEN INDUSTRY</span>
+                    </h2>
+                    <p>George Safford Parker invents the pioneering anti-leak system, the 'Lucky Curve', PARKER's second patent
+                        and major breakthrough.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1894_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1894">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1894_WOP_HISTORY_D?wid=1140&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha"
+                        alt="A MAJOR BREAKTHROUGH IN THE PEN INDUSTRY" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1894" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1894" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1894" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="3" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1906">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT3_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1906">
+                    <h2>
+                        <small>1906</small>
+                        <span>A FINE ART</span>
+                    </h2>
+                    <p>Inspired by the Art Nouveau movement, the gold and sterling silver PARKER Snake Pens are launched and
+                        will become valuable collector's items.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1906_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1906">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1906_WOP_HISTORY_D?wid=1244&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha"
+                        alt="A FINE ART" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1906" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1906" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1906" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="4" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1914">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT1_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1914">
+                    <h2>
+                        <small>1914</small>
+                        <span>FOR KING AND COUNTRY</span>
+                    </h2>
+                    <p>PARKER'S Trench Pen is designed for soldiers. The pen uses dry ink tablets that are activated by adding
+                        water. In this year, Russell Parker also joins the company.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1914_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1914">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1914_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="FOR KING AND COUNTRY" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1914" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1914" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1914" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="5" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1918">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT2_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1918">
+                    <h2>
+                        <small>1918</small>
+                        <span>A MILLION DOLLAR BRAND</span>
+                    </h2>
+                    <p>PARKER's sales surpass the $1 million USD mark for the first time.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1918_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1918">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1918_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="A MILLION DOLLAR BRAND" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1918" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1918" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1918" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="6" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1921">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT3_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1921">
+                    <h2>
+                        <small>1921</small>
+                        <span>AN ICON IS BORN</span>
+                    </h2>
+                    <p>PARKER launches Duofold, a large, bold, premium priced pen, which captures the spirit of the Roaring
+                        Twenties. Soon afterwards, Duofold becomes world famous with the 'Big Red' for its new bright orange
+                        colour and 25-year guarantee.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1921_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1921">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1921_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="AN ICON IS BORN" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1921" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1921" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1921" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="7" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1928">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT1_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1928">
+                    <h2>
+                        <small>1928</small>
+                        <span>A BREAKTHROUGH IN PEN DESIGN</span>
+                    </h2>
+                    <p>Duofold is now made with a beautiful and durable new plastic material proven to resist cracking, whether
+                        dropped from an airplane or to the bottom of the Grand Canyon. PARKER innovates in marketing and
+                        advertising.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1928_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1928">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1928_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="A BREAKTHROUGH IN PEN DESIGN" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1928" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1928" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1928" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="8" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1931">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT2_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1931">
+                    <h2>
+                        <small>1931</small>
+                        <span>FORMULA #1022</span>
+                    </h2>
+                    <p>The PARKER research department's first product arrives on the market. After three years and 1021 experiments,
+                        a quick-drying ink 'Quink' (formula #1022) arrives.This is the first pen-cleaning ink that dries
+                        fast on paper and needs no blotter.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1931_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1931">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1931_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="FORMULA #1022" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1931" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1931" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1931" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="9" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1933">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT3_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1933">
+                    <h2>
+                        <small>1933</small>
+                        <span>THE VACUMATIC PEN</span>
+                    </h2>
+                    <p>The Vacumatic pen is developed together with the now famous PARKER arrow clip designed by Joseph Platt.
+                        The innovative pen holds more than twice as much ink compared to pens of its time and has a visbible
+                        ink reservoir.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1933_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1933">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1933_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="THE VACUMATIC PEN" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1933" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1933" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1933" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="10" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1939">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT1_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1939">
+                    <h2>
+                        <small>1939</small>
+                        <span>AWARD WINNING AERODYNAMIC DESIGN</span>
+                    </h2>
+                    <p>To mark the company's 51st year, the Parker 51 is developed in 1939 and 1940 and launched in 1941. Inspired
+                        by Kenneth Parker's passion for aircraft aerodynamics, it appears 'Like a pen from another planet'.
+                        <br/>
+                        <br/> It won the Academy Award for Best Design and is probably one of the best pens of the 20th century.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1939_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1939">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1939_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="AWARD WINNING AERODYNAMIC DESIGN" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1939" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1939" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1939" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="11" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1945">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT2_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1945">
+                    <h2>
+                        <small>1945</small>
+                        <span>IN TIMES OF PEACE</span>
+                    </h2>
+                    <p>The World War II German surrender is signed with a Parker 51 provided to General Dwight D. Eisenhower
+                        by his friend Kenneth Parker. General Douglas MacArthur uses his wife's Duofold to sign the Japanese
+                        surrender.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1945_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1945">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1945_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="IN TIMES OF PEACE" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1945" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1945" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1945" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-DARK_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="12" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1954">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT1_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1954">
+                    <h2>
+                        <small>1954</small>
+                        <span>JOTTER IS BORN</span>
+                    </h2>
+                    <p>Production begins on the Jotter, PARKER's ballpoint pen. The Jotter sells 3.5 million in its first year
+                        and remains popular today.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1954_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1954">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1954_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="JOTTER IS BORN" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1954" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1954" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1954" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="13" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1957">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT3_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1957">
+                    <h2>
+                        <small>1957</small>
+                        <span>THE ICONIC ARROW</span>
+                    </h2>
+                    <p>Designed in 1933 by Joseph Platt, a prominent designer of the 1930s, the famous Parker arrow was inspired
+                        by Kenneth Parker’s passion for revolutionary transportation and aviation. First featured as a clip
+                        on the Vacumatic pen, it symbolises PARKER's pioneering attitude. In 1957 it became the brand’s emblem
+                        and was evolved in 2015 to match the brand's modern standards of sophistication and luxury.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1957_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1957">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1957_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="THE ICONIC ARROW" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1957" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1957" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1957" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="14" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1962">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT3_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1962">
+                    <h2>
+                        <small>1962</small>
+                        <span>ROYAL RECOGNITION</span>
+                    </h2>
+                    <p>PARKER is awarded the Royal Warrant by Queen Elizabeth II, becoming the official supplier of writing
+                        instruments to the Royal Household.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1962_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1962">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1962_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="ROYAL RECOGNITION" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1962" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1962" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1962" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="15" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1964">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT1_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1964">
+                    <h2>
+                        <small>1964</small>
+                        <span>THE ORIGINAL SOCIAL NETWORK</span>
+                    </h2>
+                    <p>The New York World's Fair opens. PARKER's pavilion features an IBM computer which matches 'pen friends'
+                        from all over the world, thus becoming the original social network.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1964_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1964">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1964_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="THE ORIGINAL SOCIAL NETWORK" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1964" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1964" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1964" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="16" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1969">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT2_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1969">
+                    <h2>
+                        <small>1969</small>
+                        <span>A GIANT LEAP</span>
+                    </h2>
+                    <p>To commemorate the American moon landing, a Special Edition PARKER Classic was created. The pen contained
+                        a small amount of moon dust.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1969_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1969">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1969_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="A GIANT LEAP" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1969" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1969" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1969" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="17" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1970">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT3_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1970">
+                    <h2>
+                        <small>1970</small>
+                        <span>THE SPACE PEN</span>
+                    </h2>
+                    <p>PARKER launches the T-1. Made entirely of titanium, it became known as the 'space pen'.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1970_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1970">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1970_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="THE SPACE PEN" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1970" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1970" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1970" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="18" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1981">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT2_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1981">
+                    <h2>
+                        <small>1981</small>
+                        <span>COMMEMORATING A ROYAL WEDDING</span>
+                    </h2>
+                    <p>In honour of the Royal Wedding of Prince Charles, Prince of Wales, to Lady Diana Spencer, PARKER releases
+                        a unique Limited Edition of the Parker 105.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1981_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1981">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1981_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="COMMEMORATING A ROYAL WEDDING" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1981" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1981" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1981" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="19" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1987">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT3_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1987">
+                    <h2>
+                        <small>1987</small>
+                        <span>THE PEN IS MIGHTIER...</span>
+                    </h2>
+                    <p>Four unique sterling silver Parker 75 pens are custom made. The pens are used to sign the Intermediate
+                        Nuclear Arms Treaty by American President Ronald Reagan and Soviet Secretary Mikhail Gorbachev on
+                        December 8th.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1987_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1987">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1987_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="THE PEN IS MIGHTIER..." class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1987" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1987" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1987" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="20" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1990">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT1_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1990">
+                    <h2>
+                        <small>1990</small>
+                        <span>ROYAL RECOGNITION</span>
+                    </h2>
+                    <p>PARKER is granted a second Royal Warrant from His Royal Highness the Prince of Wales.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1990_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1990">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1990_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="ROYAL RECOGNITION" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1990" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1990" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1990" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="21" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1993">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT3_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1993">
+                    <h2>
+                        <small>1993</small>
+                        <span>SONNET IS BORN</span>
+                    </h2>
+                    <p>The first version of the Sonnet appears, continuing the use of the 'Cisele' pattern from the original
+                        Parker 75.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1993_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1993">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1993_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="SONNET IS BORN" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1993" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1993" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1993" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="22" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="1996">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT1_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1996">
+                    <h2>
+                        <small>1996</small>
+                        <span>IN MEMORY OF NORMAN ROCKWELL</span>
+                    </h2>
+                    <p>A commemorative Duofold edition pen is launched to acknowledge the American artist Norman Rockwell, who
+                        produced several pieces of artwork for PARKER dating back to 1929.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/1996_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="1996">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/1996_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="IN MEMORY OF NORMAN ROCKWELL" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="1996" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="1996" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="1996" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="23" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="2009">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT2_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="2009">
+                    <h2>
+                        <small>2009</small>
+                        <span>PARKER PREMIER IS BORN</span>
+                    </h2>
+                    <p>Parker Premier is launched, using innovative and aesthetic materials.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/2009_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="2009">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/2009_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="PARKER PREMIER IS BORN" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="2009" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="2009" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="2009" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="24" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="2011">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT3_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="2011">
+                    <h2>
+                        <small>2011</small>
+                        <span>ANOTHER BREAKTHROUGH INNOVATION</span>
+                    </h2>
+                    <p>Parker 5th&trade; and Parker Ingenuity are introduced, revolutionising the pen industry with an innovative
+                        mode of writing.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/2011_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="2011">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/2011_WOP_HISTORY_D?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="ANOTHER BREAKTHROUGH INNOVATION" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="2011" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="2011" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="2011" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="25" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="2013">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT1_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="2013">
+                    <h2>
+                        <small>2013</small>
+                        <span>WORDS FOR THE FUTURE - PARKER'S
+                            <br/>125th ANNIVERSARY CELEBRATION</span>
+                    </h2>
+                    <p>PARKER celebrates the act of writing by collecting, exhibiting and sharing written words from global
+                        and local opinion leaders that inspire, pass through time and travel across nations for future generations.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/2013_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="2013">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/2013_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="WORDS FOR THE FUTURE - PARKER'S <br/>125th ANNIVERSARY CELEBRATION" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="2013" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="2013" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="2013" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <section data-count="26" class="ppg1Vh ppgClearfix ppgFluidVh pptEvent" data-timeline-year="2015">
+                <div class="ppg1Vh ppgCol ppgFluidVh pptEventLeft" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/LEFT2_WOP_HISTORY?wid=720&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="2015">
+                    <h2>
+                        <small>2015</small>
+                        <span>FOR BETTER THINKING</span>
+                    </h2>
+                    <p>PARKER announces enhancements to the Duofold and Sonnet collections alongside an elevated new take on
+                        the PARKER brand identity.</p>
+                    <!--<a href="">Read More</a>-->
+                </div>
+                <aside class="ppg1Vh ppgCol ppgFluidVh pptEventRight" style="background-image: url('http://assets.parkerpen.com/is/image/NewellRubbermaid/2015_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2');"
+                    data-timeline-year="2015">
+                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/2015_WOP_HISTORY_D?wid=1440&qlt=90,1&op_sharpen=0&resMode=sharp2"
+                        alt="FOR BETTER THINKING" class="ppgPortraitOnly" />
+
+                    <div class="social-icons">
+                        <a href="http://www.facebook.com/parkerpens" target="_blank" data-timeline-year="2015" class="facebook" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://twitter.com/parkerpens" target="_blank" data-timeline-year="2015" class="twitter" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                        <a href="http://www.pinterest.com/parkerpens" target="_blank" data-timeline-year="2015" class="pinterest" style="background-image:url('http://assets.parkerpen.com/is/image/NewellRubbermaid/SOCIAL-LIGHT_WOP_HISTORY?wid=48&qlt=90,1&op_sharpen=0&resMode=sharp2&fmt=png-alpha')"></a>
+                    </div>
+
+
+                </aside>
+            </section>
+            <ul class="pptBreadcrumbs not">
+                <li>
+                    <span data-href="/en-GB/world-of-parker">WORLD OF PARKER</span>
+                </li>
+                <li>
+                    <span data-href="/en-GB/world-of-parker-our-story">OUR STORY</span>
+                </li>
+                <li>
+                    <span title="SCROLL TO TOP" data-href="#">HISTORY</span>
+                </li>
+            </ul>
+            <span class="ppgScrollDown ppgLandscapeOnly">&#42780;</span>
+        </article>
+        <!-- END TIMELINE -->
+    </main>
+    <script type="text/javascript">
+        //<![CDATA[
+        (function ($) {
+
+            var ds = {
+
+                setShim: function () {
+                    window.requestAnimFrame = (function () {
+                        return window.requestAnimationFrame ||
+                            window.webkitRequestAnimationFrame ||
+                            window.mozRequestAnimationFrame ||
+                            function (callback) {
+                                window.setTimeout(callback, 1000 / 60);
+                            };
+                    })();
+
+                    window.cancelAnimFrame = (function () {
+                        return window.cancelAnimationFrame ||
+                            window.webkitCancelAnimationFrame ||
+                            window.mozCancelAnimationFrame ||
+                            function (animationFunction) {
+                                window.clearTimeout(animationFunction);
+                            };
+                    })();
+
+                    return false;
+                },
+
+                extendEasing: function () {
+                    jQuery.easing['jswing'] = jQuery.easing['swing'];
+                    jQuery.extend(jQuery.easing, {
+                        def: 'easeOutQuad',
+                        easeInCubic: function (x, t, b, c, d) {
+                            return c * (t /= d) * t * t + b;
+                        },
+                        easeOutQuart: function (x, t, b, c, d) {
+                            return -c * ((t = t / d - 1) * t * t * t - 1) + b;
+                        }
+                    });
+
+                    return false;
+                },
+
+                init: function () {
+                    ds.setShim();
+                    ds.extendEasing();
+
+                    $(window).on('scroll', function () {
+                        var sT = $(window).scrollTop();
+                        if (sT >= 200) {
+                            $('.header-fixed').addClass('closed');
+                        } else {
+                            $('.header-fixed').removeClass('closed');
+                        }
+                    });
+
+                    $('a').on('touchstart', function () {
+                        $(this).trigger('click');
+                    });
+
+                    return false;
+                }
+            };
+
+            jQuery.Global = function (method) {
+                if (ds[method]) {
+                    return ds[method].apply(this, Array.prototype.slice.call(arguments, 1));
+                } else if (typeof method === 'object' || !method) {
+                    return ds.init.apply(this, arguments);
+                } else {
+                    $.error('Method ' + method + ' does not exist on jQuery.Global');
+                }
+            };
+
+            $(document).ready(function () {
+                $.Global();
+            });
+
+        })(jQuery);
+        //]]>
+    </script>
+    <script type="text/javascript">
+        //<![CDATA[
+        (function ($) {
+
+            var ds = {
+
+                loop: function () {
+                    ds.canceledAnim = false;
+                    ds.animationFrame = window.requestAnimFrame(ds.loop);
+                    ds.poll();
+                },
+
+                poll: function () {
+
+                    ds.windowHeight = ds.window.height() - 70;
+
+                    var newScrollTop = ds.window.scrollTop();
+                    var headerHeight = ds.header.height() + $('.pptHero').height() - 70;
+                    var footerHeight = ds.footer.height();
+
+                    var footerPos = $(document).height() - footerHeight - $(window).height();
+
+
+
+
+                    if (newScrollTop > footerPos + 10) {
+
+                        $('.pptPseudo').css({
+                            'top': $(document).height() - footerPos + 'px'
+                        });
+                        if ($('#pptYears').hasClass('on')) {
+                            $('#pptYears').removeClass('on');
+                        }
+
+                    }
+
+                    if (newScrollTop > (footerPos - 1)) {
+
+                        if (!$('#pptMain .ppgScrollDown').hasClass('not')) {
+                            $('#pptMain .ppgScrollDown').addClass('not');
+                        }
+                    } else if (newScrollTop > headerHeight) {
+
+
+
+                        $('#pptMain .ppgScrollDown').removeClass('not');
+
+                        $('.pptPseudo').css({
+                            'top': '70px'
+                        });
+                        if (!ds.animating && (newScrollTop % ds.windowHeight !== 0 && (newScrollTop % ds.windowHeight <
+                                150 || Math.abs(newScrollTop % ds.windowHeight - (ds.windowHeight)) <
+                                150) && newScrollTop === ds.scrollTop)) {
+
+                            ds.animating = true;
+                            ds.snapToNearestEvent();
+                            ds.snapToNearestEvent = function () {};
+                        }
+                        ds.scrollTop = newScrollTop;
+
+                        ds.updatePseudoScroll();
+                        var iPad = !!navigator.platform && /iPad/.test(navigator.platform);
+
+                        var additional = 0;
+                        if (iPad === true) {
+                            additional = 25;
+                        }
+
+                        ds.pseudoColumn.css('transform', 'translateY(-' + (ds.mainHeight - ds.windowHeight -
+                            ds.scrollTop + headerHeight - additional) + 'px)');
+
+
+                        if (!ds.animating) {
+                            ds.updateCurrentYear();
+                        }
+
+                        if (!$('#pptYears').hasClass('on')) {
+                            $('#pptYears').addClass('on');
+                        }
+
+                        if ($('#pptMain .ppgScrollDown').hasClass('not')) {
+                            $('#pptMain .ppgScrollDown').removeClass('not');
+                        }
+
+                        if ($('.pptBreadcrumbs').hasClass('not')) {
+                            $('.pptBreadcrumbs').removeClass('not');
+                        }
+
+                    } else if (newScrollTop < headerHeight) {
+
+                        $('#pptMain .ppgScrollDown').addClass('not');
+
+                        $('.pptPseudo').css({
+                            'top': headerHeight - newScrollTop + 70 + 'px'
+                        });
+                        ds.scrollTop = newScrollTop;
+
+                        if ($('#pptYears').hasClass('on')) {
+                            $('#pptYears').removeClass('on');
+                            ds.pseudoColumn.css('transform', 'translateY(-' + (ds.mainHeight - ds.windowHeight) +
+                                'px)');
+                        }
+
+                        if (!$('.pptBreadcrumbs').hasClass('not')) {
+                            $('.pptBreadcrumbs').addClass('not');
+                        }
+
+
+
+
+                    }
+                },
+
+                mobileScroll: function () {
+                    var newScrollTop = ds.window.scrollTop() + 64;
+                    var $currentEvent;
+                    var $currentYear;
+
+                    $('.pptEvent.ppg1Vh').each(function () {
+                        var _this = $(this),
+                            offset = _this.offset().top,
+                            prev = _this.prev('.pptEvent');
+
+                        if (offset >= newScrollTop) {
+
+                            var tY = _this.attr('data-timeline-year');
+                            tY = $("#pptDropdown select option[value='" + tY + "']").prev('option')
+                                .attr('value');
+                            if (tY !== undefined) {
+                                ds.dropdown.find('.select-value').text(tY);
+                                $('#pptDropdown select option').removeAttr('selected');
+                                $('#pptDropdown select option[value="' + tY + '"]').attr('selected',
+                                    'selected');
+
+                                //window.location.hash = '#' + tY;
+
+
+                            }
+
+
+                            return false;
+                        } else if (_this.attr('data-timeline-year') === '2015') {
+                            var tY = '2015';
+
+                            if (tY !== undefined) {
+                                ds.dropdown.find('.select-value').text(tY);
+                                $('#pptDropdown select option').removeAttr('selected');
+                                $('#pptDropdown select option[value="' + tY + '"]').attr('selected',
+                                    'selected');
+
+                                //window.location.hash = '#' + tY;
+
+
+                            }
+
+                            return false;
+                        }
+
+
+                    });
+
+
+
+                    var selectOffset = $('#pptDropdown').offset().top;
+
+                    $(window).on('scroll', function () {
+                        var sT = $(window).scrollTop();
+
+
+                        if (sT > selectOffset) {
+                            $('#pptDropdown').addClass('sticky');
+                        } else if (sT < selectOffset) {
+                            $('#pptDropdown').removeClass('sticky');
+                        }
+                    });
+                },
+
+                matchMedia: function (query) {
+                    if (query.matches || $(window).width() < 769) {
+
+                        window.cancelAnimFrame(ds.animationFrame);
+                        ds.canceledAnim = true;
+                        ds.parseHash();
+                        ds.window.on('scroll', ds.mobileScroll);
+                    } else if (ds.canceledAnim === true) {
+                        ds.window.off('scroll');
+                        ds.parseHash();
+                        ds.loop();
+                    }
+                },
+
+                watchMedia: function () {
+                    if ('matchMedia' in window) {
+                        var portrait = window.matchMedia('(orientation: portrait)');
+
+                        portrait.addListener(ds.matchMedia);
+                        ds.matchMedia(portrait);
+                    }
+
+                    return false;
+                },
+
+                createColumn: function () {
+                    ds.pseudoColumn = $('<div class="pptPseudoScroll ppgLandscapeOnly" />').appendTo($(
+                        '<div class="ppg1Vh ppgClearfix pptPseudo" />').appendTo(ds.main));
+
+                    $('.pptEventRight').each(function () {
+                        ds.pseudoColumn.prepend($(this).clone(true, true).removeClass('ppgFluidVh'));
+                    });
+
+                    ds.updatePseudoScroll();
+
+
+                    return false;
+                },
+
+                createYearList: function () {
+                    var eventYears = [],
+                        first25thYear,
+                        last25thYear,
+                        current25thYear,
+                        yearListHtml = '';
+
+                    ds.events.each(function (index, element) {
+                        eventYears.push(parseInt($(element).attr('data-timeline-year')));
+                    });
+
+                    first25thYear = eventYears[0] - (eventYears[0] % 25);
+                    current25thYear = first25thYear;
+                    last25thYear = eventYears[eventYears.length - 1] - (eventYears[eventYears.length - 1] %
+                        25);
+                    yearListHtml += '<div id="pptYears" class="ppgLandscapeOnly">';
+
+                    while (current25thYear <= last25thYear) {
+                        yearListHtml += '<ul class="yearGroup" data-year="' + current25thYear + '">';
+                        yearListHtml += '<li class="twentyFifth year' + (eventYears.indexOf(current25thYear) >
+                                -1 ? ' withEvent' : '') + '" data-year="' + current25thYear + '">' +
+                            current25thYear + '</li>';
+                        $.each(eventYears, function (index, year) {
+                            if (year > current25thYear && year < current25thYear + 25) {
+                                yearListHtml += '<li class="year withEvent" data-year="' + year +
+                                    '">' + year + '</li>';
+                            }
+                        });
+                        yearListHtml += '</ul>';
+                        current25thYear += 25;
+                    }
+
+                    yearListHtml += '</div>';
+                    $('#pptMain').append(yearListHtml);
+
+                    ds.years = $('#pptYears .year');
+                    ds.yearGroups = $('#pptYears .yearGroup')
+                },
+
+                updateCurrentYear: function () {
+                    var iPad = !!navigator.platform && /iPad|iPhone/.test(navigator.platform);
+                    var iPadAddition = 0;
+                    if (iPad === true) {
+                        iPadAddition = 25;
+                    }
+                    var index = Math.floor((ds.scrollTop + ds.windowHeight / 2) / (ds.windowHeight +
+                        iPadAddition));
+
+                    var $currentEvent = ds.events.eq(index - 1);
+                    var year = parseInt($currentEvent.attr('data-timeline-year'));
+
+
+
+
+                    if (ds.years) {
+                        var $year = ds.years.filter('[data-year="' + year + '"]');
+                        var $group = $year.parent();
+                        ds.yearGroups.not($group).removeClass('open');
+                        if (!$group.hasClass('open')) {
+                            $group.addClass('open');
+                        }
+                        ds.years.not($year).removeClass('current');
+                        if (!$year.hasClass('current')) {
+                            $year.addClass('current');
+                        }
+
+                        if (!window.location.hash || parseInt(window.location.hash.replace('#', ''), 10) !==
+                            year) {
+                            if (window.history.replaceState) {
+                                window.history.replaceState(null, null, '#' + year);
+                            } else {
+                                window.location.hash = '#' + year;
+                            }
+                        }
+                    }
+                },
+
+                updatePseudoScroll: function () {
+                    ds.pseudoColumn.css('transform', 'translateY(-' + (ds.mainHeight - ds.windowHeight - ds
+                        .scrollTop) + 'px)');
+
+                    return false;
+                },
+
+                onResize: function () {
+                    ds.windowHeight = ds.window.height() - 70;
+                    ds.mainHeight = ds.main.height();
+                },
+
+                onOrientationChange: function () {
+                    ds.offsetTops = [];
+                    ds.events.each(function (index, element) {
+                        if (index === 0) {
+                            ds.offsetTops.push([0, $(element).innerHeight()]);
+                        } else {
+                            ds.offsetTops.push([ds.offsetTops[index - 1][0] + ds.offsetTops[index -
+                                1][1], $(element).innerHeight()])
+                        }
+                    });
+                    ds.parseHash();
+                },
+
+                parseHash: function () {
+                    var year = window.location.hash.replace('#', '');
+
+
+                    if (year && ds.years) {
+
+                        ds.years.filter('[data-year="' + year + '"]').trigger('click');
+                        ds.dropdown.find('.select-value').text(year);
+                    }
+                },
+
+                snapToNearestEvent: function () {
+                    ds.years.filter('.current').trigger('click');
+                },
+
+                onClick: function () {
+                    var $year = $(this);
+                    var offset;
+                    ds.animating = true;
+
+
+
+                    if ($year.hasClass('twentyFifth')) {
+                        ds.yearGroups.filter('.open').removeClass('open');
+                        $year.parent().addClass('open')
+                    }
+
+                    ds.years.filter('.current').removeClass('current');
+                    if (!$year.hasClass('withEvent')) {
+                        $year = $year.next();
+                    }
+
+                    if (window.history.replaceState) {
+                        window.history.replaceState(null, null, '#' + $year.attr('data-year'));
+                    } else {
+                        window.location.hash = '#' + $year.attr('data-year');
+                    }
+
+                    $year.addClass('current');
+
+                    offset = ds.events.filter('[data-timeline-year="' + $year.attr('data-year') + '"]').offset()
+                        .top - 70;
+                    if (ds.canceledAnim) {
+                        offset -= (ds.dropdown.innerHeight() - 1);
+                    }
+
+                    if ($year.attr('data-year') === '1850' || $year.attr('data-year') === '1863') {
+                        offset = $('#pptMain').offset().top + 1 - 70;
+
+                    }
+
+
+                    $('html, body').animate({
+                        scrollTop: offset
+                    }, {
+                        duration: 600,
+                        easing: 'easeOutQuart',
+                        done: function () {
+                            ds.animating = false;
+
+                        }
+                    });
+                },
+
+                nextEvent: function () {
+
+                    var $currentYear = ds.years.filter('.current');
+                    var $nextYear = $currentYear.next();
+
+                    if (!$nextYear[0]) {
+                        $nextYear = $currentYear.parent().next().find('.year.withEvent').first();
+                    }
+
+                    $nextYear.trigger('click');
+                },
+                prevEvent: function () {
+                    var $currentYear = ds.years.filter('.current');
+                    var $prevYear = $currentYear.prev('.withEvent');
+
+                    if (!$prevYear[0]) {
+                        $prevYear = $currentYear.parent().prev().find('.year.withEvent').last();
+                        $prevYear.trigger('click');
+
+                        if (!$prevYear[0]) {
+                            $('html,body').animate({
+                                scrollTop: 0
+                            }, 600);
+                        }
+
+                    } else {
+                        $prevYear.trigger('click');
+                    }
+
+
+
+                },
+                onScroll: function () {
+                    $('html, body').stop();
+                    ds.animating = false;
+
+                    ds.snapToNearestEvent = function () {
+                        ds.years.filter('.current').trigger('click');
+                    };
+                },
+
+                listen: function () {
+                    ds.window.on({
+                        'resize.Timeline orientationchange.Timeline': ds.onResize,
+                        'hashchange.Timeline': ds.parseHash,
+                        'wheel.Timeline mousewheel.Timeline touchmove.Timeline DOMMouseScroll.Timeline': ds
+                            .onScroll,
+                        'onOrientationChange.Timeline': ds.onOrientationChange
+                    });
+
+                    ds.years.unbind('click').on({
+                        'click': ds.onClick
+                    });
+
+                    ds.scrollDownButton.on({
+                        'click.Timeline': ds.nextEvent
+                    });
+
+
+                    $('#pptDropdown select').on('change', function () {
+
+                        var year = ds.dropdown.find('select').val();
+                        ds.dropdown.find('.select-value').text(year);
+                        if (window.history.replaceState) {
+                            window.history.replaceState(null, null, '#' + year);
+                        } else {
+                            window.location.hash = '#' + year;
+                        }
+
+                        var yearOffset = $('section.pptEvent[data-timeline-year="' + year + '"]').offset()
+                            .top - $('#pptDropdown .select-value').height();
+
+                        $('html,body').animate({
+                            scrollTop: yearOffset + 'px'
+                        });
+
+                        //ds.parseHash();
+                    });
+
+
+                    ds.scrollDownHeroButton.on('click', function () {
+
+
+                        var timeLineOffset = $('#pptMain').offset().top + 1 - 70;
+
+                        $('html,body').animate({
+                            scrollTop: timeLineOffset + 'px'
+                        }, 400, function () {
+                            $('#pptYears').addClass('on');
+                            $('#pptMain .ppgScrollDown').removeClass('not');
+                            window.location.hash = '#1888';
+                        });
+
+                        return false;
+                    });
+
+                    //  $('.pptEventRight .social-icons a').on('click', function () {
+                    //     var shareType = $(this).attr('class'),
+                    //     shareYear = $(this).attr('data-timeline-year');
+
+                    //     //sharing data
+                    //     var sURL = window.location.href,
+                    //     picture = window.location.protocol + '//' + window.location.host + '/' + $('aside[data-timeline-year="' + shareYear + '"]').find('.ppgPortraitOnly').attr('src'),
+                    //     name = $('.pptEventLeft[data-timeline-year="' + shareYear + '"] h2 span').text(),
+                    //     description = $('.pptEventLeft[data-timeline-year="' + shareYear + '"] p').text(),
+                    //     caption = $('.pptEventLeft[data-timeline-year="' + shareYear + '"] h2 small').text();
+
+
+                    //     switch (shareType) {
+                    //         case 'facebook':
+                    //             var appID = 1254125557932934;
+                    //             var url = 'http://www.facebook.com/dialog/feed?app_id=' + encodeURIComponent(appID) +
+                    //             '&link=' + encodeURIComponent(sURL) +
+                    //             '&picture=' + encodeURIComponent(picture) +
+                    //             '&name=' + encodeURIComponent(name) +
+                    //             '&caption=' + encodeURIComponent(caption) +
+                    //             '&description=' + encodeURIComponent(description) +
+                    //             '&redirect_uri=' + encodeURIComponent(sURL) +
+                    //              '&display=popup';
+
+                    //             var x = screen.width / 2 - 700 / 2;
+                    //             var y = screen.height / 2 - 450 / 2;
+                    //             window.open(url, '', 'height=485,width=700,left=' + x + ',top=' + y);
+
+                    //             break;
+                    //         case 'twitter':
+                    //             var url = 'https://twitter.com/home?status=' + encodeURIComponent(caption + ' ' + name) + ' ' + encodeURIComponent(sURL);
+
+                    //             var x = screen.width / 2 - 700 / 2;
+                    //             var y = screen.height / 2 - 450 / 2;
+                    //             window.open(url, '', 'height=485,width=700,left=' + x + ',top=' + y);
+
+                    //             break;
+                    //         case 'pinterest':
+                    //             var url = 'https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(sURL) + '&media=' + encodeURIComponent(picture) + '&description=' + encodeURIComponent(caption + ' ' + name) + '';
+
+                    //             var x = screen.width / 2 - 700 / 2;
+                    //             var y = screen.height / 2 - 450 / 2;
+                    //             window.open(url, '', 'height=485,width=700,left=' + x + ',top=' + y);
+
+                    //             break;
+
+                    //     }
+
+                    //     return false;
+                    // });
+
+                    $('.pptBreadcrumbs span').on('click', function () {
+                        var href = $(this).attr('data-href');
+                        if (href === '#' || href === undefined) {
+                            $('html,body').animate({
+                                scrollTop: '0px'
+                            }, 600);
+                        } else {
+
+                            window.location.href = href;
+                        }
+
+                        return false;
+                    });
+
+                    return false;
+                },
+
+                init: function () {
+                    ds.window = $(window);
+                    ds.main = $('#pptMain');
+                    ds.header = $('#headerWrapper');
+                    ds.footer = $('#footerWrapper');
+                    ds.events = $('#pptMain .pptEvent');
+                    ds.scrollDownButton = $('#pptMain .ppgScrollDown');
+                    $('#pptMain .ppgScrollDown').addClass('not');
+                    ds.scrollDownHeroButton = $('.pptHero .ppgScrollDown,  .pptHero .ppgScrollDownMBL');
+                    ds.dropdown = $('#pptDropdown');
+                    ds.scrollTop = ds.window.scrollTop();
+                    ds.offsetTops = [];
+                    ds.animating = false;
+                    ds.onResize();
+                    ds.createColumn();
+                    ds.createYearList();
+                    ds.listen();
+                    ds.onOrientationChange();
+                    ds.loop();
+                    ds.watchMedia();
+
+
+                    return false;
+                }
+            };
+
+            jQuery.Timeline = function (method) {
+                if (ds[method]) {
+                    return ds[method].apply(this, Array.prototype.slice.call(arguments, 1));
+                } else if (typeof method === 'object' || !method) {
+                    return ds.init.apply(this, arguments);
+                } else {
+                    $.error('Method ' + method + ' does not exist on jQuery.Timeline');
+                }
+            };
+
+            $(document).ready(function () {
+                $.Timeline();
+            });
+
+        })(jQuery);
+        //]]>
+    </script>
+</body>
+
+</html>

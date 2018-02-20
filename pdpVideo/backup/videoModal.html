@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- toolkit styles -->
+    <link rel="stylesheet" href="toolkit.css" />
+    <link rel="stylesheet" href="common1_1.css" />
+    <!-- /toolkit styles -->
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+        window.document.onkeydown = function (e) {
+            if (!e) {
+                e = event;
+            }
+            if (e.keyCode == 27) {
+                lightbox_close();
+            }
+        }
+
+        function lightbox_open() {
+            var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+            window.scrollTo(0, 0);
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            lightBoxVideo.play();
+        }
+
+        function lightbox_close() {
+            var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+            lightBoxVideo.pause();
+        }
+    </script>
+    <style>
+        .pdp-video .pdp-video-info p {
+            line-height: 2rem;
+        }
+
+        .pdp-video .pdp-video-info {
+            width: 60%;
+        }
+
+        @media (min-width: 1023px) {
+            .pdp-video .pdp-video-player .pdp-video-play {
+                min-height: 385px;
+            }
+        }
+
+        #fade {
+            display: none;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+        }
+
+        #light {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-width: 600px;
+            max-height: 360px;
+            margin-left: -300px;
+            margin-top: -180px;
+            border: 2px solid #FFF;
+            background: #FFF;
+            z-index: 1002;
+            overflow: visible;
+        }
+
+        #boxclose {
+            float: right;
+            cursor: pointer;
+            color: #fff;
+            border: 1px solid #AEAEAE;
+            border-radius: 3px;
+            background: #222222;
+            font-size: 31px;
+            font-weight: bold;
+            display: inline-block;
+            line-height: 0px;
+            padding: 11px 3px;
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            z-index: 1002;
+            opacity: 0.9;
+        }
+
+        .boxclose:before {
+            content: "×";
+        }
+
+        #fade:hover~#boxclose {
+            display: none;
+        }
+
+        .test:hover~.test2 {
+            display: none;
+        }
+    </style>
+    <div class="m-b-xxl">
+        <section class="pdp-video bg-teal" id="pdp-video">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="bg-teal">
+                        <div class="pdp-video-info">
+                            <div>
+                                <h5 class="h-2 txt-white txt-align--center uppercase">Duofold</h5>
+                                <hr />
+                                <p class="txt-white txt-align--center">
+                                    The most prestigious of collections, Duofold has been an emblem of excellence since 1921.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="pdp-video-player ppgUnstyled ppcgList" style="padding:0px; margin-top:0px; background-image: url('https://s7d1.scene7.com/is/image/NewellRubbermaid/pen_video_sonnet_video_still?wid=646&fmt=jpeg&qlt=90,0');">
+                        <div>
+                            <a href="https://s7d9.scene7.com/e2/NewellRubbermaid/FWLA/Parker/1.%20Brand%20assets/Movies/dfld_mvimou_720p_1200k_mp4.mp4"
+                                data-lity>
+                                <button class="pdp-video-play" data-video-id="videoSlot1" type="button" aria-label="play video NAME">
+                                </button>
+                            </a>
+                        </div>
+                    </div> -->
+                    <div class="pdp-video-player ppgUnstyled ppcgList" id="light">
+                        <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+                        <video id="VisaChipCardVideo" width="600" controls>
+                            <source src="https://s7d9.scene7.com/e2/NewellRubbermaid/FWLA/Parker/1.%20Brand%20assets/Movies/dfld_mvimou_720p_1200k_mp4.mp4" type="video/mp4">
+                            <!--Browser does not support <video> tag -->
+                        </video>
+                    </div>
+                
+                    <div id="fade" onClick="lightbox_close();"></div>
+                
+                    <div>
+                        <a href="#" onclick="lightbox_open();">Watch video</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

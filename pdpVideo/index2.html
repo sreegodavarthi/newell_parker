@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <!-- toolkit styles -->
+        <link rel="stylesheet" href="toolkit.css" />
+        <link rel="stylesheet" href="common1_1.css" />
+        <!-- /toolkit styles -->
+</head>
+<body>
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <style>
+        .pdp-video-info p {
+            line-height: 2rem;
+            font-size: 1.2rem;
+        }
+    
+        .pdp-video-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .pdp-video-info {
+            width: 60%;
+        }
+    
+        .pdp-video-info hr {
+            opacity: 1;
+            height: 1px;
+            width: 10px;
+            border: none;
+            background-color: #FFFFFF;
+            margin: 13px auto;
+        }
+    
+        .pdp-video-player {
+            padding: 0px;
+            margin-top: 0px;
+            background-image: url('https://s7d1.scene7.com/is/image/NewellRubbermaid/pen_video_still_duofold?wid=646&fmt=jpeg&qlt=92,0');
+            background-repeat: no-repeat;
+            background-color: white;
+            position: relative;
+            display: block;
+            background-position: center;
+            background-size: cover;
+        }
+    
+        .pdp-video-play {
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border-radius: 0;
+            border: none;
+            transition: all 0.2s ease-in-out;
+            text-transform: uppercase;
+            text-decoration: none;
+            background-color: transparent;
+            outline: none;
+            letter-spacing: normal;
+            line-height: normal;
+            padding: 0;
+            text-shadow: none;
+            font-size: 1.6rem;
+            font-family: 'Gotham SSm A', 'Gotham SSm B', 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+        }
+    
+        .pdp-video-play:before {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 100%;
+            border: 1px solid #FFFFFF;
+            width: 12.8rem;
+            height: 12.8rem;
+        }
+    
+        .pdp-video-play:after {
+            font-family: 'parker-pens-icons' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: "\e90d";
+            color: #000000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 100%;
+            background-color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 0.3rem;
+            padding-top: 0.2rem;
+            width: 9.2rem;
+            height: 9.2rem;
+            font-size: 1.6rem;
+        }
+    
+        .wmBox_closeBtn {
+            z-index: 2;
+            position: relative;
+            margin-top: 0 !important;
+        }
+    
+        .wmBox_closeBtn p {
+            font-size: 21px !important;
+            border-radius: 0 !important;
+            top: -6px !important;
+            right: 5px !important;
+        }
+    
+        @media (max-width: 767px) {
+            .wmBox_closeBtn p {
+                font-size: 23px !important;
+                border-radius: 0 !important;
+                top: -6px !important;
+                right: 3px !important;
+            }
+        }
+    
+    
+        @media (min-width: 1023px) {
+            .pdp-video-container {
+                min-height: 385px;
+            }
+            .pdp-video-play {
+                min-height: 385px;
+            }
+        }
+        /* Popup video styles start here */
+    
+        .wmBox_overlay {
+            z-index: 99999;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            display: none;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    
+        .wmBox_centerWrap {
+            display: table;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    
+        .wmBox_centerer {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    
+        .wmBox_centerer iframe {
+            width: 95%;
+            display: table;
+            margin: 0 auto;
+            position: relative;
+        }
+    
+        .wmBox_contentWrap {
+            width: 70%;
+            margin: 0 auto;
+            position: relative;
+        }
+    
+        .wmBox_scaleWrap {
+            position: relative;
+            height: 0;
+            padding-top: 20px;
+            padding-bottom: 56.25%;
+            width: 100%;
+        }
+    
+        .wmBox_centerer iframe {
+            position: absolute;
+            top: 0;
+            border: 0;
+            outline: 0;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    
+        .wmBox_closeBtn {
+            z-index: 2;
+            position: relative;
+            margin-top: -40px;
+        }
+    
+        .wmBox_closeBtn p {
+            line-height: 0;
+            margin: 0;
+            padding: 0.5em 0 0.75em;
+            color: #FFF;
+            background: #000;
+            width: 1.3em;
+            font-size: 25px;
+            border-radius: 100%;
+            text-align: center;
+            font-family: Verdana, serif;
+            position: relative;
+            bottom: -0.5em;
+            right: -0.5em;
+            cursor: pointer;
+            float: right;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            transition: color 0.2s ease-out, background 0.2s ease-out;
+        }
+    
+        .wmBox_closeBtn p:hover {
+            background: #FFF;
+            color: #000;
+        }
+    
+        video {
+            z-index: 9999999999999;
+        }
+    
+        @media (max-width: 768px) {
+            .wmBox_contentWrap {
+                margin: 4%;
+                width: 92%;
+            }
+        }
+        /* Popup video styles end here */
+    
+        @media (max-width: 768px) {
+            .pdp-video-main-content {
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+        }
+    </style>
+    <div class="pdp-video-container row m-b-xxl">
+        <div class="pdp-video-content bg-teal col-md-6 col-lg-6 col-sm-12 col-xs-12">
+            <div class="pdp-video-info">
+                <div class="pdp-video-main-content">
+                    <h5 class="h-2 txt-white txt-align--center uppercase">Duofold</h5>
+                    <hr />
+                    <p class="txt-white txt-align--center">
+                        The most prestigious of collections, Duofold has been an emblem of excellence since 1921.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="pdp-video-player ppgUnstyled ppcgList col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div>
+                <a class="wmBox" href="#" data-popup="https://assets.parkerpen.com/s7viewers/html5/VideoViewer.html?videoserverurl=https://assets.parkerpen.com/is/content/&emailurl=//assets.parkerpen.com/s7/emailFriend&serverUrl=//assets.parkerpen.com/is/image/&config=Scene7SharedAssets/Universal_HTML5_Video&contenturl=//assets.parkerpen.com/skins/&asset=NewellRubbermaid/prmr_mvimou_1280x720_2000K">
+                    <button class="pdp-video-play" data-video-id="videoSlot1" type="button" aria-label="play video NAME">
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $.wmBox();
+        });
+    </script>
+    <script>
+        (function ($) {
+            $.wmBox = function () {
+                $('body').prepend(
+                    '<div class="wmBox_overlay"><div class="wmBox_centerWrap"><div class="wmBox_centerer"><div class="wmBox_contentWrap"><div class="wmBox_scaleWrap"><div class="wmBox_closeBtn"><p>x</p></div>'
+                );
+            };
+            $('[data-popup]').click(function (e) {
+                e.preventDefault();
+                $('.wmBox_overlay').fadeIn(750);
+                var mySrc = $(this).attr('data-popup');
+                $('.wmBox_overlay .wmBox_scaleWrap').append('<iframe src="' + mySrc + '">');
+    
+                $('.wmBox_overlay iframe').click(function (e) {
+                    e.stopPropagation();
+                });
+                $('.wmBox_overlay').click(function (e) {
+                    e.preventDefault();
+                    $('.wmBox_overlay').fadeOut(750, function () {
+                        $(this).find('iframe').remove();
+                    });
+                });
+            });
+        }(jQuery));
+    </script>
+    
+</body>
+</html>

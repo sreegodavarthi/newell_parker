@@ -1,0 +1,33 @@
+	IBM ToolKit	https://parker-pens.mybluemix.net/
+https://parker-pens.mybluemix.net/docs.html
+
+	VM	jayanta.basu/W3lc0m313 -  ec2-34-232-67-213.compute-1.amazonaws.com
+		rajarajacholan/W3lc0m314 - ec2-54-162-86-77.compute-1.amazonaws.com
+hemali.naik/W3lc0m313 - ec2-52-91-136-161.compute-1.amazonaws.com
+		
+	Environment Links	
+		
+FED	Home Page	10.22.117.41/webapp/wcs/stores/servlet/TopCategories_15160_67551_-1
+	PLP & Search Pages	http://10.22.117.41/webapp/wcs/stores/servlet/CategoryDisplay?catalogId=67551&myAcctMain=1&langId=-1&storeId=15160&categoryId=81018#facet:&productBeginIndex:0&orderBy:&pageView:grid&minPrice:&maxPrice:&pageSize:&
+
+Project	Home Page	http://project.parkerpen.com/webapp/wcs/stores/servlet/TopCategories_15060_15060_-1
+
+QA2	Home Page	http://qa2.parkerpen.com/webapp/wcs/stores/servlet/TopCategories_15060_15060_-1
+
+		
+Parker Creatives	Desktop	https://resourceammirati.invisionapp.com/share/BKBYL4DJH#/236589077_1_Home_Desktop
+
+	Mobile	https://resourceammirati.invisionapp.com/share/PKBYL3GX3#/235694522_iPhone_7
+
+		
+Parker Wireframe		https://newellbrands.atlassian.net/wiki/pages/viewpage.action?pageId=4558422
+
+		
+JIRA		https://newellbrands.atlassian.net/browse/PARK-87?filter=-1
+
+		
+NewellBestPractises		https://newellbrands.atlassian.net/wiki/spaces/WCW/pages/6257785/Best+Practices+and+Naming+Conventions
+
+		
+BitBucket		www.bitbucket.com
+

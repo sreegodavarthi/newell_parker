@@ -1,0 +1,588 @@
+/*---
+ * Imports
+ * Add all the EWB CUSTOM less imports from the project in this file
+ * EWB Component styles = Add the stylesheets component related
+ * EWB Page styles = Add the page specific styles
+---*/
+/*---
+ * Imports
+ * Add all the breadcrumb less imports from the project in this file
+---*/
+/*---
+ * Variables
+ * Add all the variables you need for the EWB changes
+ * Responsive = The responsive breakpoints use as needed.
+---*/
+/* ----- Styles breadcrumb styles ----- */
+/* line 3, css/LESS/EWB_CUSTOM/COMPONENTS/breadcrumb/global.less */
+div#widget_breadcrumb {
+  display: block;
+}
+/*---
+ * Imports
+ * Add all the carousel less imports from the project in this file
+---*/
+/* line 1, css/LESS/EWB_CUSTOM/COMPONENTS/carousel/global.less */
+.carousel {
+  overflow: hidden;
+}
+/* line 5, css/LESS/EWB_CUSTOM/COMPONENTS/carousel/global.less */
+.carousel .left_espot {
+  width: 100%;
+}
+/* line 9, css/LESS/EWB_CUSTOM/COMPONENTS/carousel/global.less */
+.carousel .content {
+  margin: 0;
+  width: 100%;
+}
+/* line 13, css/LESS/EWB_CUSTOM/COMPONENTS/carousel/global.less */
+.carousel .content ul {
+  font-size: 0;
+}
+/* line 18, css/LESS/EWB_CUSTOM/COMPONENTS/carousel/global.less */
+.carousel .pageControl.dot {
+  bottom: 10px;
+}
+/* line 21, css/LESS/EWB_CUSTOM/COMPONENTS/carousel/global.less */
+.carousel .pageControl.dot a {
+  background-color: #FFF;
+  width: 12px;
+  height: 12px;
+  margin: 0 8px;
+}
+@media screen and (min-width: 1280px) {
+  /* line 28, css/LESS/EWB_CUSTOM/COMPONENTS/carousel/global.less */
+  .carousel .pageControl.dot a {
+    width: 14px;
+    height: 14px;
+    margin: 0 10px;
+  }
+}
+/*---
+ * Imports
+ * Add all the categoryRecommendation less imports from the project in this file
+---*/
+/*---
+ * Imports
+ * Add all the breadcrumb less imports from the project in this file
+---*/
+/* ----- Styles filters styles ----- */
+/* line 3, css/LESS/EWB_CUSTOM/COMPONENTS/filters/global.less */
+.filter,
+.facetWidget {
+  background-color: transparent;
+  position: relative;
+  padding: 0 2px;
+}
+/* line 8, css/LESS/EWB_CUSTOM/COMPONENTS/filters/global.less */
+.filter fieldset,
+.facetWidget fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 13, css/LESS/EWB_CUSTOM/COMPONENTS/filters/global.less */
+.filter fieldset .title,
+.facetWidget fieldset .title {
+  background: transparent;
+  margin: 0;
+  padding: 10px 0 0 0;
+  border-top: none;
+}
+/* line 19, css/LESS/EWB_CUSTOM/COMPONENTS/filters/global.less */
+.filter fieldset .title .arrow,
+.facetWidget fieldset .title .arrow {
+  float: right;
+}
+/* line 44, css/LESS/EWB_CUSTOM/COMPONENTS/filters/global.less */
+.filter fieldset .title .selected_number,
+.facetWidget fieldset .title .selected_number {
+  width: 20px;
+  height: 20px;
+  padding: 4px 13px;
+  border-radius: 5px;
+}
+/* line 53, css/LESS/EWB_CUSTOM/COMPONENTS/filters/global.less */
+.filter fieldset .facetSelectContainer li,
+.facetWidget fieldset .facetSelectContainer li {
+  padding: 5px 5px 5px 0px;
+  border: none;
+}
+/* line 56, css/LESS/EWB_CUSTOM/COMPONENTS/filters/global.less */
+.filter fieldset .facetSelectContainer li a,
+.facetWidget fieldset .facetSelectContainer li a {
+  display: inline-block;
+}
+/* line 60, css/LESS/EWB_CUSTOM/COMPONENTS/filters/global.less */
+.filter fieldset .facetSelectContainer li a:hover,
+.facetWidget fieldset .facetSelectContainer li a:hover {
+  text-decoration: none;
+}
+/* line 64, css/LESS/EWB_CUSTOM/COMPONENTS/filters/global.less */
+.filter fieldset .facetSelectContainer li a .checkBox,
+.facetWidget fieldset .facetSelectContainer li a .checkBox {
+  background-color: white;
+}
+/* line 73, css/LESS/EWB_CUSTOM/COMPONENTS/filters/global.less */
+.filter fieldset.colors_fieldSet li,
+.facetWidget fieldset.colors_fieldSet li {
+  width: 38px;
+  height: 38px;
+  margin: 5px 5px 5px 0;
+  padding: 0px;
+  display: inline-block;
+}
+/* line 80, css/LESS/EWB_CUSTOM/COMPONENTS/filters/global.less */
+.filter fieldset.colors_fieldSet li a,
+.facetWidget fieldset.colors_fieldSet li a {
+  opacity: 0;
+  overflow: hidden;
+}
+/*---
+ * Imports
+ * Add all the carousel less imports from the project in this file
+---*/
+/* ----- Styles gallery showcase styles ----- */
+/* line 3, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase {
+  background-color: white;
+  box-sizing: border-box;
+  margin: 20px 0;
+  overflow: auto;
+  padding: 0px 15px;
+}
+@media screen and (min-width: 768px) {
+  /* line 10, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase {
+    margin: 20px 20px;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 14, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase {
+    margin: 20px 6%;
+    padding: 0 20px;
+  }
+}
+/* line 19, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-for {
+  padding-top: 3%;
+  float: left;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+/* line 27, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-for__slide {
+  display: none;
+  overflow: hidden;
+  opacity: 0;
+}
+/* line 32, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-for__slide.active {
+  display: block;
+  opacity: 1;
+}
+/* line 38, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-for__slide img {
+  float: left;
+  width: 100%;
+  margin-left: 2%;
+}
+@media screen and (min-width: 768px) {
+  /* line 43, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-for__slide img {
+    width: 58%;
+  }
+}
+/* line 48, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-for__slide__slide-content {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  /* line 55, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-for__slide__slide-content {
+    width: 40%;
+  }
+}
+/* line 59, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-for__slide__slide-content h2 {
+  font-size: 32px;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 992px) {
+  /* line 69, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-for__slide__slide-content h2 {
+    font-size: 44px;
+  }
+}
+/* line 74, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-for__slide__slide-content h3 {
+  font-size: 16px;
+  line-height: 1.2;
+  padding-left: 50px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  /* line 82, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-for__slide__slide-content h3 {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 86, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-for__slide__slide-content h3 {
+    font-size: 24px;
+  }
+}
+/* line 91, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-for__slide__slide-content p {
+  font-size: 12px;
+  color: #bababa;
+  line-height: 1.346;
+  margin-bottom: 41px;
+}
+@media screen and (min-width: 992px) {
+  /* line 99, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-for__slide__slide-content p {
+    font-size: 16px;
+  }
+}
+/* line 104, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-for__slide__slide-content a {
+  text-transform: uppercase;
+}
+/* line 111, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
+  position: relative;
+  float: left;
+  z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  /* line 125, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-nav {
+    width: 100%;
+  }
+}
+/* line 130, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__container {
+  overflow: hidden;
+  position: relative;
+}
+/* line 135, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__container:before {
+  display: block;
+  left: -24px;
+  z-index: 4;
+  top: 0;
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 24px;
+}
+/* line 147, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__container:after {
+  display: block;
+  right: -24px;
+  z-index: 4;
+  top: 0;
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 24px;
+}
+/* line 160, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__items {
+  height: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  display: inline-flex;
+}
+@media screen and (min-width: 1280px) {
+  /* line 169, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-nav__items {
+    height: 200px;
+  }
+}
+/* line 175, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__items__item {
+  border-top: solid 3px white;
+  display: inline-block;
+  height: 104px;
+  width: 104px;
+  text-align: center;
+  padding-top: 26px;
+  vertical-align: top;
+}
+/* line 177, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__items__item:first-child {
+  margin-left: 0px;
+}
+@media screen and (min-width: 768px) {
+  /* line 189, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-nav__items__item {
+    height: 160px;
+    width: 160px;
+    padding-top: 25px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  /* line 196, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-nav__items__item {
+    height: 170px;
+    width: 170px;
+    padding-top: 31px;
+  }
+}
+/* line 202, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__items__item a {
+  background: lightgray;
+  display: block;
+  min-height: 50px;
+  min-width: 50px;
+  font-size: 88px;
+}
+@media screen and (min-width: 768px) {
+  /* line 211, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-nav__items__item a {
+    font-size: 100px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  /* line 215, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-nav__items__item a {
+    font-size: 120px;
+  }
+}
+/* line 220, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__items__item p {
+  margin-top: 2px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  /* line 227, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-nav__items__item p {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+}
+/* line 233, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__items__item.active {
+  transition: all 0.5s;
+}
+/* line 237, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__items__item.active a {
+  bottom: 5px;
+  position: relative;
+}
+/* line 242, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__items__item.active a,
+.gallery-showcase__slider-nav__items__item.active p {
+  transition: all 0.5s linear;
+}
+/* line 251, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__prev,
+.gallery-showcase__slider-nav__next {
+  bottom: 0;
+  float: none;
+  position: absolute;
+  top: 0;
+  height: 42px;
+  margin: auto;
+}
+/* line 259, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__prev span,
+.gallery-showcase__slider-nav__next span {
+  font-size: 42px;
+}
+/* line 265, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__prev {
+  display: none;
+  left: -2px;
+}
+@media screen and (min-width: 768px) {
+  /* line 270, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-nav__prev {
+    left: -10px;
+  }
+}
+/* line 275, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+.gallery-showcase__slider-nav__next {
+  right: -2px;
+}
+@media screen and (min-width: 768px) {
+  /* line 279, css/LESS/EWB_CUSTOM/COMPONENTS/galleryShowcase/global.less */
+  .gallery-showcase__slider-nav__next {
+    right: -10px;
+    display: block;
+  }
+}
+/*---
+ * Imports
+ * Add all the header less imports from the project in this file
+---*/
+/* ----- Styles filters styles ----- */
+/* line 3, css/LESS/EWB_CUSTOM/COMPONENTS/header/global.less */
+.filters {
+  background-color: transparent;
+  position: relative;
+  padding: 0 2px;
+}
+/* line 8, css/LESS/EWB_CUSTOM/COMPONENTS/header/global.less */
+.filters fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 13, css/LESS/EWB_CUSTOM/COMPONENTS/header/global.less */
+.filters fieldset .title {
+  background: transparent;
+  margin: 0;
+  padding: 10px 0 0 0;
+  border-top: none;
+}
+/* line 19, css/LESS/EWB_CUSTOM/COMPONENTS/header/global.less */
+.filters fieldset .title .arrow {
+  float: right;
+}
+/* line 44, css/LESS/EWB_CUSTOM/COMPONENTS/header/global.less */
+.filters fieldset .title .selected_number {
+  width: 20px;
+  height: 20px;
+  padding: 4px 13px;
+  border-radius: 5px;
+}
+/* line 53, css/LESS/EWB_CUSTOM/COMPONENTS/header/global.less */
+.filters fieldset .facetSelectContainer li {
+  padding: 5px 5px 5px 0px;
+  border: none;
+}
+/* line 56, css/LESS/EWB_CUSTOM/COMPONENTS/header/global.less */
+.filters fieldset .facetSelectContainer li a {
+  display: inline-block;
+}
+/* line 59, css/LESS/EWB_CUSTOM/COMPONENTS/header/global.less */
+.filters fieldset .facetSelectContainer li a:hover {
+  text-decoration: none;
+}
+/* line 63, css/LESS/EWB_CUSTOM/COMPONENTS/header/global.less */
+.filters fieldset .facetSelectContainer li a .checkBox {
+  background-color: white;
+  display: block;
+}
+/* line 72, css/LESS/EWB_CUSTOM/COMPONENTS/header/global.less */
+.filters fieldset.colors_fieldSet li {
+  width: 38px;
+  height: 38px;
+  margin: 5px;
+  display: inline-block;
+}
+/* line 78, css/LESS/EWB_CUSTOM/COMPONENTS/header/global.less */
+.filters fieldset.colors_fieldSet li a {
+  opacity: 0;
+  overflow: hidden;
+}
+/*---
+ * Imports
+ * Add all the sitemap less imports from the project in this file
+---*/
+/* ----- Styles sitemap styles ----- */
+/* line 3, css/LESS/EWB_CUSTOM/COMPONENTS/sitemap/global.less */
+.resetBoxModel {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+/* line 9, css/LESS/EWB_CUSTOM/COMPONENTS/sitemap/global.less */
+#footerRow1 {
+  width: 100%;
+}
+/* line 12, css/LESS/EWB_CUSTOM/COMPONENTS/sitemap/global.less */
+#footerRow1 .section {
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: auto;
+}
+/* line 16, css/LESS/EWB_CUSTOM/COMPONENTS/sitemap/global.less */
+#footerRow1 .section > .header {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+/* line 20, css/LESS/EWB_CUSTOM/COMPONENTS/sitemap/global.less */
+#footerRow1 .section > .header::before {
+  display: none;
+}
+/* line 24, css/LESS/EWB_CUSTOM/COMPONENTS/sitemap/global.less */
+#footerRow1 .section > .header > .toggle {
+  display: none;
+}
+/* line 28, css/LESS/EWB_CUSTOM/COMPONENTS/sitemap/global.less */
+#footerRow1 .section > ul {
+  padding: 0;
+  margin: 0;
+  border: none;
+  display: block;
+}
+/* line 32, css/LESS/EWB_CUSTOM/COMPONENTS/sitemap/global.less */
+#footerRow1 .section > ul > li > a {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+/* line 38, css/LESS/EWB_CUSTOM/COMPONENTS/sitemap/global.less */
+#footerRow1 .header h3 {
+  font-weight: 400;
+}
+/* line 2, css/LESS/EWB_CUSTOM/COMPONENTS/tabButtonContainer/global.less */
+.tabButtonContainer .tab_header {
+  border-spacing: 0;
+  margin: 0;
+}
+/* line 6, css/LESS/EWB_CUSTOM/COMPONENTS/tabButtonContainer/global.less */
+.tabButtonContainer .tab_container {
+  background-image: none;
+  border-spacing: 0;
+  border: none;
+  color: #000;
+  padding: 0;
+  vertical-align: top;
+  width: auto;
+}
+/* line 2, css/LESS/EWB_CUSTOM/COMPONENTS/my-account/global.less */
+.my_account .myaccount_header {
+  background: none;
+  border: none;
+}
+/* line 7, css/LESS/EWB_CUSTOM/COMPONENTS/my-account/global.less */
+.my_account .myaccount_section_header {
+  border: none;
+  background: none;
+}
+/* line 12, css/LESS/EWB_CUSTOM/COMPONENTS/my-account/global.less */
+.my_account .content {
+  border: none;
+}
+/* line 16, css/LESS/EWB_CUSTOM/COMPONENTS/my-account/global.less */
+.my_account .button_primary {
+  background: none;
+  border-color: grey;
+}
+/* line 21, css/LESS/EWB_CUSTOM/COMPONENTS/my-account/global.less */
+.my_account .button_text {
+  background: none;
+  border: none;
+}
+/*# sourceMappingURL=css/ewb_custom.css.map */

@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Ballpoint Careguide</title>
+    <!-- toolkit styles -->
+    <link rel="stylesheet" href="toolkit.css" />
+    <link rel="stylesheet" href="common1_1.css" />
+    <!-- /toolkit styles -->
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Outer Wrapper -->
+    <div id="page" class="outer-wrapper categorypage">
+        <div id="headerWrapper" class="headerWrapper"></div>
+        <style>
+            .hero-content-conatiner {
+                padding-bottom: 30px;
+            }
+
+            .hero-content-conatiner h1 {
+                margin-bottom: 30px;
+            }
+
+            p {
+                line-height: 0;
+                margin-bottom: 0;
+            }
+
+            div#widget_breadcrumb>ul li a {
+                color: #658B9F;
+            }
+
+            div#widget_breadcrumb>ul {
+                margin-top: 16px;
+                padding-left: 2%;
+            }
+
+            div#widget_breadcrumb>ul li {
+                display: inline;
+                font-size: 11px;
+                margin: 0;
+            }
+
+            .careguides-breadcrumb {
+                padding-left: 2%;
+                margin-bottom: 0px;
+            }
+
+            .store-pen-description {
+                padding-bottom: 7%;
+            }
+
+            .store-pen-container-one {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-left: 2%;
+                padding-top: 2%;
+            }
+
+            .store-pen-container-one h2 {
+                padding-bottom: 3%;
+            }
+
+            .careguides-content-container {
+                margin-bottom: 15px;
+            }
+
+            .careguides-content-container p {
+                line-height: 23px;
+                margin-bottom: 1rem;
+                font-size: 13px;
+            }
+
+            .careguides-faq-container .ques {
+                font-size: 15px;
+                padding-bottom: 2%;
+            }
+
+            .careguides-faq-container ul {
+                padding-left: 2%;
+            }
+
+            .careguides-faq-container li {
+                list-style-type: decimal;
+                padding-bottom: 2%;
+            }
+
+            .content-header {
+                margin-bottom: 6px;
+            }
+
+            .clean-nib-list {
+                font-size: 13px;
+                line-height: 24px;
+                padding-left: 3%;
+            }
+
+            .clean-nib-list li {
+                list-style-type: decimal;
+                padding-left: 6px;
+            }
+
+            .btn-primary-ghost {
+                text-transform: capitalize;
+                font-size: 14px;
+                margin-top: 15px;
+            }
+
+            .ball-point-shop {
+                padding-bottom: 20px;
+            }
+
+            .ball-point-shop a {
+                color: #3B3C43;
+            }
+
+            .ball-point-shop p {
+                padding-bottom: 20px;
+            }
+            /* Popup video styles start here */
+
+            .wmBox_overlay {
+                z-index: 99999;
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                display: none;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+            .wmBox_centerWrap {
+                display: table;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+
+            .wmBox_centerer {
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            .wmBox_centerer iframe {
+                width: 95%;
+                display: table;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            .wmBox_contentWrap {
+                width: 70%;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            .wmBox_scaleWrap {
+                position: relative;
+                height: 0;
+                padding-top: 20px;
+                padding-bottom: 56.25%;
+                width: 100%;
+            }
+
+            .wmBox_centerer iframe {
+                position: absolute;
+                top: 0;
+                border: 0;
+                outline: 0;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .wmBox_closeBtn {
+                z-index: 2;
+                position: relative;
+                margin-top: -40px;
+            }
+
+            .wmBox_closeBtn p {
+                line-height: 0;
+                margin: 0;
+                padding: 0.5em 0 0.75em;
+                color: #FFF;
+                background: #000;
+                width: 1.3em;
+                font-size: 25px;
+                border-radius: 100%;
+                text-align: center;
+                font-family: Verdana, serif;
+                position: relative;
+                bottom: -0.5em;
+                right: -0.5em;
+                cursor: pointer;
+                float: right;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                transition: color 0.2s ease-out, background 0.2s ease-out;
+            }
+
+            .wmBox_closeBtn p:hover {
+                background: #FFF;
+                color: #000;
+            }
+
+            video {
+                z-index: 9999999999999;
+            }
+
+            img {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .ball-point-shop img {
+                height: 500px;
+            }
+
+            @media (max-width: 768px) {
+                img {
+                    width: 100%;
+                }
+                .wmBox_contentWrap {
+                    margin: 4%;
+                    width: 92%;
+                }
+            }
+            /* Popup video styles end here */
+
+            @media (max-width: 768px) {
+                .hero-content-conatiner h1 {
+                    font-size: 28px;
+                    line-height: 44px;
+                    margin-bottom: 30px;
+                }
+                .careguides-breadcrumb {
+                    padding-left: 4%;
+                    margin-bottom: 0px;
+                }
+
+                .ball-point-shop img {
+                    height: 300px;
+                }
+
+                .store-pen-container-one {
+                    padding: 25px 16px 16px 16px;
+                }
+                div#widget_breadcrumb>ul {
+                    margin-top: 16px;
+                    padding-left: 4%;
+                }
+            }
+        </style>
+        <!-- Content Wrapper -->
+        <div id="contentWrapper" class="container-fluid">
+            <!-- Main content -->
+            <div id="content" role="main">
+
+
+                <div class="store-pen-container">
+                    <div class="col col-md-7 col-xs-12 store-pen-container-one">
+                        <div class="store-pen-description">
+                            <div class="hero-content-conatiner">
+                                <h1 class="uppercase">Ballpoint Pen Care Guide</h1>
+                                <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/BP-TITLE-BANNER?wid=2000&fmt=png-alpha&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1.0,1.0,6,0&iccEmbed=0&printRes=72"
+                                    alt="">
+                                <br>
+                            </div>
+
+                            <div class="careguides-content-container">
+                                <h2 class="careguides-content-description uppercase"> How to Change a Ballpoint Refill</h2>
+
+                                <a class="wmBox" href="#" data-popup="http://s7d9.scene7.com/e2/NewellRubbermaid/FWLA/Parker/1.%20Brand%20assets/Movies/dfld_mvimou_720p_1200k_mp4.mp4">
+                                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/care-3?wid=720&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1.0,1.0,6,0&iccEmbed=0&printRes=72"
+                                        alt="">
+                                    <button class="pdp-video-play" type="button" aria-label="play video NAME"></button>
+                                </a>
+
+                            </div>
+                            <br>
+                            <div class="careguides-content-container">
+                                <h2 class="careguides-content-description uppercase">How to Store Your Pen</h2>
+                                <div class="careguides-content-img-container">
+                                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/Careguide_howtostoreyourpen?wid=1440&fmt=jpg&qlt=100,1" alt="">
+                                </div>
+                                <p>Store your pen with the refill always retracted into the barrel. This will avoid stains or
+                                    leakage if the point of refill touches the paper.</p>
+                                <p>Placing your pen into a pen case or pouch will protect the pen from being scratched, keeping
+                                    the finish looking new.</p>
+                            </div>
+                            <br>
+                            <div class="careguides-content-container">
+                                <h2 class="careguides-content-description uppercase">How to Remove an Ink Stain on Clothing</h2>
+                                <div class="careguides-content-img-container">
+                                    <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/careguide_genericCleanclothes?wid=1440&fmt=jpg&qlt=100,1"
+                                        alt="">
+                                </div>
+                                <p>Amodex is a highly effective stain remover for most inks and safe to use on all fabrics,
+                                    surfaces, and skin.</p>
+                                <p>Never place clothing in the dryer unless the stain is completely gone as heat will set the
+                                    stain and permanently damage clothing.</p>
+                            </div>
+                            <br>
+
+                            <div class="careguides-content-container careguides-faq-container">
+                                <h2 class="content-header uppercase">Frequently Asked Questions</h2>
+                                <ul>
+                                    <li>
+                                        <p class="uppercase ques">Are refills available for all Parker ballpoint pens?</p>
+                                        <p>Information about refills can be found on our
+                                            <a href="">Inks & Refills</a> page.
+                                        </p>
+                                        <p>To purchase refills, please visit the
+                                            <a href="">Store Locator</a> page to find your nearest retailer or
+                                            <a href="">shop here.</a>
+                                        </p>
+                                        <br>
+                                    </li>
+                                    <li>
+                                        <p class="uppercase ques">What should I do if my refill is loose?</p>
+                                        <p>First, please make sure you have the correct refill for your writing instrument.</p>
+                                        <p>If so, please visit our Repairs section on our
+                                            <a href="http://qa2.parkerpen.com/webapp/wcs/stores/servlet/en/parkerpenusa/faq">FAQ</a> page for more information.
+                                        </p>
+                                        <p>If you would like more information on how to refill your pen, please watch the how-to
+                                            video in the section above.</p>
+                                        <br>
+                                    </li>
+                                    <li>
+                                        <p class="uppercase ques">What do I do if my refill doesn't perform?</p>
+                                        <p>Please see
+                                            <a href="http://qa2.parkerpen.com/webapp/wcs/stores/servlet/en-US/parkerpenusa/returns-and-exchanges">Returns & Exchanges</a> for more information.</p>
+                                        <br>
+                                    </li>
+                                    <li>
+                                        <p class="uppercase ques">May I purchase any kind of spare parts directly from you?</p>
+                                        <p>We sell front-end spare parts. If you would like to purchase one, please determine
+                                            the model and nib size required. See our
+                                            <a href="http://qa2.parkerpen.com/webapp/wcs/stores/servlet/en/parkerpenusa/nib-exchange-pgm">Nib Exchange Program</a> for more details.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <br>
+                            <div class="careguides-content-container ball-point-shop">
+                                <h2 class="content-header uppercase">Ballpoint Refills</h2>
+                                <img src="http://assets.parkerpen.com/is/image/NewellRubbermaid/Ballpoint_Refill_Image?wid=720&fmt=png-alpha&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1.0,1.0,6,0&iccEmbed=0&printRes=72"
+                                    alt="">
+                                <p>Delivering a constant flow of quick-drying ink, the ballpoint refills offer convenience and
+                                    reliability, switching out with ease for rapid and clean ink replacement.</p>
+                                <br>
+                                <a href="">SHOP NOW
+                                    <i class="icon-small-arrow"></i>
+                                </a>
+                            </div>
+                            <br>
+                            <div class="careguides-content-container ball-point-shop">
+                                <h2 class="content-header uppercase">Nib Exchange Program</h2>
+                                <p>If you are not entirely satisfied by the nib of your ballpoint pen, request a nib exchange
+                                    to better suit your individual writing style.</p>
+                                <br>
+                                <a href="http://qa2.parkerpen.com/webapp/wcs/stores/servlet/en/parkerpenusa/nib-exchange-pgm">DISCOVER
+                                    <i class="icon-small-arrow"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Main Content -->
+        </div>
+        <!-- End Content Wrapper -->
+    </div>
+    <script>
+        $(document).ready(function () {
+            $.wmBox();
+        });
+    </script>
+    <script>
+        (function ($) {
+            $.wmBox = function () {
+                $('body').prepend(
+                    '<div class="wmBox_overlay"><div class="wmBox_centerWrap"><div class="wmBox_centerer"><div class="wmBox_contentWrap"><div class="wmBox_scaleWrap"><div class="wmBox_closeBtn"><p>x</p></div>'
+                );
+            };
+            $('[data-popup]').click(function (e) {
+                e.preventDefault();
+                $('.wmBox_overlay').fadeIn(750);
+                var mySrc = $(this).attr('data-popup');
+                $('.wmBox_overlay .wmBox_scaleWrap').append('<iframe src="' + mySrc + '">');
+
+                $('.wmBox_overlay iframe').click(function (e) {
+                    e.stopPropagation();
+                });
+                $('.wmBox_overlay').click(function (e) {
+                    e.preventDefault();
+                    $('.wmBox_overlay').fadeOut(750, function () {
+                        $(this).find('iframe').remove();
+                    });
+                });
+            });
+        }(jQuery));
+    </script>
+    <!-- End Outer Wrapper -->
+</body>
+
+</html>
